@@ -266,6 +266,7 @@ const Home: NextPage = () => (
             data-aos-delay="1500"
             data-aos-easing="ease-in-sine"
             data-aos-once="false"
+            data-aos-offset="300"
             className={styles.cardRoadMap}
           >
             <div className={styles.timeTitle}>Q1- 2022</div>
@@ -282,6 +283,7 @@ const Home: NextPage = () => (
             data-aos-delay="1700"
             data-aos-easing="ease-in-sine"
             data-aos-once="false"
+            data-aos-offset="300"
             className={styles.cardRoadMap}
           >
             <div className={styles.timeTitle}>Q2- 2022</div>
@@ -299,6 +301,7 @@ const Home: NextPage = () => (
             data-aos-delay="1900"
             data-aos-easing="ease-in-sine"
             data-aos-once="false"
+            data-aos-offset="300"
             className={styles.cardRoadMap}
           >
             <div className={styles.timeTitle}>Q3- 2022</div>
@@ -316,6 +319,7 @@ const Home: NextPage = () => (
             data-aos-delay="2100"
             data-aos-easing="ease-in-sine"
             data-aos-once="false"
+            data-aos-offset="300"
             className={styles.cardRoadMap}
           >
             <div className={styles.timeTitle}>Q4- 2022</div>
