@@ -1,0 +1,42 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "tsx": true
+    }
+  },
+  "rules": {
+    "quotes": [
+      2,
+      "double"
+    ],
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [
+          ".tsx",
+          ".jsx"
+        ]
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "implicit-arrow-linebreak": "off",
+    "function-paren-newline": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/no-unescaped-entities": "off"
+  }
+}

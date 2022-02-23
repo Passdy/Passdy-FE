@@ -1,0 +1,59 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../assets/fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Mulish';
+    src: url('../assets/fonts/Mulish/static/Mulish-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'Volkorm';
+    src: url('../assets/fonts/Vollkorn/static/Vollkorn-Bold.ttf');
+}
+
+a, span, h1, h2, h3, div {
+    font-family: Lato, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.ml-40 {
+    margin-left: 40px;
+}
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
+.pl-100 {
+    padding-left: 100px;
+}

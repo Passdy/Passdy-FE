@@ -1,0 +1,267 @@
+@import "./styles/variables.module";
+
+.homeWrapper {
+  margin-top: 140px;
+}
+
+.bannerSection {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(180deg, #FBB163 -480.11%, rgba(251, 177, 99, 0) 100%);
+
+  .contentSection {
+    width: 50%;
+    padding-left: 90px;
+
+    .bigTitle {
+      font-family: Volkorm, sans-serif;
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 56px;
+
+      span {
+        font-weight: 700;
+        font-family: Volkorm, sans-serif;
+        color: $primary-color;
+      }
+    }
+
+    .secondaryTitle {
+      font-size: 16px;
+      line-height: 24px;
+      color: #000000;
+      margin-top: 30px;
+    }
+
+    .exploreButton {
+      padding: 10px 24px;
+      font-size: 16px;
+      line-height: 26px;
+      color: #fff;
+      outline: 0;
+      margin-top: 50px;
+      background-color: $primary-color;
+      border-radius: 4px;
+      border: 0;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #055345;
+      }
+    }
+  }
+
+  .banner {
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.suitableShop {
+  padding: 100px 200px;
+
+  .cardWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  .card {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .iconWrapper {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FFF8F1;
+
+      img {
+        width: 99px;
+        height: 99px;
+      }
+    }
+
+    .titleCard {
+      font-family: Volkorm, sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 33px;
+      color: #000000;
+      margin-top: 20px;
+    }
+
+    .descriptionText {
+      margin-top: 20px;
+      color: #707070;
+      font-size: 14px;
+      line-height: 21px;
+      height: 80px;
+    }
+  }
+
+  .startSellingBtn {
+    margin-top: 20px;
+    text-align: center;
+
+    button {
+      padding: 10px 24px;
+      font-size: 16px;
+      line-height: 26px;
+      color: #fff;
+      background-color: $primary-color;
+      border-radius: 4px;
+      border: 0;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #055345;
+      }
+    }
+  }
+}
+
+.howToSection {
+  background-color: $bg-color3;
+  padding: 100px 200px;
+
+  .withImageSection {
+    margin-top: 50px;
+
+    .cardHowTo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .contentHowTo {
+      width: 50%;
+
+      .titleCardHowTo {
+        .bigNumber {
+          font-weight: 500;
+          font-size: 80px;
+          line-height: 111px;
+          color: $secondary-color;
+          font-family: Volkorm, sans-serif;
+        }
+
+        .bigTitle {
+          font-weight: 600;
+          font-size: 32px;
+          line-height: 45px;
+          font-family: Volkorm, sans-serif;
+          color: $primary-color;
+          margin-left: 20px;
+        }
+      }
+
+      .cardItemWrapper {
+        width: 80%;
+
+        li {
+          font-size: 16px;
+          line-height: 24px;
+          color: #000000;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .imageHowTow {
+      width: 50%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.roadMapSection {
+  padding: 100px 200px;
+  background: #EDE6DB;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  .checkLine {
+    margin: 80px;
+    display: flex;
+    align-items: center;
+
+    .grayLine {
+      background-color: $stroke1;
+      width: 120px;
+      height: 1px;
+      margin-left: 40px;
+    }
+
+    .imageWrapper {
+      margin-left: 40px;
+    }
+  }
+
+  .cardRoadMapWrapper {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 25px;
+
+    .cardRoadMap {
+      display: flex;
+      align-items: center;
+      flex-flow: column;
+      background: #FFFFFF;
+      border: 1px dashed #7C808B;
+      box-sizing: border-box;
+      border-radius: 4px;
+      padding: 30px 25px;
+      width: 250px;
+
+      .timeTitle {
+        color: $primary-color;
+        font-family: Volkorm, sans-serif;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 45px;
+      }
+
+      .orangeLine {
+        margin-top: 20px;
+        width: 24px;
+        height: 2px;
+        background-color: $secondary-color;
+      }
+
+      .contentPeriod {
+        margin-top: 30px;
+
+        li {
+          font-size: 16px;
+          line-height: 24px;
+          color: #000000;
+        }
+      }
+    }
+  }
+}
+
+.titleSection {
+  font-family: Volkorm, sans-serif;
+  color: #000;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 56px;
+  text-align: center;
+}

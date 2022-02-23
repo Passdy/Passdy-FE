@@ -1,0 +1,78 @@
+@import "./styles/variables.module";
+
+.headerWrapper {
+  width: 100%;
+  height: 140px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.navBarWrapper {
+  padding: 20px 120px;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: #fff;
+}
+
+.mainLogo {
+  text-align: center;
+
+  span {
+    font-family: Mulish, sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 60px;
+    color: #000000;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    transition: clip-path 275ms ease;
+    cursor: pointer;
+
+    &:hover::before {
+      clip-path: ellipse(100% 100% at 50% 50%);
+    }
+
+    &::before {
+      position: absolute;
+      content: attr(data-content);
+      color: $primary-color;
+      clip-path: ellipse(0% 0% at 100% 100%);
+      transition: clip-path 275ms ease;
+    }
+  }
+
+}
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBarItem {
+  color: #000000;
+  size: 14px;
+  line-height: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.rightHeader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .person {
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .bagHandle {
+    cursor: pointer;
+  }
+
+}
