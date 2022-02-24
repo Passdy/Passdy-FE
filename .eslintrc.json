@@ -37,6 +37,7 @@
     "implicit-arrow-linebreak": "off",
     "function-paren-newline": "off",
     "react/jsx-one-expression-per-line": "off",
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "react/jsx-props-no-spreading": "off"
   }
 }

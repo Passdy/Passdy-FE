@@ -1,6 +1,11 @@
 import { NextPage } from "next";
 import Image from "next/image";
-import React, { MutableRefObject, useEffect, useRef, useState } from "react";
+import React, {
+  MutableRefObject,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import cls from "classnames";
 import styled from "styled-components";
 import styles from "./Header.module.scss";
