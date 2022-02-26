@@ -46,13 +46,14 @@
 
 .smallHeading {
   text-align: center;
-  font-family: Volkorm, sans-serif;
   color: #000;
   font-weight: 500;
   font-size: 23px;
   line-height: 40px;
   margin-bottom: 50px;
+  font-family: VT323, sans-serif;
 }
+
 .suitableShop {
   padding: 100px 200px;
 
@@ -260,6 +261,7 @@
   font-size: 40px;
   line-height: 56px;
   text-align: center;
+
   span {
     font-family: Volkorm, sans-serif;
     font-weight: 500;
@@ -267,6 +269,7 @@
     line-height: 56px;
   }
 }
+
 .exploreButton {
   padding: 10px 24px;
   font-size: 16px;

@@ -18,28 +18,35 @@
     justify-content: flex-end;
     white-space: nowrap;
     width: 150px;
-    height: 35px;
+    height: 40px;
+
+    .hoverItem {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
 
     span {
-      display: none;
+      transition: clip-path 0.5s cubic-bezier(.645, .045, .355, 1), opacity 0.5s ease, -webkit-clip-path 0.5s cubic-bezier(.645, .045, .355, 1);
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
     }
 
     .line {
       cursor: pointer;
       background-color: #C4C4C4;
-      height: 2px;
+      height: 4px;
       width: 30px;
       margin-left: 5px;
+      border-radius: 2px;
 
       &:hover {
         background-color: $primary-color;
       }
     }
+
   }
 
   .isActive {
     span {
-      display: inline-block;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
     .line {

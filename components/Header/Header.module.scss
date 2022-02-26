@@ -28,7 +28,7 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
-    transition: clip-path 275ms ease;
+    transition: clip-path 0.5s ease;
     cursor: pointer;
 
     &:hover::before {
@@ -40,7 +40,7 @@
       content: attr(data-content);
       color: $primary-color;
       clip-path: ellipse(0% 0% at 100% 100%);
-      transition: clip-path 275ms ease;
+      transition: clip-path 0.5s ease;
     }
   }
 

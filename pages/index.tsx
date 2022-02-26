@@ -46,50 +46,83 @@ const Home: NextPage = () => {
   return (
     <>
       <Header />
-      <ScrollItem
-        selectedSection={selectedSection}
-        onClickScroll={onClickScroll}
-      />
+      <ScrollItem selectedSection={selectedSection} onClickScroll={onClickScroll} />
       <div className={styles.homeWrapper}>
         <div className={styles.bannerSection}>
-          <div
-            className={styles.contentSection}
-            data-aos="fade-up"
-            data-aos-easing="ease-in-sine"
-            data-aos-duration="3000"
-            data-aos-once="true"
-          >
-            <div className={styles.bigTitle}>
-              Chúng mình tin rằng diện đồ cũ là làm mới bản thân một cách tiết
-              kiệm nhất
+          <div className={styles.contentSection}>
+            <div
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="300"
+              data-aos-once="true"
+              data-aos-delay="100"
+              className={cls(styles.bigTitle, "fade-up")}
+            >
+              Chúng mình tin rằng
             </div>
-            <div className={styles.secondaryTitle}>
+            <div
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="300"
+              data-aos-delay="200"
+              data-aos-once="true"
+              className={cls(styles.bigTitle, "fade-up")}
+            >
+              diện đồ cũ là làm mới
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              data-aos-easing="linear"
+              data-aos-duration="300"
+              data-aos-once="true"
+              className={cls(styles.bigTitle, "fade-up")}
+            >
+              bản thân một cách tiết kiệm nhất
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="300"
+              data-aos-once="true"
+              data-aos-delay="400"
+              className={cls(styles.secondaryTitle, "fade-up")}
+            >
               Không chỉ tiết kiệm thời gian, chi phí dọn đồ và mua sắm
               <br />
               Mà còn tiết kiệm cho môi trường của chúng ta
             </div>
-            <button type="button" className={styles.exploreButton}>
+            <button
+              data-aos="fade-up"
+              data-aos-offset="0"
+              data-aos-easing="linear"
+              data-aos-duration="300"
+              data-aos-once="true"
+              data-aos-delay="500"
+              type="button"
+              className={cls(styles.exploreButton, "fade-up")}
+            >
               MUA NGAY
             </button>
           </div>
           <div
-            className={styles.banner}
+            className={cls(styles.banner, "fade-up")}
             data-aos="fade-up"
-            data-aos-easing="ease-in-sine"
-            data-aos-duration="3000"
+            data-aos-easing="linear"
+            data-aos-duration="500"
             data-aos-once="true"
+            data-aos-delay="300"
           >
             <Image width="890" height="820" src="/images/banner.png" />
           </div>
         </div>
         <div ref={buyRef} className={styles.suitableShop}>
           <div className={styles.smallHeading}>
-            PassDy là một platform kí gửi các sản phẩm thời trang giúp tiết kiệm
-            cho bạn và môi trường
+            {/* eslint-disable-next-line max-len */}
+            PassDy là một platform kí gửi các sản phẩm thời trang giúp tiết kiệm cho bạn và môi
+            trường
           </div>
-          <div className={styles.titleSection}>
-            Hướng tới thời trang bền vững
-          </div>
+          <div className={styles.titleSection}>Hướng tới thời trang bền vững</div>
           <div
             className={styles.cardWrapper}
             data-aos="fade-in"
@@ -111,8 +144,7 @@ const Home: NextPage = () => {
                 phá hủy hệ sinh thái
               </div>
               <div className={styles.descriptionText}>
-                Mỗi chiếc quần, áo sẽ tiêu tốn khoảng{" "}
-                <span className="color-primary">291</span>
+                Mỗi chiếc quần, áo sẽ tiêu tốn khoảng <span className="color-primary">291</span>
                 <br />
                 <span className="color-primary">lít nước</span> và thải ra{" "}
                 <span className="color-primary">8 kg khí thải carbon.</span>
@@ -159,9 +191,7 @@ const Home: NextPage = () => {
               <div className={styles.descriptionText}>
                 Mua một món đồ cũ sẽ giúp chúng ta giảm
                 <br />
-                <span className="color-primary">
-                  82% lượng nước và khí thải cacbon.
-                </span>
+                <span className="color-primary">82% lượng nước và khí thải cacbon.</span>
               </div>
             </div>
           </div>
@@ -180,10 +210,10 @@ const Home: NextPage = () => {
           <div className={styles.withImageSection}>
             <div
               data-aos="fade-up"
-              data-aos-duration="2000"
-              className={styles.cardHowTo}
+              data-aos-duration="300"
+              className={cls(styles.cardHowTo, "fade-up")}
               id="sell-section"
-              data-aos-easing="ease-in-sine"
+              data-aos-easing="ease-in-out"
               data-aos-once="true"
             >
               <div className={styles.contentHowTo}>
@@ -193,8 +223,8 @@ const Home: NextPage = () => {
                 </div>
                 <div className={styles.cardItemWrapper}>
                   <li>
-                    Giải phóng những món đồ ít dùng mà bạn không mặc hay không
-                    còn cảm thấy phù hợp nữa và cho vào túi
+                    Giải phóng những món đồ ít dùng mà bạn không mặc hay không còn cảm thấy phù hợp
+                    nữa và cho vào túi
                   </li>
                 </div>
               </div>
@@ -204,9 +234,9 @@ const Home: NextPage = () => {
             </div>
             <div
               data-aos="fade-up"
-              data-aos-duration="2000"
-              data-aos-easing="ease-in-sine"
-              className={cls(styles.cardHowTo, "mt-100")}
+              data-aos-duration="300"
+              data-aos-easing="ease-in-out"
+              className={cls(styles.cardHowTo, "mt-100", "fade-up")}
               data-aos-once="true"
             >
               <div className={styles.imageHowTow}>
@@ -219,31 +249,28 @@ const Home: NextPage = () => {
                 </div>
                 <div className={styles.cardItemWrapper}>
                   <li>
-                    Chỉ cần điền các thông tin và các món đồ của bạn sẽ đến với
-                    Passdy một cách nhanh chóng (hoàn toàn miễn phí)
+                    Chỉ cần điền các thông tin và các món đồ của bạn sẽ đến với Passdy một cách
+                    nhanh chóng (hoàn toàn miễn phí)
                   </li>
                 </div>
               </div>
             </div>
             <div
               data-aos="fade-up"
-              data-aos-duration="2000"
-              data-aos-easing="ease-in-sine"
-              className={cls(styles.cardHowTo, "mt-100")}
+              data-aos-duration="300"
+              data-aos-easing="ease-in-out"
+              className={cls(styles.cardHowTo, "mt-100", "fade-up")}
               data-aos-once="true"
             >
               <div className={styles.contentHowTo}>
                 <div className={styles.titleCardHowTo}>
                   <span className={styles.bigNumber}>03</span>
-                  <span className={styles.bigTitle}>
-                    Phần còn lại để Passdy lo
-                  </span>
+                  <span className={styles.bigTitle}>Phần còn lại để Passdy lo</span>
                 </div>
                 <div className={styles.cardItemWrapper}>
                   <li>
-                    Passdy sẽ xét duyệt túi đồ, chụp ảnh, và đăng bán sản phẩm.
-                    Sau khi một món đồ được bán, bạn có thể rút tiền hoặc tích
-                    điểm. Tìm hiểu thêm: Quy trình bán
+                    Passdy sẽ xét duyệt túi đồ, chụp ảnh, và đăng bán sản phẩm. Sau khi một món đồ
+                    được bán, bạn có thể rút tiền hoặc tích điểm. Tìm hiểu thêm: Quy trình bán
                   </li>
                 </div>
               </div>
@@ -254,10 +281,11 @@ const Home: NextPage = () => {
           </div>
           <div
             data-aos="fade-up"
-            data-aos-duration="2000"
-            data-aos-easing="ease-in-sine"
-            className="text-center"
+            data-aos-duration="300"
+            data-aos-easing="ease-in-out"
+            className={cls("text-center", "fade-up")}
             data-aos-once="true"
+            data-aos-offset="0"
           >
             <button type="button" className={styles.exploreButton}>
               Pass luôn
@@ -277,11 +305,7 @@ const Home: NextPage = () => {
               data-aos-easing="ease-in-sine"
               data-aos-once="true"
             >
-              <Image
-                width="56px"
-                height="56px"
-                src="/icons/polygon-check.png"
-              />
+              <Image width="56px" height="56px" src="/icons/polygon-check.png" />
             </div>
             <div
               className={styles.grayLine}
@@ -346,8 +370,7 @@ const Home: NextPage = () => {
               <div className={cls(styles.contentPeriod)}>
                 <li>Phát triển website và dashboard</li>
                 <li className="mt-20">
-                  Thiết kế và xây dựng hệ thống kênh bán và mua quần áo của
-                  Passdy
+                  Thiết kế và xây dựng hệ thống kênh bán và mua quần áo của Passdy
                 </li>
               </div>
             </div>
@@ -364,8 +387,8 @@ const Home: NextPage = () => {
               <div className={cls(styles.contentPeriod)}>
                 <li>Ra mắt hệ thống mua bán chính thức của Passdy</li>
                 <li className="mt-20">
-                  Đẩy mạnh phong trào thời trang bền vững và lối mua sắm văn
-                  minh qua các kênh truyền thông
+                  Đẩy mạnh phong trào thời trang bền vững và lối mua sắm văn minh qua các kênh
+                  truyền thông
                 </li>
               </div>
             </div>
@@ -380,12 +403,8 @@ const Home: NextPage = () => {
               <div className={styles.timeTitle}>Q3- 2022</div>
               <div className={styles.orangeLine} />
               <div className={cls(styles.contentPeriod)}>
-                <li>
-                  Tích hợp các phương thức thanh toán mới (Momo và Paypal)
-                </li>
-                <li className="mt-20">
-                  Mở rộng hỗ trợ vận chuyển 63 tỉnh thành
-                </li>
+                <li>Tích hợp các phương thức thanh toán mới (Momo và Paypal)</li>
+                <li className="mt-20">Mở rộng hỗ trợ vận chuyển 63 tỉnh thành</li>
               </div>
             </div>
             <div
@@ -400,12 +419,8 @@ const Home: NextPage = () => {
               <div className={styles.orangeLine} />
               <div className={cls(styles.contentPeriod)}>
                 <li>Phát triển giao diện mobile</li>
-                <li className="mt-20">
-                  Gia tăng hoàn thiện và phát triển hệ thống
-                </li>
-                <li className="mt-20">
-                  Ra mắt mua bán sản phẩm cho trẻ em & nam giới
-                </li>
+                <li className="mt-20">Gia tăng hoàn thiện và phát triển hệ thống</li>
+                <li className="mt-20">Ra mắt mua bán sản phẩm cho trẻ em & nam giới</li>
               </div>
             </div>
           </div>
