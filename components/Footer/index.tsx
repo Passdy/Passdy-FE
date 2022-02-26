@@ -24,58 +24,47 @@ const Footer: NextPage = () => {
           </div>
         </div>
         <div className={styles.subcribeColumn}>
-          <div className={styles.bigTitle}>Subscribe newsletter</div>
+          <div className={styles.bigTitle}>
+            Trở thành một phần của cộng đồng “diện văn minh”!
+          </div>
           <div className={styles.smallTitle}>
-            Lastest news and get early access to collection previews
+            Đăng ký để cập nhật thông tin về Passdy và thời trang bền vững cùng
+            chúng mình nhé
           </div>
           <div className={styles.formWrapper}>
-            <input placeholder="Enter your email" ref={inputRef} />
-            <button type="button">Subscribe</button>
+            <input placeholder="Email của bạn" ref={inputRef} />
+            <button type="button">Đăng ký</button>
           </div>
         </div>
       </div>
       <div className={styles.infoFooter}>
         <div className={styles.columnInfoWrapper}>
           <div className={styles.columnInfo}>
-            <div className={styles.titleColumn}>Help</div>
+            <div className={styles.titleColumn}>VỀ PASSDY</div>
             <div className={styles.itemWrapper}>
-              <div className={styles.item}>Contact us</div>
-              <div className={styles.item}>Store Location</div>
-              <div className={styles.item}>Delivery</div>
-              <div className={styles.item}>Returns</div>
+              <div className={styles.item}>Thông tin</div>
             </div>
           </div>
           <div className={styles.columnInfo}>
-            <div className={styles.titleColumn}>SITE INFO</div>
+            <div className={styles.titleColumn}>TRỢ GIÚP</div>
             <div className={styles.itemWrapper}>
-              <div className={styles.item}>Terms & Conditions</div>
-              <div className={styles.item}>Privacy Policy</div>
-              <div className={styles.item}>Cookie Policy</div>
-              <div className={styles.item}>Contact us</div>
+              <div className={styles.item}>FAQ</div>
+              <div className={styles.item}>Địa chỉ</div>
+              <div className={styles.item}>Shipping</div>
+              <div className={styles.item}>Chính sách trả hàng</div>
             </div>
           </div>
           <div className={styles.columnInfo}>
-            <div className={styles.titleColumn}>COMPANY</div>
+            <div className={styles.titleColumn}>LIÊN LẠC</div>
             <div className={styles.itemWrapper}>
-              <div className={styles.item}>Careers</div>
-              <div className={styles.item}>Licensing</div>
-              <div className={styles.item}>Affiliates</div>
-              <div className={styles.item}>Investor Relations</div>
-            </div>
-          </div>
-          <div className={styles.columnInfo}>
-            <div className={styles.titleColumn}>CONTACT</div>
-            <div className={styles.itemWrapper}>
-              <div className={styles.item}>Phone: + 88 090 090 000</div>
+              <div className={styles.item}>Điện thoại: + 88 090 090 000</div>
               <div className={styles.item}>Gmail: passdy@gmail.com</div>
-              <div className={styles.item}>Address: 204, Hanoi, Vietnam</div>
+              <div className={styles.item}>Địa chỉ: 204, Hanoi, Vietnam</div>
             </div>
           </div>
         </div>
         <div className={styles.grayLine} />
-        <div className={styles.lastLine}>
-          Coppyright 2022 PassDy. By PassDy. All Rights Reserved
-        </div>
+        <div className={styles.lastLine}>Về bản quyền thuộc công ty TNHH PassDy. Bảo lưu mọi quyền</div>
       </div>
     </div>
   );

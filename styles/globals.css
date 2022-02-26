@@ -6,6 +6,9 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 @font-face {
     font-family: 'Lato';
     src: url('../assets/fonts/Lato/Lato-Regular.ttf');
@@ -18,7 +21,7 @@ body {
 
 @font-face {
     font-family: 'Volkorm';
-    src: url('../assets/fonts/Vollkorn/static/Vollkorn-Bold.ttf');
+    src: url('../assets/fonts/Vollkorn/static/Vollkorn-Medium.ttf');
 }
 
 a, span, h1, h2, h3, div {
@@ -56,4 +59,12 @@ a {
 
 .pl-100 {
     padding-left: 100px;
+}
+
+.text-center {
+    text-align: center
+}
+
+.color-primary {
+    color: #1ea38d;
 }

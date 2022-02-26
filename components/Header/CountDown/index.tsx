@@ -21,31 +21,31 @@ const Countdown: NextPage = () => {
       <div className={styles.countDownBanner}>
         <span>
           <span className={styles.cruiticalNumber}>50% </span>
-          off Valentine's Day
+          off cho ngày valentine
         </span>
         &nbsp;|&nbsp;
         <span>
-          Offer ends in{" "}
+          Ưu đãi kết thúc trong ngày{" "}
           <span className={styles.cruiticalNumber}>
             {" "}
             {durationFormat.days()}{" "}
           </span>{" "}
-          day
+          ngày
           <span className={styles.cruiticalNumber}>
             {" "}
             {durationFormat.hours()}{" "}
           </span>{" "}
-          hrs
+          giờ
           <span className={styles.cruiticalNumber}>
             {" "}
             {durationFormat.minutes()}{" "}
           </span>{" "}
-          min
+          phút
           <span className={styles.cruiticalNumber}>
             {" "}
             {durationFormat.seconds()}{" "}
           </span>{" "}
-          secs
+          giây
         </span>
       </div>
     </div>

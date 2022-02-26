@@ -9,7 +9,12 @@ import "aos/dist/aos.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      delay: 50,
+      once: false,
+      duration: 400,
+      anchorPlacement: "top-bottom",
+    });
   }, []);
 
   return (

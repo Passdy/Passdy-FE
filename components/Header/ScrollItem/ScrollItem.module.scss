@@ -1,0 +1,50 @@
+@import "./styles/variables.module";
+
+.selectSectionWraper {
+  position: fixed;
+  top: 50%;
+  left: 95%;
+  z-index: 1;
+  padding-right: 10px;
+  transform: translate(-50%, -50%);
+
+  .item {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 33px;
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    white-space: nowrap;
+    width: 150px;
+    height: 35px;
+
+    span {
+      display: none;
+    }
+
+    .line {
+      cursor: pointer;
+      background-color: #C4C4C4;
+      height: 2px;
+      width: 30px;
+      margin-left: 5px;
+
+      &:hover {
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  .isActive {
+    span {
+      display: inline-block;
+    }
+
+    .line {
+      background-color: $primary-color;
+    }
+  }
+
+}

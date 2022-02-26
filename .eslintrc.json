@@ -38,6 +38,8 @@
     "function-paren-newline": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/no-unescaped-entities": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off"
   }
 }
