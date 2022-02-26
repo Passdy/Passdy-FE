@@ -119,7 +119,7 @@ const Header: NextPage = () => {
             <div className="primary-line" />
           </NavItem>
           <NavItem className={cls("ml-40")}>
-            <span data-content="Roadmap">Lộ trình phát triển</span>
+            <span data-content="Lộ trình phát triển">Lộ trình phát triển</span>
             <div className="primary-line" />
           </NavItem>
         </div>
