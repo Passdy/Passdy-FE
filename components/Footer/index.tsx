@@ -24,12 +24,9 @@ const Footer: NextPage = () => {
           </div>
         </div>
         <div className={styles.subcribeColumn}>
-          <div className={styles.bigTitle}>
-            Trở thành một phần của cộng đồng “diện văn minh”!
-          </div>
+          <div className={styles.bigTitle}>Trở thành một phần của cộng đồng “diện văn minh”!</div>
           <div className={styles.smallTitle}>
-            Đăng ký để cập nhật thông tin về Passdy và thời trang bền vững cùng
-            chúng mình nhé
+            Đăng ký để cập nhật thông tin về Passdy và thời trang bền vững cùng chúng mình nhé
           </div>
           <div className={styles.formWrapper}>
             <input placeholder="Email của bạn" ref={inputRef} />
@@ -64,7 +61,9 @@ const Footer: NextPage = () => {
           </div>
         </div>
         <div className={styles.grayLine} />
-        <div className={styles.lastLine}>Về bản quyền thuộc công ty TNHH PassDy. Bảo lưu mọi quyền</div>
+        <div className={styles.lastLine}>
+          Về bản quyền thuộc công ty TNHH PassDy. Bảo lưu mọi quyền
+        </div>
       </div>
     </div>
   );
