@@ -17,42 +17,40 @@ const ScrollItem = ({ selectedSection, onClickScroll }: IProps) => {
         className={cls(styles.item, {
           [styles.isActive]: selectedSection === "buy-section",
         })}
+        onMouseOut={() => setOnHover("")}
+        onClick={() => onClickScroll("buy")}
+        onMouseOver={() => setOnHover("buy-section")}
       >
-        <span className={cls({ [styles.hoverItem]: onHover === "buy-section" })}>Mua</span>
-        <div
-          onMouseOver={() => setOnHover("buy-section")}
-          onMouseOut={() => setOnHover("")}
-          onClick={() => onClickScroll("buy")}
-          className={styles.line}
-          data-content="Mua"
-        />
+        <span className={cls({ [styles.hoverItem]: onHover === "buy-section" })}>
+          {(onHover === "buy-section" || selectedSection === "buy-section") && "Mua"}
+        </span>
+        <div className={styles.line} />
       </div>
       <div
         className={cls(styles.item, {
           [styles.isActive]: selectedSection === "sell-section",
         })}
+        onMouseOut={() => setOnHover("")}
+        onClick={() => onClickScroll("sell")}
+        onMouseOver={() => setOnHover("sell-section")}
       >
-        <span className={cls({ [styles.hoverItem]: onHover === "sell-section" })}>Bán</span>
-        <div
-          onMouseOver={() => setOnHover("sell-section")}
-          onMouseOut={() => setOnHover("")}
-          onClick={() => onClickScroll("sell")}
-          className={styles.line}
-          data-content="Bán"
-        />
+        <span className={cls({ [styles.hoverItem]: onHover === "sell-section" })}>
+          {(onHover === "sell-section" || selectedSection === "sell-section") && "Bán"}
+        </span>
+        <div className={styles.line} />
       </div>
       <div
         className={cls(styles.item, {
           [styles.isActive]: selectedSection === "roadmap-section",
         })}
+        onMouseOut={() => setOnHover("")}
+        onClick={() => onClickScroll("roadmap")}
+        onMouseOver={() => setOnHover("roadmap-section")}
       >
-        <span className={cls({ [styles.hoverItem]: onHover === "roadmap-section" })}>Lộ trình</span>
-        <div
-          onMouseOver={() => setOnHover("roadmap-section")}
-          onMouseOut={() => setOnHover("")}
-          onClick={() => onClickScroll("roadmap")}
-          className={styles.line}
-        />
+        <span className={cls({ [styles.hoverItem]: onHover === "roadmap-section" })}>
+          {(onHover === "roadmap-section" || selectedSection === "roadmap-section") && "Lộ trình"}
+        </span>
+        <div className={styles.line} />
       </div>
     </div>
   );

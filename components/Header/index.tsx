@@ -8,7 +8,7 @@ import Countdown from "./CountDown";
 const NavItem = styled.div<{ isShow?: boolean }>`
   size: 14px;
   line-height: 24px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
   position: relative;

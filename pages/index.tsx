@@ -68,7 +68,7 @@ const Home: NextPage = () => {
               data-aos-once="true"
               className={cls(styles.bigTitle, "fade-up")}
             >
-              diện đồ cũ là làm mới
+              <span>diện đồ cũ</span> là làm mới
             </div>
             <div
               data-aos="fade-up"
@@ -210,7 +210,7 @@ const Home: NextPage = () => {
           <div className={styles.withImageSection}>
             <div
               data-aos="fade-up"
-              data-aos-duration="300"
+              data-aos-duration="700"
               className={cls(styles.cardHowTo, "fade-up")}
               id="sell-section"
               data-aos-easing="ease-in-out"
@@ -234,7 +234,7 @@ const Home: NextPage = () => {
             </div>
             <div
               data-aos="fade-up"
-              data-aos-duration="300"
+              data-aos-duration="700"
               data-aos-easing="ease-in-out"
               className={cls(styles.cardHowTo, "mt-100", "fade-up")}
               data-aos-once="true"
@@ -257,7 +257,7 @@ const Home: NextPage = () => {
             </div>
             <div
               data-aos="fade-up"
-              data-aos-duration="300"
+              data-aos-duration="700"
               data-aos-easing="ease-in-out"
               className={cls(styles.cardHowTo, "mt-100", "fade-up")}
               data-aos-once="true"
@@ -281,7 +281,7 @@ const Home: NextPage = () => {
           </div>
           <div
             data-aos="fade-up"
-            data-aos-duration="300"
+            data-aos-duration="700"
             data-aos-easing="ease-in-out"
             className={cls("text-center", "fade-up")}
             data-aos-once="true"
