@@ -9,12 +9,6 @@ body {
 html {
     scroll-behavior: smooth;
 }
-
-@font-face {
-    font-family: 'Lato';
-    src: url('../assets/fonts/Lato/Lato-Regular.ttf');
-}
-
 @font-face {
     font-family: 'LatoMedium';
     src: url('../assets/fonts/Lato/Lato-Medium.ttf');
@@ -45,7 +39,7 @@ html:not(.no-js) [data-aos=fade-up].fade-up {
 }
 
 a, span, h1, h2, h3, div, li {
-    font-family: Lato, sans-serif;
+    font-family: Inter, sans-serif;
 }
 
 a {
