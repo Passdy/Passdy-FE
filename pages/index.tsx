@@ -203,41 +203,52 @@ const Home: NextPage = () => {
             bạn cùng Passdy qua 3 bước
           </div>
           <div className={styles.withImageSection}>
-            <div
-              data-aos="fade-up"
-              data-aos-duration="700"
-              className={cls(styles.cardHowTo, "fade-up")}
-              id="sell-section"
-              data-aos-easing="ease-in-out"
-              data-aos-once="true"
-            >
-              <div className={styles.contentHowTo}>
-                <div className={styles.titleCardHowTo}>
+            <div className={cls(styles.cardHowTo)} id="sell-section">
+              <div
+                data-aos="fade-up"
+                data-aos-duration="700"
+                className={cls(styles.contentHowTo, "fade-up")}
+                data-aos-easing="ease-in-out"
+                data-aos-once="true"
+              >
+                <div className={cls(styles.titleCardHowTo)}>
                   <span className={styles.bigNumber}>01</span>
                   <span className={styles.bigTitle}>Dọn đồ và xếp vào túi</span>
                 </div>
-                <div className={styles.cardItemWrapper}>
+                <div className={cls(styles.cardItemWrapper)}>
                   <div>
                     Giải phóng những món đồ ít dùng mà bạn không mặc hay không còn cảm thấy phù hợp
                     nữa và cho vào túi
                   </div>
                 </div>
               </div>
-              <div className={styles.imageHowTow}>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="700"
+                className={cls(styles.imageHowTow, "fade-up")}
+                data-aos-easing="ease-in-out"
+                data-aos-once="true"
+              >
                 <img src="/images/packing.png" alt="" />
               </div>
             </div>
-            <div
-              data-aos="fade-up"
-              data-aos-duration="700"
-              data-aos-easing="ease-in-out"
-              className={cls(styles.cardHowTo, "mt-100", "fade-up")}
-              data-aos-once="true"
-            >
-              <div className={styles.imageHowTow}>
+            <div className={cls(styles.cardHowTo, "mt-100")}>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-easing="ease-in-out"
+                className={cls(styles.imageHowTow, "fade-up")}
+                data-aos-once="true"
+              >
                 <img src="/images/two-girls.png" alt="" />
               </div>
-              <div className={cls(styles.contentHowTo, "pl-100")}>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-easing="ease-in-out"
+                data-aos-once="true"
+                className={cls(styles.contentHowTo, "pl-100", "fade-up")}
+              >
                 <div className={styles.titleCardHowTo}>
                   <span className={styles.bigNumber}>02</span>
                   <span className={styles.bigTitle}>Gửi đồ tới Passdy</span>
@@ -257,7 +268,13 @@ const Home: NextPage = () => {
               className={cls(styles.cardHowTo, "mt-100", "fade-up")}
               data-aos-once="true"
             >
-              <div className={styles.contentHowTo}>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-easing="ease-in-out"
+                className={cls(styles.contentHowTo, "fade-up")}
+                data-aos-once="true"
+              >
                 <div className={styles.titleCardHowTo}>
                   <span className={styles.bigNumber}>03</span>
                   <span className={styles.bigTitle}>Phần còn lại để Passdy lo</span>
@@ -269,7 +286,13 @@ const Home: NextPage = () => {
                   </div>
                 </div>
               </div>
-              <div className={styles.imageHowTow}>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="700"
+                data-aos-easing="ease-in-out"
+                className={cls(styles.imageHowTow, "fade-up")}
+                data-aos-once="true"
+              >
                 <img src="/images/smile-boy.png" alt="" />
               </div>
             </div>
