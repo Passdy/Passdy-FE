@@ -12,17 +12,27 @@ html {
 
 @font-face {
     font-family: 'Lato';
+    src: url('../assets/fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'LatoMedium';
     src: url('../assets/fonts/Lato/Lato-Medium.ttf');
 }
 
 @font-face {
     font-family: 'Mulish';
-    src: url('../assets/fonts/Mulish/static/Mulish-ExtraBold.ttf');
+    src: url('../assets/fonts/Mulish/static/Mulish-Black.ttf');
 }
 
 @font-face {
     font-family: 'Volkorm';
     src: url('../assets/fonts/Vollkorn/static/Vollkorn-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'VolkormSemibold';
+    src: url('../assets/fonts/Vollkorn/static/Vollkorn-SemiBold.ttf');
 }
 
 html:not(.no-js) [data-aos=fade-up].fade-up {
@@ -34,7 +44,7 @@ html:not(.no-js) [data-aos=fade-up].fade-up {
     src: url('../assets/fonts/VT323/VT323-Regular.ttf');
 }
 
-a, span, h1, h2, h3, div {
+a, span, h1, h2, h3, div, li {
     font-family: Lato, sans-serif;
 }
 

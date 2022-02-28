@@ -18,8 +18,12 @@ const Footer: NextPage = () => {
         <div className={styles.socialColumn}>
           <div className={styles.whiteLogo}>PassDy</div>
           <div className={styles.socialLogo}>
-            <Image width="24px" height="24px" src="/icons/instagram-logo.png" />
-            <Image width="24px" height="24px" src="/icons/facebook-logo.png" />
+            <a href="https://www.instagram.com/passdyvn/">
+              <Image width="24px" height="24px" src="/icons/instagram-logo.png" />
+            </a>
+            <a href="https://www.facebook.com/Passdy-Vi%E1%BB%87t-Nam-101658345804355">
+              <Image width="24px" height="24px" src="/icons/facebook-logo.png" />
+            </a>
             <Image width="24px" height="24px" src="/icons/whatsapp.png" />
           </div>
         </div>
@@ -30,7 +34,7 @@ const Footer: NextPage = () => {
           </div>
           <div className={styles.formWrapper}>
             <input placeholder="Email của bạn" ref={inputRef} />
-            <button type="button">Đăng ký</button>
+            <button type="button">ĐĂNG KÝ</button>
           </div>
         </div>
       </div>

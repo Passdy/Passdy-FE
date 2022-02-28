@@ -116,19 +116,14 @@ const Home: NextPage = () => {
             <Image width="890" height="820" src="/images/banner.png" />
           </div>
         </div>
-        <div ref={buyRef} className={styles.suitableShop}>
+        <div id="buy-section" ref={buyRef} className={styles.suitableShop}>
           <div className={styles.smallHeading}>
             {/* eslint-disable-next-line max-len */}
             PassDy là một platform kí gửi các sản phẩm thời trang giúp tiết kiệm cho bạn và môi
             trường
           </div>
           <div className={styles.titleSection}>Hướng tới thời trang bền vững</div>
-          <div
-            className={styles.cardWrapper}
-            data-aos="fade-in"
-            data-aos-once="true"
-            id="buy-section"
-          >
+          <div className={styles.cardWrapper} data-aos="fade-in" data-aos-once="true">
             <div
               data-aos="zoom-out-left"
               data-aos-duration="2000"
@@ -222,10 +217,10 @@ const Home: NextPage = () => {
                   <span className={styles.bigTitle}>Dọn đồ và xếp vào túi</span>
                 </div>
                 <div className={styles.cardItemWrapper}>
-                  <li>
+                  <div>
                     Giải phóng những món đồ ít dùng mà bạn không mặc hay không còn cảm thấy phù hợp
                     nữa và cho vào túi
-                  </li>
+                  </div>
                 </div>
               </div>
               <div className={styles.imageHowTow}>
@@ -248,10 +243,10 @@ const Home: NextPage = () => {
                   <span className={styles.bigTitle}>Gửi đồ tới Passdy</span>
                 </div>
                 <div className={styles.cardItemWrapper}>
-                  <li>
+                  <div>
                     Chỉ cần điền các thông tin và các món đồ của bạn sẽ đến với Passdy một cách
                     nhanh chóng (hoàn toàn miễn phí)
-                  </li>
+                  </div>
                 </div>
               </div>
             </div>
@@ -268,10 +263,10 @@ const Home: NextPage = () => {
                   <span className={styles.bigTitle}>Phần còn lại để Passdy lo</span>
                 </div>
                 <div className={styles.cardItemWrapper}>
-                  <li>
+                  <div>
                     Passdy sẽ xét duyệt túi đồ, chụp ảnh, và đăng bán sản phẩm. Sau khi một món đồ
                     được bán, bạn có thể rút tiền hoặc tích điểm. Tìm hiểu thêm: Quy trình bán
-                  </li>
+                  </div>
                 </div>
               </div>
               <div className={styles.imageHowTow}>
@@ -279,21 +274,14 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="700"
-            data-aos-easing="ease-in-out"
-            className={cls("text-center", "fade-up")}
-            data-aos-once="true"
-            data-aos-offset="0"
-          >
+          <div className={cls("text-center")}>
             <button type="button" className={styles.exploreButton}>
-              Pass luôn
+              PASS LUÔN
             </button>
           </div>
         </div>
         <div className={styles.roadMapSection}>
-          <div ref={roadMapRef} className={styles.titleSection}>
+          <div id="roadmap-section" ref={roadMapRef} className={styles.titleSection}>
             Lộ Trình phát
             <br />
             triển của <span className="color-primary">Passdy</span>
@@ -356,7 +344,7 @@ const Home: NextPage = () => {
               <Image width="56px" height="56px" src="/icons/gray-polygon.png" />
             </div>
           </div>
-          <div id="roadmap-section" className={styles.cardRoadMapWrapper}>
+          <div className={styles.cardRoadMapWrapper}>
             <div
               data-aos="fade"
               data-aos-delay="1500"
