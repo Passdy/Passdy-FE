@@ -3,8 +3,6 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import cls from "classnames";
 import styles from "../styles/Home.module.scss";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import ScrollItem from "../components/Header/ScrollItem";
 
 const Home: NextPage = () => {
@@ -45,7 +43,6 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Header />
       <ScrollItem selectedSection={selectedSection} onClickScroll={onClickScroll} />
       <div className={styles.homeWrapper}>
         <div className={styles.bannerSection}>
@@ -437,7 +434,6 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

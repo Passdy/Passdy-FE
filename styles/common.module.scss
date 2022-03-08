@@ -1,0 +1,39 @@
+@import "./styles/variables.module";
+
+.button {
+  background-color: $primary-color;
+  padding: 10px 24px;
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  transition: background-color 150ms;
+  font-family: LatoMedium, sans-serif;
+
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+.outlineButton {
+  padding: 12px 24px;
+  border: 1px solid $primary-color;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: transparent;
+  color: $primary-color;
+  font-size: 16px;
+  line-height: 26px;
+  width: auto;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-color;
+    color: #fff;
+  }
+}
