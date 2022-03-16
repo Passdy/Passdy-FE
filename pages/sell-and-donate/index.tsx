@@ -7,6 +7,9 @@ import { NextPage } from "next";
 import HeaderSellPage from "../../components/HeaderSellPage";
 import styles from "../../styles/SellDonate.module.scss";
 import commonStyles from "../../styles/common.module.scss";
+import AddSellItem from "../../components/AddSellItem";
+import { SelectOptionType } from "../../helpers";
+import AddressServices from "../../services/AddressServices";
 
 const options = [
   { value: "0", label: "Trong tháng này" },
@@ -31,6 +34,8 @@ const SellAndDonatePage: NextPage = () => {
   });
   const [pageCount, setPageCount] = useState<number>(0);
   const [itemOffset, setItemOffset] = useState<number>(0);
+  const [isAddItemPage, setIsAddItemPage] = useState<boolean>(false);
+  const [listProvince, setListProvince] = useState<SelectOptionType[]>([]);
 
   useEffect(() => {
     // Fetch items from another resources.
@@ -44,70 +49,93 @@ const SellAndDonatePage: NextPage = () => {
     setItemOffset(newOffset);
   };
 
+  useEffect(() => {
+    AddressServices.getAddress({ address_type: "province" }).then((res) => {
+      const newOptionsList = res.data.map((e: any) => ({
+        value: e.id,
+        label: e.name,
+      }));
+      setListProvince(newOptionsList);
+    });
+  }, []);
+
   return (
     <>
-      <HeaderSellPage />
+      <HeaderSellPage
+        bigTitle="Túi đồ của bạn đang đến với thời trang bền vững"
+        smallTitle="Cùng xem lại các túi đồ bạn đã gửi đến Passdy"
+      />
       <div className={styles.yourPackageWrapper}>
         <div className={styles.webPath}>
           Trang chủ/ Bán/ <span>Bán & Từ thiện</span>
         </div>
-        <div className={styles.titleLine}>
-          <span>Túi dọn đồ của bạn:</span>
-          <button type="submit" className={cls(commonStyles.button)}>
-            PASS ĐỒ KHÁC
-          </button>
-        </div>
-        <div className={styles.filterLine}>
-          Thời gian
-          <Select styles={customStyles} defaultValue={selectedFilter} options={options} />
-        </div>
-        <div className={styles.itemWrapper}>
-          {[1, 2].map(() => (
-            <div className={styles.cardPackage}>
-              <div className={styles.idPackageColumn}>
-                <div className={styles.titleColumn}>Mã túi #34567</div>
-                <div className={styles.smallText}>Ngày 09/02/2022</div>
-              </div>
-              <div className={styles.totalNumber}>
-                <div className={styles.titleColumn}>Tổng số đồ</div>
-                <div className={styles.itemNumber}>10</div>
-              </div>
-              <div className={styles.bigColumnWrapper}>
-                <Image src="/icons/green-earth.svg" width={86} height={108} />
-                <div className={styles.contentBig}>
-                  <div className={styles.titleColumn}>Bạn đã giúp giảm thải</div>
-                  <div className="d-flex space-between">
-                    <div className={styles.smallItemWrapper}>
-                      <div className={styles.itemNumber}>16kg</div>
-                      <div className={cls(styles.smallText, "mt-20")}>Khí thải CO2</div>
-                    </div>
-                    <div className={styles.smallItemWrapper}>
-                      <div className={styles.itemNumber}>30l</div>
-                      <div className={cls(styles.smallText, "mt-20")}>Nước sạch</div>
+        {isAddItemPage ? (
+          <AddSellItem listProvince={listProvince} />
+        ) : (
+          <div>
+            <div className={styles.titleLine}>
+              <span>Túi dọn đồ của bạn:</span>
+              <button
+                onClick={() => setIsAddItemPage(true)}
+                type="submit"
+                className={cls(commonStyles.button)}
+              >
+                PASS ĐỒ KHÁC
+              </button>
+            </div>
+            <div className={styles.filterLine}>
+              Thời gian
+              <Select styles={customStyles} defaultValue={selectedFilter} options={options} />
+            </div>
+            <div className={styles.itemWrapper}>
+              {[1, 2].map(() => (
+                <div className={styles.cardPackage}>
+                  <div className={styles.idPackageColumn}>
+                    <div className={styles.titleColumn}>Mã túi #34567</div>
+                    <div className={styles.smallText}>Ngày 09/02/2022</div>
+                  </div>
+                  <div className={styles.totalNumber}>
+                    <div className={styles.titleColumn}>Tổng số đồ</div>
+                    <div className={styles.itemNumber}>10</div>
+                  </div>
+                  <div className={styles.bigColumnWrapper}>
+                    <Image src="/icons/green-earth.svg" width={86} height={108} />
+                    <div className={styles.contentBig}>
+                      <div className={cls(styles.titleColumn)}>Bạn đã giúp giảm thải</div>
+                      <div className="d-flex space-between">
+                        <div className={styles.smallItemWrapper}>
+                          <div className={styles.itemNumber}>16kg</div>
+                          <div className={cls(styles.smallText, "mt-20")}>Khí thải CO2</div>
+                        </div>
+                        <div className={styles.smallItemWrapper}>
+                          <div className={styles.itemNumber}>30l</div>
+                          <div className={cls(styles.smallText, "mt-20")}>Nước sạch</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+              ))}
+              <div className={styles.paginateLine}>
+                <ReactPaginate
+                  breakLabel="..."
+                  nextLabel=">"
+                  onPageChange={handlePageClick}
+                  pageRangeDisplayed={5}
+                  pageCount={pageCount}
+                  previousLabel="<"
+                  activeClassName={styles.selected}
+                  renderOnZeroPageCount={undefined}
+                />
+              </div>
+              <div className={styles.passButtonWrapper}>
+                <button type="button" className={commonStyles.outlineButton}>
+                  PASS ĐỒ KHÁC
+                </button>
               </div>
             </div>
-          ))}
-          <div className={styles.paginateLine}>
-            <ReactPaginate
-              breakLabel="..."
-              nextLabel=">"
-              onPageChange={handlePageClick}
-              pageRangeDisplayed={5}
-              pageCount={pageCount}
-              previousLabel="<"
-              activeClassName={styles.selected}
-              renderOnZeroPageCount={undefined}
-            />
           </div>
-          <div className={styles.passButtonWrapper}>
-            <button type="button" className={commonStyles.outlineButton}>
-              PASS ĐỒ KHÁC
-            </button>
-          </div>
-        </div>
+        )}
       </div>
       <div className={styles.suitableShop}>
         <div className={styles.titleSection}>Hướng tới thời trang bền vững</div>

@@ -1,13 +1,18 @@
 import React from "react";
 import styles from "./HeaderSellPage.module.scss";
 
-const HeaderSellPage = () => {
+type IProps = {
+  bigTitle: string;
+  smallTitle: string;
+};
+
+const HeaderSellPage = ({ bigTitle, smallTitle }: IProps) => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.bgBlur}/>
+      <div className={styles.bgBlur} />
       <div className={styles.bgText}>
-        <div className={styles.bigTitle}>Túi đồ của bạn đang đến với thời trang bền vững</div>
-        <div className={styles.smallTitle}>Cùng xem lại các túi đồ bạn đã gửi đến Passdy</div>
+        <div className={styles.bigTitle}>{bigTitle}</div>
+        <div className={styles.smallTitle}>{smallTitle}</div>
       </div>
     </div>
   );

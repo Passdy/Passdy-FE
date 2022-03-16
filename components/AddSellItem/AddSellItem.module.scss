@@ -1,0 +1,182 @@
+@import "./styles/variables.module";
+
+.cardWrapper {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  column-gap: 40px;
+  margin-top: 40px;
+
+  .card {
+    border-radius: 5px;
+    width: 350px;
+    padding: 40px;
+    background-color: $bg-color4;
+    height: 350px;
+  }
+}
+
+.titleNumber {
+  font-family: Volkorm, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 45px;
+  color: #000000;
+}
+
+.titleMedium {
+  color: #000000;
+  font-family: Volkorm, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  white-space: nowrap;
+}
+
+.buttonWrapper {
+  position: relative;
+
+  &.activeButton {
+    button {
+      background: $primary-color;
+      color: #fff;
+    }
+  }
+
+  button {
+    background: #FFFFFF;
+    width: 100%;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 5px;
+    min-height: 40px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000000;
+    cursor: pointer;
+
+    &:hover {
+      background: $primary-color;
+      color: #fff;
+    }
+  }
+
+  .wrapperQuestion {
+    position: absolute;
+    right: -15px;
+    top: 10px;
+  }
+}
+
+.textToolTip {
+  max-width: 150px;
+}
+
+.customTooltip {
+  div {
+    display: inline-block;
+    width: 200px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .importantText {
+    text-decoration-line: underline;
+    color: #000000;
+    font-weight: bold;
+  }
+}
+
+.formInput {
+  width: 100%;
+  padding: 10px 15px;
+  background: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  color: #000000;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  border-radius: 5px;
+  outline: 0;
+  resize: none;
+}
+
+.centerCardWrapper {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+
+  .centerCard {
+    max-width: 350px;
+    width: 250px;
+  }
+}
+
+.itemNumber {
+  color: $primary-color;
+  font-size: 32px;
+  line-height: 26px;
+  font-weight: bold;
+}
+
+.smallText {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  color: #707070;
+}
+
+.formCardWrapper {
+  border-radius: 5px;
+  background: $bg-color4;
+  min-height: 571px;
+  margin-top: 80px;
+  padding: 40px 90px 50px 90px;
+}
+
+.titleItemForm {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 21px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.formLine {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 150px;
+
+  .formItemWrapper {
+  }
+}
+
+.districtWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 80px;
+}
+
+.addressWrapper {
+  > span {
+    color: #707070;
+    font-size: 14px;
+    line-height: 21px;
+    margin-right: 35px;
+  }
+
+  .mr70 {
+    margin-right: 70px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmButtonWrapper {
+  margin-top: 50px;
+  text-align: center;
+}

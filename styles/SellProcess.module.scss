@@ -1,0 +1,330 @@
+@import "./styles/variables.module";
+
+
+.webPath {
+  color: #707070;
+  font-size: 13px;
+  line-height: 26px;
+  text-align: center;
+
+  span {
+    color: $primary-color;
+    font-weight: 700;
+  }
+}
+
+.sellProcessWrapper {
+  background: $bg-color3;
+  padding: 20px 200px 100px 200px;
+}
+
+.sellDetail {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+}
+
+.cardSellDetail {
+  text-align: center;
+}
+
+.bigTitle {
+  font-size: 28px;
+  line-height: 32px;
+  color: #000000;
+  font-weight: 700;
+}
+
+.smallText {
+  color: #707070;
+  line-height: 21px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.tableSellDetail {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  height: 450px;
+
+  .p50 {
+    padding: 50px;
+  }
+
+  .moneyText {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+  }
+
+  .boldTitle {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+  }
+
+  .smallTitle {
+    color: #707070;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  th {
+    color: #000000;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    padding: 28px 24px;
+    border: 1px solid $stroke1;
+    height: 90px;
+  }
+
+  tr {
+    background-color: $bg-color4;
+
+    &:first-child th {
+      border-top: 0;
+      border-left: 0;
+    }
+
+    th {
+      &:last-child {
+        border-top: 0;
+        border-right: 0;
+      }
+    }
+
+    td {
+      border: 1px solid $stroke1;
+
+      &:first-child {
+        border-left: 0;
+      }
+
+      &:last-child {
+        border-right: 0;
+      }
+
+    }
+
+    &:last-child {
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+.tableSellDetail2 {
+  td {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+  }
+}
+
+.sellPricePrediction {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.selectionCard {
+  background-color: $bg-color4;
+  padding: 30px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+
+  .column {
+    width: 150px;
+    text-align: left;
+  }
+
+  .mediumTitle {
+    margin-bottom: 15px;
+  }
+}
+
+.mediumTitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  color: #000000;
+}
+
+.primaryText {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  color: $primary-color;
+}
+
+.exampleCardWrapper {
+  margin-top: 50px;
+  padding: 0 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+}
+
+.exampleCard {
+  text-align: left;
+
+  .exampleImage {
+    border-radius: 5px;
+  }
+
+  .titleExample {
+    color: #000000;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .desExample {
+    color: #707070;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+  }
+}
+
+.sellRoadMap {
+  margin-top: 100px;
+}
+
+.wrapperSellRoute {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+
+  .itemSellRoute {
+    text-align: left;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #000000;
+    background: #fff;
+    padding: 10px 20px 20px 10px;
+    width: 150px;
+    position: relative;
+
+    .importantText {
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  }
+
+  .iconWrapper {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 66%;
+
+    .borderImage {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+
+    .labelText {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 24px;
+      color: #000000;
+      margin-top: 15px;
+      white-space: nowrap;
+    }
+
+    .grayStroke {
+      width: 1px;
+      height: 80px;
+      background-color: $stroke1;
+      margin-top: 15px;
+    }
+  }
+  .lastItem {
+    right: -27%;
+  }
+}
+
+.suitableShop {
+  padding: 100px 200px;
+
+  .cardWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  .card {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .iconWrapper {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FFF8F1;
+
+      img {
+        width: 99px;
+        height: 99px;
+      }
+    }
+
+    .titleCard {
+      font-family: Volkorm, sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 33px;
+      color: #000000;
+      margin-top: 20px;
+    }
+
+    .descriptionText {
+      margin-top: 20px;
+      color: #707070;
+      font-size: 14px;
+      line-height: 21px;
+      height: 80px;
+      width: 300px;
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+}
+
+.titleSection {
+  text-align: center;
+  font-family: Volkorm, sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 56px;
+  color: #000000;
+}

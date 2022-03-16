@@ -6,3 +6,8 @@ export const validatePassword = (value: string): [boolean, boolean, boolean] => 
 
   return [isInvalidLength, isNoSpecialChar, isNoNumber];
 };
+
+export type SelectOptionType = {
+  value: string | number;
+  label: string;
+};

@@ -31,7 +31,6 @@ const SignUpPage: NextPage = () => {
     ];
   }, [passwordInput]);
 
-  console.log(isValidLength, isHasSpecial, isHasNumber);
 
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
   return (

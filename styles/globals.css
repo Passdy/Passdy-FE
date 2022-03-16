@@ -68,6 +68,10 @@ a {
     margin-top: 10px;
 }
 
+.mt-30 {
+    margin-top: 30px;
+}
+
 .mt-40 {
     margin-top: 40px;
 }
@@ -98,4 +102,8 @@ a {
 
 .space-between {
     justify-content: space-between;
+}
+
+.mr-20 {
+    margin-right: 20px;
 }
