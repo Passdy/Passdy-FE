@@ -1,52 +1,12 @@
 import { NextPage } from "next";
-import React, { useEffect, useMemo, useState } from "react";
-import moment from "moment";
+import React from "react";
 import styles from "./Countdown.module.scss";
 
 const Countdown: NextPage = () => {
-  const [duration, setDuration] = useState(
-    moment.duration(28, "hours").asMilliseconds(),
-  );
-
-  const durationFormat = useMemo(() => moment.duration(duration), [duration]);
-  useEffect(() => {
-    setInterval(() => {
-      setDuration((value) =>
-        moment.duration(value).subtract(1000, "milliseconds").asMilliseconds(),
-      );
-    }, 1000);
-  }, []);
   return (
     <div className={styles.headerWrapper}>
       <div className={styles.countDownBanner}>
-        <span>
-          <span className={styles.cruiticalNumber}>50% </span>
-          off cho ngày valentine
-        </span>
-        &nbsp;|&nbsp;
-        <span>
-          Ưu đãi kết thúc trong ngày{" "}
-          <span className={styles.cruiticalNumber}>
-            {" "}
-            {durationFormat.days()}{" "}
-          </span>{" "}
-          ngày
-          <span className={styles.cruiticalNumber}>
-            {" "}
-            {durationFormat.hours()}{" "}
-          </span>{" "}
-          giờ
-          <span className={styles.cruiticalNumber}>
-            {" "}
-            {durationFormat.minutes()}{" "}
-          </span>{" "}
-          phút
-          <span className={styles.cruiticalNumber}>
-            {" "}
-            {durationFormat.seconds()}{" "}
-          </span>{" "}
-          giây
-        </span>
+        <span>Mỗi ngày diện một văn minh hơn!</span>
       </div>
     </div>
   );

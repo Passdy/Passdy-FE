@@ -77,9 +77,10 @@
       margin-top: 20px;
       display: flex;
       align-items: center;
+      height: 60px;
 
       input {
-        padding: 12px 15px 15px 15px;
+        padding: 20px 15px 15px 15px;
         color: $primary-color;
         font-size: 14px;
         line-height: 21px;
@@ -87,6 +88,7 @@
         outline: 0;
         border: 0;
         width: 300px;
+        border-radius: 5px;
 
         &::placeholder {
           color: $primary-color;
@@ -166,5 +168,38 @@
     font-size: 12px;
     line-height: 15px;
     font-weight: 400;
+  }
+}
+
+.formInput {
+  position: relative;
+  padding: 2px;
+  background: #fff;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 308px;
+
+  label {
+    color: $primary-color;
+    font-size: 14px;
+    line-height: 21px;
+    position: absolute;
+    top: 17px;
+    left: 19px;
+    transition: 0.2s;
+  }
+}
+
+.floatingText {
+  label {
+    font-size: 11px;
+    top: 4px;
+  }
+}
+
+.activeInput {
+  border: 2px solid #3b3a3a !important;
+  input {
+    border: 2px solid #000 !important;
   }
 }

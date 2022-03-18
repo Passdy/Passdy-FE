@@ -1,10 +1,12 @@
 import { NextPage } from "next";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+import cls from "classnames";
 import Image from "next/image";
 import styles from "./Footer.module.scss";
 
 const Footer: NextPage = () => {
-  const inputRef = useRef(null);
+  const [isActiveInput, setIsActiveInput] = useState<boolean>(false);
+  const [inputEmail, setInputEmail] = useState<string>("");
 
   return (
     <div className={styles.footerWrapper}>
@@ -24,7 +26,6 @@ const Footer: NextPage = () => {
             <a href="https://www.facebook.com/Passdy-Vi%E1%BB%87t-Nam-101658345804355">
               <Image width="24px" height="24px" src="/icons/facebook-logo.png" />
             </a>
-            <Image width="24px" height="24px" src="/icons/whatsapp.png" />
           </div>
         </div>
         <div className={styles.subcribeColumn}>
@@ -33,7 +34,21 @@ const Footer: NextPage = () => {
             Đăng ký để cập nhật thông tin về Passdy và thời trang bền vững cùng chúng mình nhé
           </div>
           <div className={styles.formWrapper}>
-            <input placeholder="Email của bạn" ref={inputRef} />
+            <div
+              className={cls(styles.formInput, {
+                [styles.floatingText]: isActiveInput || inputEmail,
+                [styles.activeInput]: isActiveInput || inputEmail,
+              })}
+            >
+              <input
+                onChange={(e) => setInputEmail(e.target.value)}
+                value={inputEmail}
+                onFocus={() => setIsActiveInput(true)}
+                onBlur={() => setIsActiveInput(false)}
+                name="email"
+              />
+              <label htmlFor="email">Email</label>
+            </div>
             <button type="button">ĐĂNG KÝ</button>
           </div>
         </div>
@@ -58,9 +73,9 @@ const Footer: NextPage = () => {
           <div className={styles.columnInfo}>
             <div className={styles.titleColumn}>LIÊN LẠC</div>
             <div className={styles.itemWrapper}>
-              <div className={styles.item}>Điện thoại: + 88 090 090 000</div>
+              <div className={styles.item}>Điện thoại: 094 8256677</div>
               <div className={styles.item}>Gmail: passdy@gmail.com</div>
-              <div className={styles.item}>Địa chỉ: 204, Hanoi, Vietnam</div>
+              <div className={styles.item}>Địa chỉ: 25 BT4-3 Trung Văn, Nam Từ Liêm, HN</div>
             </div>
           </div>
         </div>
