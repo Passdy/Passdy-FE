@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useMemo, useState } from "react";
 import cls from "classnames";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
@@ -45,8 +46,8 @@ const AddSellItem = ({ listProvince }: AddProps) => {
   const [isHomeAddress, setIsHomeAddress] = useState<boolean>(false);
   const [typeGive, setTypeGive] = useState<TypeGive>();
   const [typeReceive, setTypeReceive] = useState<TypeReceive>();
-  const [listDistrict, fetchListDistrict] = useAddressOption("district", cityId);
-  const [listWard, fetchListWard] = useAddressOption("ward", districtId);
+  const [listDistrict] = useAddressOption("district", cityId);
+  const [listWard] = useAddressOption("ward", districtId);
   const countUpRef = React.useRef(null);
   const countUpWaterRef = React.useRef(null);
 

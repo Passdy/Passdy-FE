@@ -23,14 +23,14 @@ const SignUpPage: NextPage = () => {
   } = useForm<Inputs>();
 
   const passwordInput = watch("password");
-  const [isValidLength, isHasSpecial, isHasNumber] = useMemo(() => {
-    return [
+  const [isValidLength, isHasSpecial, isHasNumber] = useMemo(
+    () => [
       /^.{8,}$/.test(passwordInput),
       /[ `!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/.test(passwordInput),
       /.*[0-9].*/.test(passwordInput),
-    ];
-  }, [passwordInput]);
-
+    ],
+    [passwordInput],
+  );
 
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
   return (

@@ -47,6 +47,7 @@ const Footer: NextPage = () => {
                 onBlur={() => setIsActiveInput(false)}
                 name="email"
               />
+              {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
               <label htmlFor="email">Email</label>
             </div>
             <button type="button">ĐĂNG KÝ</button>
