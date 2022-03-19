@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import cls from "classnames";
 import Image from "next/image";
 import styles from "./Footer.module.scss";
@@ -58,15 +58,14 @@ const Footer: NextPage = () => {
           <div className={styles.columnInfo}>
             <div className={styles.titleColumn}>VỀ PASSDY</div>
             <div className={styles.itemWrapper}>
-              <div className={styles.item}>Thông tin</div>
+              <div className={styles.item}>Sứ mệnh</div>
+              <div className={styles.item}>Reviews</div>
             </div>
           </div>
           <div className={styles.columnInfo}>
             <div className={styles.titleColumn}>TRỢ GIÚP</div>
             <div className={styles.itemWrapper}>
               <div className={styles.item}>FAQ</div>
-              <div className={styles.item}>Địa chỉ</div>
-              <div className={styles.item}>Shipping</div>
               <div className={styles.item}>Chính sách trả hàng</div>
             </div>
           </div>

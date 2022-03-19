@@ -107,3 +107,16 @@ a {
 .mr-20 {
     margin-right: 20px;
 }
+
+.underline-link {
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.text-danger {
+    font-size: 12px;
+    line-height: 18px;
+    color: #DE411A;
+    margin-top: 10px;
+}

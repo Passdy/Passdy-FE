@@ -1,6 +1,6 @@
+import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import { NextPage } from "next";
 import Link from "next/link";
-import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import cls from "classnames";
 import styled from "styled-components";
 import styles from "./Header.module.scss";
@@ -112,8 +112,12 @@ const Header: NextPage = () => {
             <span data-content="Bán">Bán</span>
             <div className="primary-line" />
             <div className="dropdownWrapper">
-              <div className="menu-item">Bán & Từ thiện</div>
-              <div className="menu-item">Quy trình bán</div>
+              <Link href="/sell-and-donate" passHref>
+                <div className="menu-item">Bán & Từ thiện</div>
+              </Link>
+              <Link href="/sell-process" passHref>
+                <div className="menu-item">Quy trình bán</div>
+              </Link>
               <div className="menu-item">Tài khoản bán</div>
             </div>
           </NavItem>

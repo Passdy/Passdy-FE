@@ -88,8 +88,8 @@ const SellAndDonatePage: NextPage = () => {
               <Select styles={customStyles} defaultValue={selectedFilter} options={options} />
             </div>
             <div className={styles.itemWrapper}>
-              {[1, 2].map(() => (
-                <div className={styles.cardPackage}>
+              {[1, 2].map((index) => (
+                <div key={index} className={styles.cardPackage}>
                   <div className={styles.idPackageColumn}>
                     <div className={styles.titleColumn}>Mã túi #34567</div>
                     <div className={styles.smallText}>Ngày 09/02/2022</div>

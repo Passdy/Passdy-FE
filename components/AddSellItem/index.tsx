@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import cls from "classnames";
-import { SubmitHandler, useForm, Controller } from "react-hook-form";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import Image from "next/image";
 import ReactTooltip from "react-tooltip";
+import BigNumber from "bignumber.js";
+import { useCountUp } from "react-countup";
 import Select from "react-select";
+import { toast } from "react-toastify";
 import styles from "./AddSellItem.module.scss";
 import commonStyles from "../../styles/common.module.scss";
 import SelectCircleItem from "../SelectCircleItem";
@@ -38,17 +41,48 @@ const AddSellItem = ({ listProvince }: AddProps) => {
   } = useForm<Inputs>();
   const cityId = watch("city_id");
   const districtId = watch("district_id");
+  const clothNumber = watch("cloth_num");
   const [isHomeAddress, setIsHomeAddress] = useState<boolean>(false);
   const [typeGive, setTypeGive] = useState<TypeGive>();
   const [typeReceive, setTypeReceive] = useState<TypeReceive>();
   const [listDistrict, fetchListDistrict] = useAddressOption("district", cityId);
   const [listWard, fetchListWard] = useAddressOption("ward", districtId);
+  const countUpRef = React.useRef(null);
+  const countUpWaterRef = React.useRef(null);
 
-  console.log(districtId);
-  console.log(listWard);
+  const [co2Saved, waterLiterSave] = useMemo(() => {
+    const co2Kg = new BigNumber(clothNumber).times(0.5).toNumber();
+    const waterLitter = new BigNumber(clothNumber).times(3.78).toNumber();
+    return [co2Kg, waterLitter];
+  }, [clothNumber]);
+
+  const { update } = useCountUp({
+    ref: countUpRef,
+    start: 1,
+    end: 0,
+    duration: 1,
+    decimals: 2,
+  });
+
+  const { update: updateWater } = useCountUp({
+    ref: countUpWaterRef,
+    start: 1,
+    end: 0,
+    duration: 1,
+    decimals: 2,
+  });
+
+  useEffect(() => {
+    update(co2Saved);
+    updateWater(waterLiterSave);
+  }, [co2Saved, update]);
+
   // console.log(listDistrict)
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    console.log(data);
+    toast.success("Thêm order thành công!");
+  };
 
   const wrapperQuestion = (text: string, idTip: string, importantText?: string) => (
     <div className={styles.wrapperQuestion}>
@@ -148,8 +182,18 @@ const AddSellItem = ({ listProvince }: AddProps) => {
               <input
                 {...register("cloth_num", { required: true })}
                 className={styles.formInput}
-                type="text"
+                onKeyPress={(event) => {
+                  if (!/[0-9]/.test(event.key)) {
+                    event.preventDefault();
+                  }
+                }}
               />
+              {errors.cloth_num && (
+                <span className="text-danger">
+                  {errors.cloth_num?.type === "required" &&
+                    "Số lượng đồ bạn gửi Passdy là bắt buộc."}
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -162,11 +206,16 @@ const AddSellItem = ({ listProvince }: AddProps) => {
               <div className={cls(styles.titleMedium, "mt-20")}>Bạn đã giúp giảm thải</div>
               <div className="d-flex space-between">
                 <div className={cls(styles.smallItemWrapper, "mt-30")}>
-                  <div className={styles.itemNumber}>16kg</div>
+                  <div className={styles.itemNumber}>
+                    <span ref={countUpRef} />
+                    kg
+                  </div>
                   <div className={cls(styles.smallText, "mt-20")}>Khí thải CO2</div>
                 </div>
                 <div className={cls(styles.smallItemWrapper, "mt-30")}>
-                  <div className={styles.itemNumber}>30l</div>
+                  <div className={styles.itemNumber}>
+                    <span ref={countUpWaterRef} />l
+                  </div>
                   <div className={cls(styles.smallText, "mt-20")}>Nước sạch</div>
                 </div>
               </div>
@@ -180,20 +229,30 @@ const AddSellItem = ({ listProvince }: AddProps) => {
             <div className={styles.formItemWrapper}>
               <div className={styles.titleItemForm}>Họ và tên</div>
               <input
-                {...register("address_name")}
+                {...register("address_name", { required: true })}
                 placeholder="Name"
                 className={styles.formInput}
                 type="text"
               />
+              {errors.address_name && (
+                <span className="text-danger">
+                  {errors.address_name?.type === "required" && "Họ và tên là bắt buộc."}
+                </span>
+              )}
             </div>
             <div className={styles.formItemWrapper}>
               <div className={styles.titleItemForm}>Số điện thoại</div>
               <input
-                {...register("phone")}
+                {...register("phone", { required: true })}
                 placeholder="Phone"
                 className={styles.formInput}
                 type="text"
               />
+              {errors.phone && (
+                <span className="text-danger">
+                  {errors.phone?.type === "required" && "Số điện thoại là bắt buộc."}
+                </span>
+              )}
             </div>
           </div>
           <div className={cls(styles.formLine, "mt-40")}>
@@ -201,6 +260,7 @@ const AddSellItem = ({ listProvince }: AddProps) => {
               <div className={styles.titleItemForm}>Thành phố</div>
               <Controller
                 control={control}
+                rules={{ required: true }}
                 render={({ field: { onChange, value, name } }) => (
                   <Select
                     value={listProvince.find((c) => c.value === value)}
@@ -213,13 +273,18 @@ const AddSellItem = ({ listProvince }: AddProps) => {
                 )}
                 name="city_id"
               />
-              {/*<Select {...register("city_id")} placeholder="City" options={listProvince} />*/}
+              {errors.city_id && (
+                <span className="text-danger">
+                  {errors.city_id?.type === "required" && "Thành phố là bắt buộc."}
+                </span>
+              )}
             </div>
             <div className={styles.districtWrapper}>
               <div>
                 <div className={styles.titleItemForm}>Quận</div>
                 <Controller
                   control={control}
+                  rules={{ required: true }}
                   render={({ field: { onChange, value, name } }) => (
                     <Select
                       value={listDistrict.find((c) => c.value === value)}
@@ -232,11 +297,17 @@ const AddSellItem = ({ listProvince }: AddProps) => {
                   )}
                   name="district_id"
                 />
+                {errors.district_id && (
+                  <span className="text-danger">
+                    {errors.district_id?.type === "required" && "Quận là bắt buộc."}
+                  </span>
+                )}
               </div>
               <div>
                 <div className={styles.titleItemForm}>Phường</div>
                 <Controller
                   control={control}
+                  rules={{ required: true }}
                   render={({ field: { onChange, value, name } }) => (
                     <Select
                       value={listWard.find((c) => c.value === value)}
@@ -249,6 +320,11 @@ const AddSellItem = ({ listProvince }: AddProps) => {
                   )}
                   name="ward_id"
                 />
+                {errors.ward_id && (
+                  <span className="text-danger">
+                    {errors.ward_id?.type === "required" && "Phường là bắt buộc."}
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -274,7 +350,7 @@ const AddSellItem = ({ listProvince }: AddProps) => {
           </div>
         </div>
         <div className={styles.confirmButtonWrapper}>
-          <button type="button" className={commonStyles.button}>
+          <button type="submit" className={commonStyles.button}>
             XÁC NHẬN
           </button>
         </div>

@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import React, { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import Head from "next/head";
@@ -7,6 +8,7 @@ import AOS from "aos";
 import { Provider } from "react-redux";
 import theme from "../theme";
 import "aos/dist/aos.css";
+import "react-toastify/dist/ReactToastify.css";
 import { store } from "../store";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -31,6 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <div className="component-wrapper">
           <Component {...pageProps} />
         </div>
+        <ToastContainer />
         <Footer />
       </Provider>
     </ThemeProvider>

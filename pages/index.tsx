@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import cls from "classnames";
 import styles from "../styles/Home.module.scss";
 import ScrollItem from "../components/Header/ScrollItem";
@@ -27,8 +28,9 @@ const Home: NextPage = () => {
     el.getBoundingClientRect().top > -offsetHeight;
 
   useEffect(() => {
-    document.addEventListener("scroll", () => {
+    const eventOnScroll = () => {
       const wrappedElement = document.getElementById("buy-section");
+
       if (isBottom(wrappedElement, 200)) {
         setSelectedSection("buy-section");
       } else if (isBottom(document.getElementById("sell-section"), 1600)) {
@@ -38,9 +40,14 @@ const Home: NextPage = () => {
       } else {
         setSelectedSection("");
       }
-    });
+    };
+    document.addEventListener("scroll", eventOnScroll);
+    return () => {
+      document.removeEventListener("scroll", eventOnScroll);
+    };
   }, []);
 
+  // @ts-ignore
   return (
     <>
       <ScrollItem selectedSection={selectedSection} onClickScroll={onClickScroll} />
@@ -110,7 +117,7 @@ const Home: NextPage = () => {
             data-aos-once="true"
             data-aos-delay="300"
           >
-            <Image width="800" height="1200" src="/images/banner.jpg" />
+            <Image width="1300" height="1200" src="/images/banner.png" />
           </div>
         </div>
         <div id="buy-section" ref={buyRef} className={styles.suitableShop}>
@@ -238,7 +245,7 @@ const Home: NextPage = () => {
                 className={cls(styles.imageHowTow, "fade-up")}
                 data-aos-once="true"
               >
-                <img src="/images/two-girls.png" alt="" />
+                <img src="/images/two-boxs.png" alt="" />
               </div>
               <div
                 data-aos="fade-up"
@@ -282,7 +289,10 @@ const Home: NextPage = () => {
                 <div className={styles.cardItemWrapper}>
                   <div>
                     Passdy sẽ xét duyệt túi đồ, chụp ảnh, và đăng bán sản phẩm. Sau khi một món đồ
-                    được bán, bạn có thể rút tiền hoặc tích điểm. Tìm hiểu thêm: Quy trình bán
+                    được bán, bạn có thể rút tiền hoặc tích điểm. Tìm hiểu thêm:
+                    <Link href="/sell-and-donate" passHref>
+                      <span className="underline-link">Quy trình bán</span>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -293,7 +303,7 @@ const Home: NextPage = () => {
                 className={cls(styles.imageHowTow, "fade-up")}
                 data-aos-once="true"
               >
-                <img src="/images/smile-boy.png" alt="" />
+                <img src="/images/step3.png" alt="" />
               </div>
             </div>
           </div>
