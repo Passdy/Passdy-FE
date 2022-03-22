@@ -1,0 +1,102 @@
+@import "./styles/variables.module";
+
+.profileWrapper {
+  display: flex;
+  justify-content: center;
+  height: 650px;
+
+  .leftProfile {
+    width: 40%;
+    background: $bg-color2;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+
+    .avatarWrapper {
+      position: relative;
+      width: 104px;
+      height: 104px;
+      margin-top: 60px;
+    }
+
+    .nameTitle {
+      margin-top: 20px;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 33px;
+      font-family: Volkorm, sans-serif;
+      color: #000000;
+    }
+
+    .sinceText {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: #707070;
+      margin-top: 20px;
+    }
+
+    .wrapperButton {
+      margin-top: 40px;
+
+      .editButton {
+        border: 1px solid #000000;
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding: 10px 20px;
+        background: transparent;
+        color: #000000;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $secondary-color;
+          color: #fff;
+        }
+      }
+    }
+
+    .primaryText {
+      margin-top: 40px;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 33px;
+      color: $primary-color;
+    }
+  }
+
+  .rightProfile {
+    width: 60%;
+    background: $bg-color3;
+
+    .cardData {
+      margin-top: 80px;
+      margin-left: 140px;
+      padding: 40px 50px;
+      width: 400px;
+      background-color: #fff;
+
+      .itemWrapper {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+        color: #000000;
+
+        span {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
+          color: #707070;
+        }
+      }
+
+      .breakLine {
+        border-top: 0.5px solid #C4C4C4;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}

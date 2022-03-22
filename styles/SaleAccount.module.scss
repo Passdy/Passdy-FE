@@ -1,0 +1,203 @@
+@import "./styles/variables.module";
+
+.mainWrapper {
+  background: $bg-color3;
+  padding: 10px 50px 120px 90px;
+
+  .contentWrapper {
+    max-width: 1440px;
+    min-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .smallText {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #707070;
+  }
+
+  .bigTitle {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 26px;
+    color: #000000;
+    text-align: left;
+  }
+
+  .bigValueTitle {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 26px;
+    color: $primary-color;
+  }
+
+  .mediumTitle {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    color: #000000;
+  }
+
+  .accountWrapper {
+    margin-top: 100px;
+
+    .dataTable {
+      background: $bg-color4;
+      border-radius: 5px;
+      margin-top: 40px;
+
+      .totalMoneyRow {
+        padding: 40px;
+        border-bottom: 1px solid $stroke1;
+      }
+
+      .firstRow {
+        border-right: 1px solid $stroke1;
+        padding: 40px;
+        width: 30%;
+      }
+
+      .lastRow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        width: 60%;
+
+        .imageWrapper {
+          margin-right: 25px;
+        }
+      }
+    }
+  }
+
+  .yourItemWrapper {
+    margin-top: 100px;
+
+    .navigationWrapper {
+      margin-top: 40px;
+
+      .item {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 26px;
+        color: #707070;
+        width: 120px;
+        cursor: pointer;
+        padding: 20px;
+
+        &.activeTab {
+          color: $primary-color;
+        }
+      }
+
+      .lineWrapper {
+        display: flex;
+
+        .breakLine {
+          height: 1px;
+          width: 100%;
+          background-color: $stroke1;
+        }
+
+        .activeLine {
+          position: absolute;
+          height: 2px;
+          width: 120px;
+          background-color: $primary-color;
+          transition: 0.2s;
+
+          &.selectedSold {
+            margin-left: 100px;
+          }
+        }
+      }
+    }
+
+  }
+
+  .filterWrapper {
+    display: flex;
+    margin-top: 40px;
+
+    .leftWrapper {
+      display: flex;
+
+      .filterItemWrapper {
+        display: flex;
+        align-items: center;
+
+        span {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
+          color: #707070;
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .rightWrapper {
+      margin-left: auto;
+
+      .outlineButton {
+        background: #fff;
+        padding: 10px 24px;
+
+        &:hover {
+          background: $primary-color;
+        }
+      }
+    }
+
+  }
+
+  .listItemWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 50px;
+    margin-top: 50px;
+  }
+
+  .cardItem {
+    .cardImageWrapper {
+      position: relative;
+      display: flex;
+
+      .heartIcon {
+        position: absolute;
+        top: 16px;
+        z-index: 1;
+        right: 130px;
+        cursor: pointer;
+      }
+    }
+    .nameTitle {
+      color: #000000;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      margin-top: 25px;
+    }
+    .priceTitle {
+      margin-top: 10px;
+      color: $primary-color;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  .webPath {
+    color: #707070;
+    font-size: 13px;
+    line-height: 26px;
+    text-align: center;
+
+    span {
+      color: $primary-color;
+      font-weight: 700;
+    }
+  }
+}

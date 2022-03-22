@@ -45,41 +45,6 @@
     display: grid;
     grid-template-columns: auto;
     row-gap: 40px;
-
-    .paginateLine {
-      text-align: center;
-
-
-      ul {
-        list-style-type: none;
-        display: grid;
-        column-gap: 10px;
-        grid-auto-flow: column;
-        justify-content: center;
-        color: #000000;
-        font-size: 14px;
-        line-height: 21px;
-
-        .selected {
-          a {
-            background-color: $secondary-color !important;
-            color: #fff !important;
-          }
-        }
-
-        a {
-          border-radius: 5px;
-          padding: 8px 16px;
-          border: 1px solid #C4C4C4;
-          cursor: pointer;
-
-          &:hover {
-            background-color: $secondary-color;
-            color: #fff;
-          }
-        }
-      }
-    }
   }
 
   .totalNumber {

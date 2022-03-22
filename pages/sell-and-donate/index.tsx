@@ -116,7 +116,7 @@ const SellAndDonatePage: NextPage = () => {
                   </div>
                 </div>
               ))}
-              <div className={styles.paginateLine}>
+              <div className={cls(commonStyles.paginateLine)}>
                 <ReactPaginate
                   breakLabel="..."
                   nextLabel=">"
@@ -124,7 +124,7 @@ const SellAndDonatePage: NextPage = () => {
                   pageRangeDisplayed={5}
                   pageCount={pageCount}
                   previousLabel="<"
-                  activeClassName={styles.selected}
+                  activeClassName={commonStyles.selected}
                   renderOnZeroPageCount={undefined}
                 />
               </div>

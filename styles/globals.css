@@ -60,6 +60,10 @@ a {
     margin-left: 20px;
 }
 
+.ml-60 {
+    margin-left: 60px;
+}
+
 .mt-20 {
     margin-top: 20px;
 }
@@ -119,4 +123,16 @@ a {
     line-height: 18px;
     color: #DE411A;
     margin-top: 10px;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.align-start {
+    align-items: flex-start !important;
+}
+
+.w-5o {
+    width: 50%;
 }

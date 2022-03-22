@@ -290,7 +290,7 @@ const Home: NextPage = () => {
                   <div>
                     Passdy sẽ xét duyệt túi đồ, chụp ảnh, và đăng bán sản phẩm. Sau khi một món đồ
                     được bán, bạn có thể rút tiền hoặc tích điểm. Tìm hiểu thêm:
-                    <Link href="/sell-and-donate" passHref>
+                    <Link href="/sell-process" passHref>
                       <span className="underline-link">Quy trình bán</span>
                     </Link>
                   </div>
