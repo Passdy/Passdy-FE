@@ -7,6 +7,7 @@ import styles from "../../styles/Profile.module.scss";
 const Profile: NextPage = () => {
   const { data: session } = useSession();
 
+  console.log(session);
   return (
     <div className={styles.profileWrapper}>
       <div className={styles.leftProfile}>
