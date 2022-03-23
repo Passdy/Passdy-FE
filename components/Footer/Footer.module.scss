@@ -38,13 +38,17 @@
       font-weight: 900;
       font-size: 40px;
       line-height: 150%;
+      width: 150px;
+      justify-content: center;
+      display: flex;
     }
 
     .socialLogo {
-      margin-left: 10px;
       margin-top: 20px;
       display: grid;
-      grid-template-columns: 24px 24px 24px;
+      width: 150px;
+      grid-template-columns: 24px 24px;
+      justify-content: center;
       column-gap: 25px;
 
       img {
