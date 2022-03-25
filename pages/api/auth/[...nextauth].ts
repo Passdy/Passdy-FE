@@ -32,6 +32,7 @@ const providers = [
 ];
 
 export default NextAuth({
+  secret: "mu4MOmI4/v7z8wPOQ4bJPs10BXmIdXZVoB4XIs0macg=",
   providers,
   callbacks: {
     async jwt({ token, user }) {
