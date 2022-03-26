@@ -67,8 +67,7 @@ const LoginPage: NextPage = () => {
                       onClick={() => setIsWithDraw(true)}
                       type="button"
                       className={commonStyles.button}
-                    >
-                      Rút tiền
+                    >RÚT TIỀN
                     </button>
                   </div>
                 </div>

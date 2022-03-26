@@ -57,7 +57,7 @@ const Home: NextPage = () => {
             <div
               data-aos="fade-up"
               data-aos-easing="linear"
-              data-aos-duration="300"
+              data-aos-duration="400"
               data-aos-once="true"
               data-aos-delay="100"
               className={cls(styles.bigTitle, "fade-up")}
@@ -67,7 +67,7 @@ const Home: NextPage = () => {
             <div
               data-aos="fade-up"
               data-aos-easing="linear"
-              data-aos-duration="300"
+              data-aos-duration="400"
               data-aos-delay="200"
               data-aos-once="true"
               className={cls(styles.bigTitle, "fade-up")}
@@ -78,31 +78,40 @@ const Home: NextPage = () => {
               data-aos="fade-up"
               data-aos-delay="300"
               data-aos-easing="linear"
-              data-aos-duration="300"
+              data-aos-duration="400"
               data-aos-once="true"
               className={cls(styles.bigTitle, "fade-up")}
             >
               bản thân một cách tiết kiệm nhất
             </div>
-            <div
-              data-aos="fade-up"
-              data-aos-easing="linear"
-              data-aos-duration="300"
-              data-aos-once="true"
-              data-aos-delay="400"
-              className={cls(styles.secondaryTitle, "fade-up")}
-            >
-              Không chỉ tiết kiệm thời gian, chi phí dọn đồ và mua sắm
-              <br />
-              Mà còn tiết kiệm cho môi trường của chúng ta
+            <div className={cls(styles.secondaryTitle, "fade-up")}>
+              <div
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="400"
+                data-aos-once="true"
+                data-aos-delay="400"
+                className="fade-up"
+              >
+                Không chỉ tiết kiệm thời gian, chi phí dọn đồ và mua sắm
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="400"
+                data-aos-once="true"
+                data-aos-delay="500"
+                className="fade-up"
+              >
+                Mà còn tiết kiệm cho môi trường của chúng ta
+              </div>
             </div>
             <button
-              data-aos="fade-up"
-              data-aos-offset="0"
+              data-aos="fade"
               data-aos-easing="linear"
-              data-aos-duration="600"
+              data-aos-duration="500"
               data-aos-once="true"
-              data-aos-delay="900"
+              data-aos-delay="1000"
               type="button"
               className={cls(styles.exploreButton, "fade-up")}
             >
@@ -113,9 +122,9 @@ const Home: NextPage = () => {
             className={cls(styles.banner, "fade-up")}
             data-aos="fade-up"
             data-aos-easing="linear"
-            data-aos-duration="700"
+            data-aos-duration="500"
             data-aos-once="true"
-            data-aos-delay="600"
+            data-aos-delay="700"
           >
             <Image width="1300" height="1200" src="/images/banner.png" />
           </div>
@@ -229,7 +238,7 @@ const Home: NextPage = () => {
               <div
                 data-aos="fade-up"
                 data-aos-duration="800"
-                data-aos-delay="900"
+                data-aos-delay="600"
                 data-aos-offset="300"
                 className={cls(styles.imageHowTow)}
                 data-aos-easing="ease-in-out"
@@ -245,7 +254,7 @@ const Home: NextPage = () => {
                 data-aos-easing="ease-in-out"
                 className={cls(styles.imageHowTow)}
                 data-aos-once="true"
-                data-aos-delay="900"
+                data-aos-delay="600"
                 data-aos-offset="300"
               >
                 <img src="/images/two-boxs.png" alt="" />
@@ -297,7 +306,7 @@ const Home: NextPage = () => {
                 data-aos-easing="ease-in-out"
                 className={cls(styles.imageHowTow)}
                 data-aos-once="true"
-                data-aos-delay="900"
+                data-aos-delay="600"
                 data-aos-offset="300"
               >
                 <img src="/images/step3.png" alt="" />
