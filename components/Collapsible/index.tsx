@@ -7,9 +7,9 @@ type PropsType = {
 };
 const Collapsible = ({ title, content }: PropsType) => (
   <div className={styles.wrapper}>
-
+    {title}
+    {content}
   </div>
 );
-
 
 export default Collapsible;
