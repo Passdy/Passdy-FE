@@ -111,7 +111,7 @@ const Home: NextPage = () => {
               data-aos-easing="linear"
               data-aos-duration="500"
               data-aos-once="true"
-              data-aos-delay="1000"
+              data-aos-delay="1300"
               type="button"
               className={cls(styles.exploreButton, "fade-up")}
             >
@@ -122,9 +122,9 @@ const Home: NextPage = () => {
             className={cls(styles.banner, "fade-up")}
             data-aos="fade-up"
             data-aos-easing="linear"
-            data-aos-duration="500"
+            data-aos-duration="400"
             data-aos-once="true"
-            data-aos-delay="700"
+            data-aos-delay="600"
           >
             <Image width="1300" height="1200" src="/images/banner.png" />
           </div>
