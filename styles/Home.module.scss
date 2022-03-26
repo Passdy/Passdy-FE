@@ -123,7 +123,6 @@
       cursor: pointer;
       font-weight: 500;
       transition: background-color 150ms;
-      font-family: LatoMedium, sans-serif;
 
       &:hover {
         background-color: $secondary-color;
@@ -175,7 +174,6 @@
           line-height: 24px;
           color: #000000;
           font-weight: 500;
-          font-family: Lato, sans-serif;
         }
       }
     }
@@ -289,7 +287,6 @@
   cursor: pointer;
   font-weight: 500;
   transition: background-color 150ms;
-  font-family: LatoMedium, sans-serif;
 
   &:hover {
     background-color: $secondary-color;

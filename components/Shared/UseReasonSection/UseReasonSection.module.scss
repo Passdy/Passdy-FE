@@ -1,0 +1,94 @@
+@import "./styles/variables.module";
+
+.suitableShop {
+  padding: 100px 200px;
+  background: #fff;
+
+  .titleSection {
+    font-family: Volkorm, sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 56px;
+    color: #000000;
+    text-align: center;
+  }
+
+  .cardWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  .card {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .iconWrapper {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FFF8F1;
+
+      img {
+        width: 99px;
+        height: 99px;
+      }
+    }
+
+    .titleCard {
+      font-family: Volkorm, sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 33px;
+      color: #000000;
+      margin-top: 20px;
+    }
+
+    .descriptionText {
+      margin-top: 20px;
+      color: #707070;
+      font-size: 14px;
+      line-height: 21px;
+      height: 80px;
+      width: 300px;
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .startSellingBtn {
+    margin-top: 20px;
+    text-align: center;
+
+    button {
+      padding: 10px 24px;
+      font-size: 16px;
+      line-height: 26px;
+      color: #fff;
+      background-color: $primary-color;
+      border-radius: 4px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 150ms;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
+}
+
+.container {
+  max-width: 1900px;
+  margin: 0 auto;
+}

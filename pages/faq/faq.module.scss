@@ -1,0 +1,28 @@
+@import "./styles/variables.module";
+
+.wrapper {
+
+  .contentFaq {
+    padding: 50px 30px 100px 30px;
+    display: flex;
+    .leftSide {
+      width: 200px;
+      .itemLeft {
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+        font-weight: 700;
+        text-align: center;
+      }
+    }
+    .rightSide {
+      margin-left: 70px;
+      .bigTitle {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 40px;
+        color: #000000;
+      }
+    }
+  }
+}

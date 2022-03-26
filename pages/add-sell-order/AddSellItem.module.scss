@@ -109,8 +109,7 @@
   margin-top: 50px;
 
   .centerCard {
-    max-width: 350px;
-    width: 250px;
+    //max-width: 350px;
   }
 }
 
@@ -179,4 +178,27 @@
 .confirmButtonWrapper {
   margin-top: 50px;
   text-align: center;
+}
+
+.container {
+  max-width: 1900px;
+  margin: 0 auto;
+
+  .biggerFormWrapper {
+    padding: 10px 200px 50px 200px;
+  }
+}
+
+.pageWrapper {
+  background: $bg-color3;
+}
+
+.smallItemWrapper {
+  min-width: 200px;
+}
+
+.wrapperSaved {
+  display: grid;
+  column-gap: 50px;
+  grid-template-columns: auto auto;
 }

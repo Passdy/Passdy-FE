@@ -47,7 +47,7 @@ const SignUpPage: NextPage = () => {
               className={styles.input}
               placeholder="Nhập họ tên"
               type="text"
-              {...register("fullname", { required: true })}
+              {...register("fullname", { required: true, pattern: /=.*[!@#$%^&*]/ })}
             />
             {errors.fullname && (
               <div className={styles.errorLine}>

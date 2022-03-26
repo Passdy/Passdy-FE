@@ -100,9 +100,9 @@ const Home: NextPage = () => {
               data-aos="fade-up"
               data-aos-offset="0"
               data-aos-easing="linear"
-              data-aos-duration="300"
+              data-aos-duration="600"
               data-aos-once="true"
-              data-aos-delay="500"
+              data-aos-delay="900"
               type="button"
               className={cls(styles.exploreButton, "fade-up")}
             >
@@ -113,9 +113,9 @@ const Home: NextPage = () => {
             className={cls(styles.banner, "fade-up")}
             data-aos="fade-up"
             data-aos-easing="linear"
-            data-aos-duration="300"
+            data-aos-duration="700"
             data-aos-once="true"
-            data-aos-delay="400"
+            data-aos-delay="600"
           >
             <Image width="1300" height="1200" src="/images/banner.png" />
           </div>
@@ -214,7 +214,6 @@ const Home: NextPage = () => {
                 className={cls(styles.contentHowTo)}
                 data-aos-easing="ease-in-out"
                 data-aos-once="true"
-                data-aos-delay="900"
               >
                 <div className={cls(styles.titleCardHowTo)}>
                   <span className={styles.bigNumber}>01</span>
@@ -230,6 +229,8 @@ const Home: NextPage = () => {
               <div
                 data-aos="fade-up"
                 data-aos-duration="800"
+                data-aos-delay="900"
+                data-aos-offset="300"
                 className={cls(styles.imageHowTow)}
                 data-aos-easing="ease-in-out"
                 data-aos-once="true"
@@ -244,6 +245,8 @@ const Home: NextPage = () => {
                 data-aos-easing="ease-in-out"
                 className={cls(styles.imageHowTow)}
                 data-aos-once="true"
+                data-aos-delay="900"
+                data-aos-offset="300"
               >
                 <img src="/images/two-boxs.png" alt="" />
               </div>
@@ -252,7 +255,6 @@ const Home: NextPage = () => {
                 data-aos-duration="800"
                 data-aos-easing="ease-in-out"
                 data-aos-once="true"
-                data-aos-delay="900"
                 className={cls(styles.contentHowTo, "pl-100")}
               >
                 <div className={styles.titleCardHowTo}>
@@ -272,7 +274,6 @@ const Home: NextPage = () => {
                 data-aos="fade-up"
                 data-aos-duration="800"
                 data-aos-easing="ease-in-out"
-                data-aos-delay="900"
                 className={cls(styles.contentHowTo)}
                 data-aos-once="true"
               >
@@ -296,6 +297,8 @@ const Home: NextPage = () => {
                 data-aos-easing="ease-in-out"
                 className={cls(styles.imageHowTow)}
                 data-aos-once="true"
+                data-aos-delay="900"
+                data-aos-offset="300"
               >
                 <img src="/images/step3.png" alt="" />
               </div>
