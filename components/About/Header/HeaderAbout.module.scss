@@ -1,0 +1,45 @@
+@import "./styles/variables.module";
+
+.wrapper {
+  position: relative;
+}
+
+.bgBlur {
+  width: 100%;
+  height: 450px;
+  background-image: url("/images/about/banner.png");
+  background-size: 100% 100%;
+}
+
+.bgText {
+  width: 100%;
+  height: 450px;
+  background: linear-gradient(89.76deg, #33534F 13.22%, rgba(36, 99, 91, 0.69) 53.33%, rgba(11, 125, 112, 0) 91.9%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: column;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+
+  .bigTitle {
+    font-family: Volkorm, sans-serif;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 61px;
+    color: #FFFFFF;
+    opacity: 1;
+    text-align: center;
+    width: 800px;
+    margin-left: 80px;
+  }
+
+  .smallTitle {
+    margin-top: 5px;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+  }
+}

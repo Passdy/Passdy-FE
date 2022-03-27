@@ -1,29 +1,45 @@
 @import "./styles/variables.module";
 
 .wrapper {
+  background-color: $bg-color3;
+  min-height: 900px;
 
   .contentFaq {
-    padding: 50px 30px 100px 30px;
+    padding: 50px 30px 100px 50px;
     display: flex;
+
+    .bigTitle {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 29px;
+      color: #000000;
+    }
+
     .leftSide {
-      width: 10%;
+      width: 15%;
+      display: flex;
+      flex-flow: column;
+
       .itemLeft {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 22px;
         color: #000000;
+        text-align: left;
+        font-weight: 400;
+        cursor: pointer;
+      }
+
+      .activeItem {
         font-weight: 700;
-        text-align: center;
+        text-decoration: underline;
       }
     }
+
     .rightSide {
+      border-left: 1px solid #E6E6E6;
+      padding-left: 50px;
       margin-left: 70px;
-      width: 85%;
-      .bigTitle {
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 40px;
-        color: #000000;
-      }
+      width: 80%;
     }
   }
 }

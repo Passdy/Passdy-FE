@@ -4,6 +4,7 @@ import Image from "next/image";
 import cls from "classnames";
 import styles from "./about.module.scss";
 import UseReasonSection from "../../components/Shared/UseReasonSection/UseReasonSection";
+import HeaderAbout from "../../components/About/Header";
 
 type selectedPersonTypeCheck = "tree" | "heart" | "lightBulb" | "balance";
 
@@ -13,21 +14,21 @@ const About: NextPage = () => {
   const [imageUrl, content] = useMemo(() => {
     const fixedData: { [key: string]: any } = {
       heart: {
-        url: "heart",
+        url: "plant",
         content:
           "Môi trường đã cho đi quá nhiều và đã đến lúc để chúng ta không chỉ suy nghĩ và hành động vì bản thân. Mà còn vì môi trường! ",
       },
       balance: {
-        url: "",
+        url: "baloon",
         content: "Chúng mình tin cân bằng là nền tảng cho sự phát triển bền vững và dài lâu!",
       },
       lightBulb: {
-        url: "light-bulb",
+        url: "creative",
         content:
           "Cho dù mỗi ngày nhận được một lựa chọn thời trang văn minh, Passdy vẫn sẽ tiếp tục theo đuổi phong cách sống xanh, lan toả ý nghĩa của nền thời trang bền vững",
       },
       tree: {
-        url: "tree",
+        url: "rocket",
         content:
           "Liên tục làm mới tủ đồ mà vẫn tiết kiệm cho bản thân lẫn môi trường. Passdy không chỉ là một lối mua sắm, mà còn là lối sống văn minh mới!",
       },
@@ -37,72 +38,76 @@ const About: NextPage = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.primaryTitle}>
-        Passdy mang đến giải pháp tiện lợi giúp bạn diện văn minh
-      </div>
-      <div className={styles.bannerWrapper}>
-        <Image src="/images/about/banner.png" layout="responsive" width={1440} height={400} />
-      </div>
+      <HeaderAbout />
       <div className={styles.containerWrapper}>
         <UseReasonSection noBg />
         <div className={styles.passdyStory}>
-          <div className={styles.titleSection}>Câu chuyện của Passdy</div>
-          <div className={styles.cardWrapper}>
-            <div className={styles.left}>
-              <Image src="/images/about/team-member.png" width={503} height={331} />
-            </div>
-            <div className={styles.right}>
-              <span className={styles.titleCard}>
-                NĂM 2018
-                <div className={styles.orangeLine} />
-              </span>
-              <div className={styles.textContent}>
-                Ý thức môi trường từ sớm, chúng mình luôn nuôi nấng những ý tưởng và tạo ra các dự
-                án giúp bảo vệ môi trường. Khi mới 18 tuổi, chúng mình đã tổ chức hoạt động từ thiện
-                để gây quỹ và đóng góp cho những tổ chức bảo vệ môi trường tại Việt Nam. Tuy nhiên
-                những đóng góp này chưa tạo ra ảnh hưởng thực sự lớn.
-              </div>
+          <div className={styles.storyBannerWrapper}>
+            <img className={styles.halfCircle} alt="" src="/images/about/half-circle.png" />
+            <img className={styles.bubble} alt="" src="/images/about/bubble.png" />
+            <div className={styles.storyTitle}>Câu chuyện của Passdy</div>
+            <div className={styles.bgTeamWrapper}>
+              <Image src="/images/about/bg-team.png" width={715} height={500} />
             </div>
           </div>
-          <div className={styles.cardWrapper}>
-            <div className={styles.right}>
-              <div className={styles.titleCard}>
-                Chúng mình muốn đóng góp đáng kể hơn
-                <div className={styles.orangeLine} />
+          <div className={styles.cardStoryWrapper}>
+            <div className={styles.cardStory}>
+              <div className={styles.iconWrapper}>
+                <Image src="/images/about/save-eco.png" height={140} width={140} />
               </div>
-              <div className={styles.textContent}>
-                Trong 5 năm qua, vấn nạn ô nhiễm bởi ngành công nghiệp thời trang đã dấy lên sự quan
-                ngại và thực sự kêu gọi chúng ta phải thay đổi hành vi mua sắm.
-                <br />
-                Chính vì vậy, chúng mình muốn tạo ra một điểm cân bằng giữa thời trang và môi
-                trường. Để trực tiếp đóng góp và truyền cảm hứng đến cho tất cả mọi người!
+              <div className={styles.contentStory}>
+                <div className={styles.titleCardStory}>Năm 2018</div>
+                <div className="mt-20">
+                  Ý thức môi trường từ sớm, chúng mình luôn nuôi nấng những ý tưởng và tạo ra các dự
+                  án giúp bảo vệ môi trường. Khi mới 18 tuổi, chúng mình đã tổ chức hoạt động từ
+                  thiện để gây quỹ và đóng góp cho những tổ chức bảo vệ môi trường tại Việt Nam. Tuy
+                  nhiên những đóng góp này chưa tạo ra ảnh hưởng thực sự lớn.
+                </div>
               </div>
             </div>
-            <div className={styles.left}>
-              <Image src="/images/about/save-earth.png" width={503} height={280} />
-            </div>
-          </div>
-          <div className={styles.cardWrapper}>
-            <div className={styles.left}>
-              <Image src="/images/about/target-board.png" width={300} height={400} />
-            </div>
-            <div className={styles.right}>
-              <div className={styles.titleCard}>
-                3 mục tiêu của Passdy
-                <div className={styles.orangeLine} />
+            <div className={styles.cardStory}>
+              <div className={styles.iconWrapper}>
+                <Image src="/images/about/heart-money.png" height={140} width={140} />
               </div>
-              <div className={styles.textContent}>
-                1. Truyền cảm hứng về thời trang bền vững
-                <br />
-                2. Kết nối và xây dựng cộng đồng “Diện Văn Minh"
-                <br />
-                3. Tạo ra trải nghiệm mua sắm quần áo cũ tiện lợi nhất tại Việt Nam
+              <div className={styles.contentStory}>
+                <div className={styles.titleCardStory}>Chúng mình muốn đóng góp đáng kể hơn</div>
+                <div className="mt-20">
+                  Trong 5 năm qua, vấn nạn ô nhiễm bởi ngành công nghiệp thời trang đã dấy lên sự
+                  quan ngại và thực sự kêu gọi chúng ta phải thay đổi hành vi mua sắm. Chính vì vậy,
+                  chúng mình muốn tạo ra một điểm cân bằng giữa thời trang và môi trường. Để trực
+                  tiếp đóng góp và truyền cảm hứng đến cho tất cả mọi người!
+                </div>
+              </div>
+            </div>
+            <div className={styles.cardStory}>
+              <div className={styles.iconWrapper}>
+                <Image src="/images/about/target-board.png" height={140} width={140} />
+              </div>
+              <div className={styles.contentStory}>
+                <div className={styles.titleCardStory}>3 mục tiêu của Passdy</div>
+                <div className="mt-20">
+                  <div className={styles.noteLine}>
+                    <img src="images/about/enter-icon.png" alt="" />
+                    Truyền cảm hứng về thời trang bền vững
+                  </div>
+                  <div className={styles.noteLine}>
+                    <img src="images/about/enter-icon.png" alt="" />
+                    Truyền cảm hứng về thời trang bền vững
+                  </div>
+                  <div className={styles.noteLine}>
+                    <img src="images/about/enter-icon.png" alt="" />
+                    Truyền cảm hứng về thời trang bền vững
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div className={styles.passdyPerson}>
-          <div className={styles.titleSection}>Con người Passdy</div>
+          <div className={styles.wrapperTitle}>
+            <div className={styles.primaryLine} />
+            <span>Con Người Passdy</span>
+          </div>
           <div className={styles.contentWrapper}>
             <div className={styles.selectionTitle}>
               <div
@@ -139,37 +144,60 @@ const About: NextPage = () => {
                 Môi trường
               </div>
             </div>
-            <div className={styles.imageWrapper}>
-              <Image src={`/images/about/${imageUrl}.png`} width={320} height={320} />
+            <div className={styles.textImageWrapper}>
+              <div className={styles.imageWrapper}>
+                <Image src={`/images/about/${imageUrl}.png`} width={280} height={280} />
+              </div>
+              <div className={styles.text}>{content}</div>
             </div>
-            <div className={styles.text}>{content}</div>
           </div>
         </div>
         <div className={styles.passdyTeam}>
           <div className={styles.titleSection}>Team Passdy</div>
           <div className={styles.cardTeamWrapper}>
-            <div className={styles.cardMember}>
-              <Image src="/images/about/namanh.png" width={328} height={467} />
+            <div
+              style={{ backgroundImage: "url(images/about/namanh.png)" }}
+              className={styles.cardMember}
+            >
               <div className={styles.blurLayer} />
               <div className={styles.textWrapper}>
                 <div className={styles.name}>Lê Nam Anh</div>
                 <div className={styles.position}>Project Manager</div>
+                <div className={styles.hiddenText}>
+                  Ace is one of the marketing arm of Splinterlands and other successfully launched
+                  NFT games and now the new CMO for P2E Marketing handling hundreds of KOLs all over
+                  the world.
+                </div>
               </div>
             </div>
-            <div className={styles.cardMember}>
-              <Image src="/images/about/minhtri.png" width={328} height={467} />
+            <div
+              style={{ backgroundImage: "url(images/about/minhtri.png)" }}
+              className={styles.cardMember}
+            >
               <div className={styles.blurLayer} />
               <div className={styles.textWrapper}>
-                <div className={styles.name}>NGUYỄN ANH TRÍ</div>
+                <div className={styles.name}>Nguyễn Anh Trí</div>
                 <div className={styles.position}>HEAD OF MARKETING</div>
+                <div className={styles.hiddenText}>
+                  Ace is one of the marketing arm of Splinterlands and other successfully launched
+                  NFT games and now the new CMO for P2E Marketing handling hundreds of KOLs all over
+                  the world.
+                </div>
               </div>
             </div>
-            <div className={styles.cardMember}>
-              <Image src="/images/about/namanh.png" width={328} height={467} />
+            <div
+              style={{ backgroundImage: "url(images/about/minhhoang.png)" }}
+              className={styles.cardMember}
+            >
               <div className={styles.blurLayer} />
               <div className={styles.textWrapper}>
-                <div className={styles.name}>PHẠM MINH HOÀNG</div>
+                <div className={styles.name}>Phạm Minh HOÀNG</div>
                 <div className={styles.position}>WAREHOUSE MANAGER</div>
+                <div className={styles.hiddenText}>
+                  Ace is one of the marketing arm of Splinterlands and other successfully launched
+                  NFT games and now the new CMO for P2E Marketing handling hundreds of KOLs all over
+                  the world.
+                </div>
               </div>
             </div>
           </div>
