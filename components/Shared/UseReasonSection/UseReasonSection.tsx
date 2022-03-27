@@ -1,8 +1,10 @@
 import React from "react";
+import cls from "classnames";
 import styles from "./UseReasonSection.module.scss";
 
-const UseReasonSection = () => (
-  <div className={styles.suitableShop}>
+// eslint-disable-next-line react/prop-types
+const UseReasonSection = ({ noBg = false }) => (
+  <div className={cls(styles.suitableShop, { [styles.noBg]: noBg })}>
     <div className={styles.container}>
       <div className={styles.titleSection}>Chọn Passdy vì?</div>
       <div className={styles.cardWrapper}>

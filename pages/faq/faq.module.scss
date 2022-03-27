@@ -6,7 +6,7 @@
     padding: 50px 30px 100px 30px;
     display: flex;
     .leftSide {
-      width: 200px;
+      width: 10%;
       .itemLeft {
         font-size: 20px;
         line-height: 24px;
@@ -17,6 +17,7 @@
     }
     .rightSide {
       margin-left: 70px;
+      width: 85%;
       .bigTitle {
         font-weight: 700;
         font-size: 40px;

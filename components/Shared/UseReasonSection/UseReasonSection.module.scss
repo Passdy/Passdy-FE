@@ -4,6 +4,10 @@
   padding: 100px 200px;
   background: #fff;
 
+  &.noBg {
+    background: transparent;
+  }
+
   .titleSection {
     font-family: Volkorm, sans-serif;
     font-weight: 500;

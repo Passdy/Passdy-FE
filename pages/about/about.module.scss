@@ -1,0 +1,193 @@
+@import "./styles/variables.module";
+
+.wrapper {
+  background-color: $bg-color2;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  .containerWrapper {
+    max-width: 1990px;
+    margin: 0 auto;
+  }
+
+  .primaryTitle {
+    font-size: 40px;
+    line-height: 40px;
+    color: $primary-color;
+    font-weight: 700;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .bannerWrapper {
+    position: relative;
+    margin-top: 40px;
+  }
+
+  .titleSection {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 56px;
+    font-family: Volkorm, sans-serif;
+    color: #000000;
+    text-align: center;
+  }
+
+  .passdyStory {
+    margin-top: 150px;
+
+    .orangeLine {
+      height: 2px;
+      background-color: $secondary-color;
+      width: 50%;
+      margin-top: 10px;
+    }
+
+    .titleCard {
+      display: flex;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 36px;
+      color: $primary-color;
+      margin: 0 auto;
+      flex-flow: column;
+      align-items: center;
+    }
+
+    .cardWrapper {
+      padding: 0 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 70px;
+
+      .left {
+        width: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .right {
+        text-align: center;
+        margin-left: 50px;
+        max-width: 500px;
+
+        .textContent {
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 24px;
+          color: #000000;
+          text-align: left;
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+
+  .passdyPerson {
+    margin: 300px auto 0 auto;
+
+    .selectionTitle {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      text-transform: capitalize;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 40px;
+      color: #000000;
+      cursor: pointer;
+
+      .activeSelection {
+        color: $primary-color;
+      }
+
+      div {
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    .contentWrapper {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 250px 320px 250px;
+      column-gap: 50px;
+      justify-content: center;
+    }
+
+    .text {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .passdyTeam {
+    margin-top: 200px;
+    padding-bottom: 200px;
+  }
+
+  .cardTeamWrapper {
+    display: grid;
+    grid-template-columns: 328px 328px 328px;
+    grid-column-gap: 20px;
+    justify-content: center;
+
+    .cardMember {
+      border: 1px solid #000000;
+      box-sizing: border-box;
+      position: relative;
+      height: 550px;
+      margin-top: 40px;
+
+      .blurLayer {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+      }
+
+      .textWrapper {
+        position: absolute;
+        transition: top 0.5s ease 0s;
+        width: 100%;
+        top: 470px;
+      }
+
+      &:hover {
+        .blurLayer {
+          background: linear-gradient(180deg, rgba(12, 16, 49, 0.5) 0%, #0C1031 100%);
+        }
+
+        .textWrapper {
+          padding: 30px 50px 100px 0;
+          top: 340px;
+          z-index: 2;
+        }
+      }
+
+      .name {
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+        font-family: Volkorm, sans-serif;
+        margin-top: 20px;
+      }
+
+      .position {
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: $primary-color;
+        margin-top: 5px;
+      }
+    }
+  }
+}

@@ -3,6 +3,7 @@ import { NextPage } from "next";
 import cls from "classnames";
 import styles from "./faq.module.scss";
 import HeaderSellPage from "../../components/HeaderSellPage";
+import Collapsible from "../../components/Collapsible";
 
 const FAQ: NextPage = () => (
   <div className={styles.wrapper}>
@@ -15,6 +16,52 @@ const FAQ: NextPage = () => (
       </div>
       <div className={styles.rightSide}>
         <div className={styles.bigTitle}>Người Mua</div>
+        <Collapsible className="mt-40" title="SHIPPING" borderTop>
+          <div>Phạm vi: Toàn quốc</div>
+          <div>Thời gian vận chuyển:</div>
+          <div>- Nội thành Hà Nội: 1-2 ngày</div>
+          <div>- Miền Trung: 3-5 ngày</div>
+          <div>- Miền Nam: 5-7 ngày</div>
+        </Collapsible>
+        <Collapsible title="PHƯƠNG THỨC THANH TOÁN">
+          <div>Phương thức thanh toán chuyển tiền ngân hàng.</div>
+        </Collapsible>
+        <div className={cls(styles.bigTitle, "mt-60")}>Người Bán</div>
+        <Collapsible
+          className="mt-40"
+          title="Các tiêu chí cần lưu ý khi gửi đồ cho Passdy:"
+          borderTop
+        >
+          <div>Passdy khuyến khích bạn gửi:</div>
+          <ul>
+            <li>Quần áo mới vẫn còn tag hoặc secon-hand đã được giặt sạch</li>
+            <li>Quần áo còn đầy đủ các thông tin như size, chất liệu</li>
+            <li>Quần áo không bị lỗi, ố, sờn màu, gião….</li>
+            <li>Quần áo theo mùa, đã được mua trong vòng 3 năm trở lại</li>
+            <li>Quần áo hàng hiệu hoặc local brand.</li>
+          </ul>
+        </Collapsible>
+        <Collapsible title="Đồ mình đăng kí bán sẽ được lấy như thế nào?">
+          <div>
+            Sau khi bạn đã đăng kí tài khoản và điền đầy đủ các thông tin, Passdy sẽ liên hệ với bạn
+            và sẽ có nhân viên đến tận nơi nhận đồ.
+          </div>
+        </Collapsible>
+        <Collapsible title="Những đồ không đạt tiêu chuẩn sẽ được xử lý thế nào?">
+          <div>
+            Sau khi bạn đã đăng kí các thông tin, bạn sẽ được lựa chọn giữa việc nhận lại đồ hoặc từ
+            thiện. Nếu những bộ quần áo không đạt tiêu chuẩn và bạn muốn nhận lại, bạn sẽ phải trả
+            phí và Passdy sẽ gửi lại cho bạn.
+          </div>
+        </Collapsible>
+        <div className={cls(styles.bigTitle, "mt-60")}>Hoàn Trả</div>
+        <Collapsible className="mt-40" title="Những đồ không đạt tiêu chuẩn sẽ được hoàn trả như thế nào?" borderTop>
+          <div>
+            Nếu món đồ bạn mua không phù hợp, bạn có thể liên hệ với Passdy để yêu cầu hoàn trả
+            trong vòng 3 ngày kể từ ngày nhận hàng. Hãy kiểm tra chất lượng quần áoáo đúng như lúc
+            nhận để có thể được chấp nhận hoàn trả bạn nhé!
+          </div>
+        </Collapsible>
       </div>
     </div>
   </div>
