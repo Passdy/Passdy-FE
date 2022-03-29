@@ -20,7 +20,7 @@ const providers = [
           username: credentials!.username,
           password: credentials!.password,
         });
-        if (!user) {
+        if (user) {
           return user;
         }
         return null;
@@ -35,16 +35,17 @@ export default NextAuth({
   secret: "mu4MOmI4/v7z8wPOQ4bJPs10BXmIdXZVoB4XIs0macg=",
   providers,
   callbacks: {
-    async jwt({ token, user }) {
+    jwt({ token, user }) {
       if (user) {
-        token.accessToken = user.token;
+        token.accessToken = user.access_token;
+        token.profile = user;
       }
 
       return token;
     },
     session({ session, token }) {
       session.accessToken = token.accessToken;
-      session.hello = 1;
+      session.profile = token.profile;
       return session;
     },
   },

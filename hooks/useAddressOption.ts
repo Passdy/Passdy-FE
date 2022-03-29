@@ -10,11 +10,17 @@ const useAddressOption = (
   const [listData, setListData] = useState<SelectOptionType[]>([]);
 
   const fetchData = useCallback(() => {
-    if (!parentId) {
+    if (!parentId && addressType !== "province") {
       setListData([]);
       return;
     }
-    AddressServices.getAddress({ address_type: addressType, parent_id: parentId }).then((res) => {
+    const params: any = {
+      address_type: addressType,
+    };
+    if (addressType !== "province") {
+      params.parent_id = parentId;
+    }
+    AddressServices.getAddress(params).then((res) => {
       const newOptionsList = res.data.map((e: any) => ({
         value: e.id,
         label: e.name,

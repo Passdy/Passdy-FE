@@ -1,8 +1,22 @@
 import React from "react";
-import { NextPage } from "next";
-import { useSession } from "next-auth/react";
+import { GetServerSideProps, NextPage } from "next";
+import { getSession, useSession } from "next-auth/react";
 import Image from "next/image";
 import styles from "../../styles/Profile.module.scss";
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getSession(context);
+  if (!session) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/login",
+      },
+      props: {},
+    };
+  }
+  return { props: {} };
+};
 
 const Profile: NextPage = () => {
   const { data: session } = useSession();

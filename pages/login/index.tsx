@@ -3,7 +3,8 @@ import cls from "classnames";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
-import { signIn } from "next-auth/react";
+import { signIn, getSession } from "next-auth/react";
+import Cookies from "js-cookie";
 import { toast } from "react-toastify";
 import Image from "next/image";
 import styles from "../../styles/Login.module.scss";
@@ -30,8 +31,10 @@ const LoginPage: NextPage = () => {
       password: data.password,
       redirect: false,
     });
+    const session: any = await getSession();
+    Cookies.set("access_token", session.accessToken);
     if (res && res.status === 200) {
-      router.push("/profile");
+      await router.push("/profile");
     } else {
       toast.error("Sai email hoặc mật khẩu.");
     }

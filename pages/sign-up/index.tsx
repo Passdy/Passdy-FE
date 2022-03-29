@@ -2,10 +2,13 @@ import React, { useMemo, useState } from "react";
 import cls from "classnames";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { NextPage } from "next";
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "../../styles/Login.module.scss";
 import commonStyles from "../../styles/common.module.scss";
 import CheckSvg from "../../components/Icons/CheckSvg";
+import AuthServices from "../../services/AuthServices";
 
 type Inputs = {
   password: string;
@@ -15,10 +18,12 @@ type Inputs = {
 
 const SignUpPage: NextPage = () => {
   const [isShowPassWord, setIsShowPassWord] = useState<boolean>(false);
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     watch,
+    setError,
     formState: { errors },
   } = useForm<Inputs>();
 
@@ -32,7 +37,28 @@ const SignUpPage: NextPage = () => {
     [passwordInput],
   );
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    const formData = {
+      username: data.fullname,
+      password: data.password,
+      rePassword: data.password,
+      email: data.email,
+    };
+    AuthServices.register(formData)
+      .then(() => {
+        toast.success("Đăng ký tài khoản thành công! Kiểm tra email của bạn.");
+        router.push("/login");
+      })
+      .catch((e) => {
+        if (e.response.data.key === "EMAIL_EXIST") {
+          setError("email", {
+            type: "manual",
+            message: "Email đã tồn tại.",
+          });
+        }
+      });
+  };
+
   return (
     <div className={styles.mainWrapper}>
       <div className={styles.leftSide}>
@@ -47,7 +73,7 @@ const SignUpPage: NextPage = () => {
               className={styles.input}
               placeholder="Nhập họ tên"
               type="text"
-              {...register("fullname", { required: true, pattern: /=.*[!@#$%^&*]/ })}
+              {...register("fullname", { required: true })}
             />
             {errors.fullname && (
               <div className={styles.errorLine}>
@@ -68,6 +94,7 @@ const SignUpPage: NextPage = () => {
                 <Image width={16} height={16} src="/icons/red-warning.svg" />
                 <span>
                   {errors.email?.type === "required" && "Email là bắt buộc!"}
+                  {errors.email?.type === "manual" && "Email đã tồn tại."}
                   {errors.email?.type === "pattern" && "Email không hợp lệ!"}
                 </span>
               </div>

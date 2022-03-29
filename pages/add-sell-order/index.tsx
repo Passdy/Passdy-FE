@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import cls from "classnames";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import Image from "next/image";
@@ -10,12 +10,14 @@ import Link from "next/link";
 import Select from "react-select";
 import { toast } from "react-toastify";
 import { NextPage } from "next";
+import { useRouter } from "next/router";
 import styles from "./AddSellItem.module.scss";
 import commonStyles from "../../styles/common.module.scss";
 import SelectCircleItem from "../../components/SelectCircleItem";
 import useAddressOption from "../../hooks/useAddressOption";
 import Breadcrumb from "../../components/Shared/Breadcrumb";
 import UseReasonSection from "../../components/Shared/UseReasonSection/UseReasonSection";
+import OrderServies from "../../services/OrderServies";
 
 type TypeGive = "sell" | "donate";
 type TypeReceive = "recycling" | "resend";
@@ -33,11 +35,13 @@ type Inputs = {
 };
 
 const AddSellItem: NextPage = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     control,
     watch,
+    setValue,
     formState: { errors },
   } = useForm<Inputs>();
   const cityId = watch("city_id");
@@ -57,6 +61,16 @@ const AddSellItem: NextPage = () => {
     const waterLitter = new BigNumber(clothNumber || 0).times(3.78).toNumber();
     return [co2Kg, waterLitter];
   }, [clothNumber]);
+
+  const onSetTypeGive = useCallback((type: TypeGive) => {
+    setTypeGive(type);
+    setValue("type_give", type);
+  }, []);
+
+  const onSetTypeReceive = useCallback((type: TypeReceive) => {
+    setTypeReceive(type);
+    setValue("type_receive", type);
+  }, []);
 
   const { update } = useCountUp({
     ref: countUpRef,
@@ -79,11 +93,18 @@ const AddSellItem: NextPage = () => {
     updateWater(waterLiterSave);
   }, [co2Saved, update]);
 
-  // console.log(listDistrict)
-
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
-    toast.success("Thêm order thành công!");
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    const params = {
+      ...data,
+      address_type: isHomeAddress ? "apartment" : "company",
+    };
+    const res = await OrderServies.createOrder(params);
+    if (res && res.data) {
+      toast.success("Thêm order thành công!");
+      await router.push("/sell-and-donate");
+    } else {
+      toast.error("Đã xảy ra lỗi !");
+    }
   };
 
   const wrapperQuestion = (text: string, idTip: string, importantText?: string) => (
@@ -136,7 +157,7 @@ const AddSellItem: NextPage = () => {
                         [styles.activeButton]: typeGive === "sell",
                       })}
                     >
-                      <button type="button" onClick={() => setTypeGive("sell")}>
+                      <button type="button" onClick={() => onSetTypeGive("sell")}>
                         Pass đi
                       </button>
                       {wrapperQuestion(
@@ -149,7 +170,7 @@ const AddSellItem: NextPage = () => {
                         [styles.activeButton]: typeGive === "donate",
                       })}
                     >
-                      <button onClick={() => setTypeGive("donate")} type="button">
+                      <button onClick={() => onSetTypeGive("donate")} type="button">
                         Từ thiện
                       </button>
                       {wrapperQuestion(
@@ -169,7 +190,7 @@ const AddSellItem: NextPage = () => {
                         [styles.activeButton]: typeReceive === "recycling",
                       })}
                     >
-                      <button onClick={() => setTypeReceive("recycling")} type="button">
+                      <button onClick={() => onSetTypeReceive("recycling")} type="button">
                         Tái chế
                       </button>
                       {wrapperQuestion(
@@ -183,7 +204,7 @@ const AddSellItem: NextPage = () => {
                         [styles.activeButton]: typeReceive === "resend",
                       })}
                     >
-                      <button onClick={() => setTypeReceive("resend")} type="button">
+                      <button onClick={() => onSetTypeReceive("resend")} type="button">
                         Hoàn trả
                       </button>
                       {wrapperQuestion(
@@ -251,7 +272,7 @@ const AddSellItem: NextPage = () => {
                       <input
                         {...register("address_name", {
                           required: true,
-                          pattern: /^[a-zA-Z0-9]+$/,
+                          pattern: /^[^*|":<>[\]{}`\\()';@&$]+$/,
                           maxLength: 30,
                         })}
                         placeholder="Name"
@@ -378,7 +399,8 @@ const AddSellItem: NextPage = () => {
                       {errors.address && (
                         <span className="text-danger">
                           {errors.address?.type === "required" && "Địa chỉ cụ thể là bắt buộc."}
-                          {errors.address?.type === "maxLength" && "Địa chỉ cụ thể không thể quá 100 ký tự."}
+                          {errors.address?.type === "maxLength" &&
+                            "Địa chỉ cụ thể không thể quá 100 ký tự."}
                         </span>
                       )}
                     </div>

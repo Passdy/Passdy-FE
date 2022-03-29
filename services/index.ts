@@ -39,7 +39,7 @@ axiosInstance.interceptors.response.use(
     switch (error.response.status) {
       case 401:
         if (error.response?.data?.path !== "/auth/login") {
-          window.location.replace("/sign-in");
+          window.location.replace("/login");
         }
         Cookies.remove("access_token");
         break;

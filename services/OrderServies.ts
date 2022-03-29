@@ -1,7 +1,6 @@
 import axiosInstance from "./index";
 
-export const createOrder = (data: object) => axiosInstance.post("/order", data);
-
+const createOrder = (data: object) => axiosInstance.post("/order", data);
 
 export default {
   createOrder,
