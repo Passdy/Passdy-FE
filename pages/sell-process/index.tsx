@@ -3,19 +3,27 @@ import { NextPage } from "next";
 import cls from "classnames";
 import Select from "react-select";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../../styles/SellProcess.module.scss";
 import HeaderSellPage from "../../components/HeaderSellPage";
+import LayoutWrapper from "../../components/Shared/LayoutWrapper";
+import Breadcrumb from "../../components/Shared/Breadcrumb";
 
 const SellProcess: NextPage = () => (
-  <>
+  <LayoutWrapper>
     <HeaderSellPage
       bigTitle="Cùng xem thời gian bán và mức giá dự kiến cho những món đồ của bạn nhé!"
       smallTitle="Những yếu tố ảnh hưởng như loại thương hiệu, giá niêm yết"
     />
     <div className={styles.sellProcessWrapper}>
-      <div className={styles.webPath}>
-        Trang chủ/ Bán/ <span>Quy trình bán</span>
-      </div>
+      <Breadcrumb>
+        <Link href="/sell-and-donate" passHref>
+          Bán/
+        </Link>
+        <Link href="/sell-process" passHref>
+          <span> Bán & Từ Thiện</span>
+        </Link>
+      </Breadcrumb>
       <div className={styles.sellDetail}>
         <div className={styles.cardSellDetail}>
           <div className={styles.bigTitle}>Danh sách bán</div>
@@ -249,7 +257,7 @@ const SellProcess: NextPage = () => (
         </div>
       </div>
     </div>
-  </>
+  </LayoutWrapper>
 );
 
 export default SellProcess;

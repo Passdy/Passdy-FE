@@ -9,7 +9,8 @@ import { useCountUp } from "react-countup";
 import Link from "next/link";
 import Select from "react-select";
 import { toast } from "react-toastify";
-import { NextPage } from "next";
+import { GetServerSideProps, NextPage } from "next";
+import { getSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import styles from "./AddSellItem.module.scss";
 import commonStyles from "../../styles/common.module.scss";
@@ -18,6 +19,7 @@ import useAddressOption from "../../hooks/useAddressOption";
 import Breadcrumb from "../../components/Shared/Breadcrumb";
 import UseReasonSection from "../../components/Shared/UseReasonSection/UseReasonSection";
 import OrderServies from "../../services/OrderServies";
+import LayoutWrapper from "../../components/Shared/LayoutWrapper";
 
 type TypeGive = "sell" | "donate";
 type TypeReceive = "recycling" | "resend";
@@ -32,6 +34,20 @@ type Inputs = {
   ward_id: number;
   address: string;
   address_type: "apartment" | "company";
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getSession(context);
+  if (!session) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/login",
+      },
+      props: {},
+    };
+  }
+  return { props: {} };
 };
 
 const AddSellItem: NextPage = () => {
@@ -132,7 +148,7 @@ const AddSellItem: NextPage = () => {
   );
 
   return (
-    <>
+    <LayoutWrapper>
       <div className={styles.pageWrapper}>
         <div className={styles.container}>
           <div className={styles.biggerFormWrapper}>
@@ -431,7 +447,7 @@ const AddSellItem: NextPage = () => {
         </div>
       </div>
       <UseReasonSection />
-    </>
+    </LayoutWrapper>
   );
 };
 

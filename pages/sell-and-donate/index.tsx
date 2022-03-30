@@ -5,11 +5,14 @@ import ReactPaginate from "react-paginate";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { GetServerSideProps, NextPage } from "next";
+import Link from "next/link";
 import { getSession } from "next-auth/react";
 import HeaderSellPage from "../../components/HeaderSellPage";
 import styles from "../../styles/SellDonate.module.scss";
 import commonStyles from "../../styles/common.module.scss";
 import UseReasonSection from "../../components/Shared/UseReasonSection/UseReasonSection";
+import LayoutWrapper from "../../components/Shared/LayoutWrapper";
+import Breadcrumb from "../../components/Shared/Breadcrumb";
 
 const options = [
   { value: "0", label: "Trong tháng này" },
@@ -63,15 +66,20 @@ const SellAndDonatePage: NextPage = () => {
   };
 
   return (
-    <>
+    <LayoutWrapper>
       <HeaderSellPage
         bigTitle="Túi đồ của bạn đang đến với thời trang bền vững"
         smallTitle="Cùng xem lại các túi đồ bạn đã gửi đến Passdy"
       />
       <div className={styles.yourPackageWrapper}>
-        <div className={styles.webPath}>
-          Trang chủ/ Bán/ <span>Bán & Từ thiện</span>
-        </div>
+        <Breadcrumb>
+          <Link href="/sell-and-donate" passHref>
+            Bán/
+          </Link>
+          <Link href="/sell-and-donate" passHref>
+            <span> Bán & Từ Thiện</span>
+          </Link>
+        </Breadcrumb>
         <div>
           <div className={styles.titleLine}>
             <span>Túi dọn đồ của bạn:</span>
@@ -137,7 +145,7 @@ const SellAndDonatePage: NextPage = () => {
         </div>
       </div>
       <UseReasonSection />
-    </>
+    </LayoutWrapper>
   );
 };
 

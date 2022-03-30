@@ -4,6 +4,7 @@ import cls from "classnames";
 import styles from "./faq.module.scss";
 import HeaderSellPage from "../../components/HeaderSellPage";
 import Collapsible from "../../components/Collapsible";
+import LayoutWrapper from "../../components/Shared/LayoutWrapper";
 
 const FAQ: NextPage = () => {
   const [selectedContent, setSelectedContent] = useState<string>("buyer");
@@ -79,45 +80,47 @@ const FAQ: NextPage = () => {
   }, [selectedContent]);
 
   return (
-    <div className={styles.wrapper}>
-      <HeaderSellPage bigTitle="Câu hỏi thường gặp" smallTitle="" />
-      <div className={styles.contentFaq}>
-        <div className={styles.leftSide}>
-          <div className={styles.bigTitle}>Danh mục</div>
-          <span
-            onClick={() => setSelectedContent("buyer")}
-            className={cls(
-              { [styles.activeItem]: selectedContent === "buyer" },
-              styles.itemLeft,
-              "mt-40",
-            )}
-          >
-            Người Mua
-          </span>
-          <span
-            onClick={() => setSelectedContent("seller")}
-            className={cls(
-              { [styles.activeItem]: selectedContent === "seller" },
-              styles.itemLeft,
-              "mt-20",
-            )}
-          >
-            Người Bán
-          </span>
-          <span
-            onClick={() => setSelectedContent("giveback")}
-            className={cls(
-              { [styles.activeItem]: selectedContent === "giveback" },
-              styles.itemLeft,
-              "mt-20",
-            )}
-          >
-            Hoán Trả/Đổi hàng
-          </span>
+    <LayoutWrapper>
+      <div className={styles.wrapper}>
+        <HeaderSellPage bigTitle="Câu hỏi thường gặp" smallTitle="" />
+        <div className={styles.contentFaq}>
+          <div className={styles.leftSide}>
+            <div className={styles.bigTitle}>Danh mục</div>
+            <span
+              onClick={() => setSelectedContent("buyer")}
+              className={cls(
+                { [styles.activeItem]: selectedContent === "buyer" },
+                styles.itemLeft,
+                "mt-40",
+              )}
+            >
+              Người Mua
+            </span>
+            <span
+              onClick={() => setSelectedContent("seller")}
+              className={cls(
+                { [styles.activeItem]: selectedContent === "seller" },
+                styles.itemLeft,
+                "mt-20",
+              )}
+            >
+              Người Bán
+            </span>
+            <span
+              onClick={() => setSelectedContent("giveback")}
+              className={cls(
+                { [styles.activeItem]: selectedContent === "giveback" },
+                styles.itemLeft,
+                "mt-20",
+              )}
+            >
+              Hoán Trả/Đổi hàng
+            </span>
+          </div>
+          <div className={styles.rightSide}>{renderContent}</div>
         </div>
-        <div className={styles.rightSide}>{renderContent}</div>
       </div>
-    </div>
+    </LayoutWrapper>
   );
 };
 

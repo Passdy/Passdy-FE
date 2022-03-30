@@ -124,7 +124,7 @@ const Header: NextPage = () => {
             </div>
           </NavItem>
           <NavItem className={cls("ml-40")}>
-            <Link href="/#buy-section" passHref>
+            <Link href="/about" passHref>
               <span data-content="Về Passdy">Về Passdy</span>
             </Link>
             <div className="primary-line" />
