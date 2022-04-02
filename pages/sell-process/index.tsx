@@ -4,11 +4,11 @@ import cls from "classnames";
 import Select from "react-select";
 import Image from "next/image";
 import Link from "next/link";
+import ReactTooltip from "react-tooltip";
 import styles from "../../styles/SellProcess.module.scss";
 import HeaderSellPage from "../../components/HeaderSellPage";
 import LayoutWrapper from "../../components/Shared/LayoutWrapper";
 import Breadcrumb from "../../components/Shared/Breadcrumb";
-import ReactTooltip from "react-tooltip";
 
 const SellProcess: NextPage = () => (
   <LayoutWrapper>

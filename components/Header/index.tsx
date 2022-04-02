@@ -2,11 +2,11 @@ import React, { MutableRefObject, useEffect, useRef, useState } from "react";
 import { NextPage } from "next";
 import Link from "next/link";
 import cls from "classnames";
+import { useRouter } from "next/router";
+import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
 import styles from "./Header.module.scss";
 import Countdown from "./CountDown";
-import { useRouter } from "next/router";
-import ReactTooltip from "react-tooltip";
 
 const NavItem = styled.div<{ isShow?: boolean }>`
   size: 14px;
