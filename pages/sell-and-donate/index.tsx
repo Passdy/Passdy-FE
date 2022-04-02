@@ -41,7 +41,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       props: {},
     };
   }
-  return { props: {} };
+  return {
+    redirect: {
+      permanent: false,
+      destination: "/add-sell-order",
+    },
+    props: {},
+  };
 };
 
 const SellAndDonatePage: NextPage = () => {

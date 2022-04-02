@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import cls from "classnames";
 import styles from "../styles/Home.module.scss";
 import ScrollItem from "../components/Header/ScrollItem";
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
   const buyRef = useRef<any>(null);
   const sellRef = useRef<any>(null);
   const roadMapRef = useRef<any>(null);
+  const router = useRouter();
 
   const onClickScroll = (type: string) => {
     if (type === "buy") {
@@ -21,6 +23,14 @@ const Home: NextPage = () => {
     } else {
       roadMapRef?.current.scrollIntoView();
     }
+  };
+
+  const onBuyNowButton = () => {
+    window.location.replace("https://shopee.vn/passdyvn ");
+  };
+
+  const onPassNow = () => {
+    router.push("/sell-and-donate");
   };
 
   const isBottom = (el: any, offsetHeight: number) =>
@@ -113,6 +123,7 @@ const Home: NextPage = () => {
               data-aos-once="true"
               data-aos-delay="1300"
               type="button"
+              onClick={onBuyNowButton}
               className={cls(styles.exploreButton, "fade-up")}
             >
               MUA NGAY
@@ -204,7 +215,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div ref={sellRef} className={styles.startSellingBtn}>
-            <button type="button" className={styles.exploreButton}>
+            <button onClick={onBuyNowButton} type="button" className={styles.exploreButton}>
               MUA NGAY
             </button>
           </div>
@@ -314,7 +325,7 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className={cls("text-center")}>
-            <button type="button" className={styles.exploreButton}>
+            <button onClick={onPassNow} type="button" className={styles.exploreButton}>
               PASS LUÔN
             </button>
           </div>

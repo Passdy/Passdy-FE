@@ -12,6 +12,8 @@
   outline: 0;
   border: 0;
   transition: background-color 150ms;
+  display: flex;
+  align-items: center;
 
   &:hover {
     background-color: $secondary-color;

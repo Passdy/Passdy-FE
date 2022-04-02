@@ -3,13 +3,14 @@ import cls from "classnames";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import { getSession, signIn } from "next-auth/react";
 import Cookies from "js-cookie";
 import { toast } from "react-toastify";
 import Image from "next/image";
 import styles from "../../styles/Login.module.scss";
-import commonStyles from "../../styles/common.module.scss";
 import LayoutWrapper from "../../components/Shared/LayoutWrapper";
+import SubmitButton from "../../components/Shared/SubmitButton";
 
 type Inputs = {
   password: string;
@@ -19,6 +20,7 @@ type Inputs = {
 
 const LoginPage: NextPage = () => {
   const [isShowPassWord, setIsShowPassWord] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const {
     register,
     handleSubmit,
@@ -27,16 +29,18 @@ const LoginPage: NextPage = () => {
   const router = useRouter();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    setIsLoading(true);
     const res: any = await signIn("credentials", {
       username: data.email,
       password: data.password,
       redirect: false,
     });
-    const session: any = await getSession();
-    Cookies.set("access_token", session.accessToken);
     if (res && res.status === 200) {
+      const session: any = await getSession();
+      Cookies.set("access_token", session.accessToken);
       await router.push("/profile");
     } else {
+      setIsLoading(false);
       toast.error("Sai email hoặc mật khẩu.");
     }
   };
@@ -110,9 +114,15 @@ const LoginPage: NextPage = () => {
                   <span>{errors.password?.type === "required" && "Mật khẩu là bắt buộc!"}</span>
                 </div>
               )}
-              <button type="submit" className={cls(commonStyles.button, "mt-40")}>
-                ĐĂNG NHẬP
-              </button>
+              <SubmitButton loading={isLoading} className="mt-40">
+                Đăng nhập
+              </SubmitButton>
+              <div className={cls("mt-20", styles.lastRow)}>
+                <span className={styles.smallTitle}>Bạn chưa có tài khoản?</span>
+                <Link href="/sign-up" passHref>
+                  <span className={styles.underLineText}>Đăng ký</span>
+                </Link>
+              </div>
             </div>
           </form>
         </div>

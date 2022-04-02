@@ -19,31 +19,28 @@
 .mainLogo {
   text-align: center;
 
-  span {
-    font-family: Mulish, sans-serif;
-    font-weight: 900;
-    font-size: 40px;
-    line-height: 60px;
-    color: #000000;
-    position: relative;
+  .logoWrapper {
     display: inline-block;
-    overflow: hidden;
-    transition: clip-path 0.5s ease;
     cursor: pointer;
 
-    &:hover::before {
-      clip-path: ellipse(100% 100% at 50% 50%);
+    &:hover {
+      img {
+        clip-path: ellipse(100% 100% at 50% 50%);
+      }
     }
 
-    &::before {
+    img {
       position: absolute;
-      content: attr(data-content);
-      color: $primary-color;
+      z-index: 2;
       clip-path: ellipse(0% 0% at 100% 100%);
       transition: clip-path 0.5s ease;
     }
-  }
 
+    svg {
+      fill: #000000;
+      z-index: 1;
+    }
+  }
 }
 
 .navBar {

@@ -5,11 +5,12 @@ import { NextPage } from "next";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../../styles/Login.module.scss";
-import commonStyles from "../../styles/common.module.scss";
 import CheckSvg from "../../components/Icons/CheckSvg";
 import AuthServices from "../../services/AuthServices";
 import LayoutWrapper from "../../components/Shared/LayoutWrapper";
+import SubmitButton from "../../components/Shared/SubmitButton";
 
 type Inputs = {
   password: string;
@@ -19,6 +20,7 @@ type Inputs = {
 
 const SignUpPage: NextPage = () => {
   const [isShowPassWord, setIsShowPassWord] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const router = useRouter();
   const {
     register,
@@ -39,6 +41,7 @@ const SignUpPage: NextPage = () => {
   );
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    setIsLoading(true);
     const formData = {
       username: data.fullname,
       password: data.password,
@@ -57,6 +60,9 @@ const SignUpPage: NextPage = () => {
             message: "Email đã tồn tại.",
           });
         }
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -160,12 +166,14 @@ const SignUpPage: NextPage = () => {
                   </div>
                 </div>
               )}
-              <button type="submit" className={cls(commonStyles.button, "mt-40")}>
-                Đăng ký
-              </button>
+              <SubmitButton loading={isLoading} className="mt-40">
+                Đăng ký
+              </SubmitButton>
               <div className={cls("mt-20", styles.lastRow)}>
                 <span className={styles.smallTitle}>Đã có tài khoản?</span>
-                <span className={styles.underLineText}>Đăng nhập</span>
+                <Link href="/login" passHref>
+                  <span className={styles.underLineText}>Đăng nhập</span>
+                </Link>
               </div>
             </div>
           </form>

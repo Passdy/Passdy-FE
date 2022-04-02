@@ -5,7 +5,7 @@ import Image from "next/image";
 import ReactPaginate from "react-paginate";
 import Link from "next/link";
 import Select from "react-select";
-import { getSession } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
 import styles from "../../styles/SaleAccount.module.scss";
 import commonStyles from "../../styles/common.module.scss";
 import WithdrawPage from "../../components/SaleAccount/WithdrawPage";
@@ -35,7 +35,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return { props: {} };
 };
 
-const LoginPage: NextPage = () => {
+const SaleAccountPage: NextPage = () => {
   const [isWithdrawPage, setIsWithDraw] = useState<boolean>(false);
   const [pageCount, setPageCount] = useState<number>(0);
   const [itemOffset, setItemOffset] = useState<number>(0);
@@ -43,6 +43,10 @@ const LoginPage: NextPage = () => {
     value: "all",
     label: "All",
   });
+
+  const { data: session } = useSession();
+
+  console.log(session);
   const [categorySelected, setCategorySelected] = useState({
     value: "",
     label: "All",
@@ -262,4 +266,4 @@ const LoginPage: NextPage = () => {
   );
 };
 
-export default LoginPage;
+export default SaleAccountPage;

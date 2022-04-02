@@ -80,7 +80,9 @@ const Footer: NextPage = () => {
             <div className={styles.itemWrapper}>
               <div className={styles.item}>Điện thoại: 094 8256677</div>
               <div className={styles.item}>Gmail: passdy@gmail.com</div>
-              <div className={styles.item}>Địa chỉ: 25 BT4-3 Trung Văn, Nam Từ Liêm, HN</div>
+              <div className={styles.item}>
+                Số 7 ngách 3/2 phố Nhân Hòa, phường Nhân Chính, quận Thanh Xuân, Hà Nội
+              </div>
             </div>
           </div>
         </div>

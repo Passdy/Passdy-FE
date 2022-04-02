@@ -13,13 +13,13 @@ import { GetServerSideProps, NextPage } from "next";
 import { getSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import styles from "./AddSellItem.module.scss";
-import commonStyles from "../../styles/common.module.scss";
 import SelectCircleItem from "../../components/SelectCircleItem";
 import useAddressOption from "../../hooks/useAddressOption";
 import Breadcrumb from "../../components/Shared/Breadcrumb";
 import UseReasonSection from "../../components/Shared/UseReasonSection/UseReasonSection";
 import OrderServies from "../../services/OrderServies";
 import LayoutWrapper from "../../components/Shared/LayoutWrapper";
+import SubmitButton from "../../components/Shared/SubmitButton";
 
 type TypeGive = "sell" | "donate";
 type TypeReceive = "recycling" | "resend";
@@ -64,6 +64,7 @@ const AddSellItem: NextPage = () => {
   const districtId = watch("district_id");
   const clothNumber = watch("cloth_num");
   const [isHomeAddress, setIsHomeAddress] = useState<boolean>(false);
+  const [isLoadingBtn, setIsLoadingBtn] = useState<boolean>(false);
   const [typeGive, setTypeGive] = useState<TypeGive>();
   const [typeReceive, setTypeReceive] = useState<TypeReceive>();
   const [listProvince] = useAddressOption("province", 0);
@@ -114,11 +115,13 @@ const AddSellItem: NextPage = () => {
       ...data,
       address_type: isHomeAddress ? "apartment" : "company",
     };
+    setIsLoadingBtn(true);
     const res = await OrderServies.createOrder(params);
     if (res && res.data) {
       toast.success("Thêm order thành công!");
       await router.push("/sell-and-donate");
     } else {
+      setIsLoadingBtn(false);
       toast.error("Đã xảy ra lỗi !");
     }
   };
@@ -437,9 +440,7 @@ const AddSellItem: NextPage = () => {
                   </div>
                 </div>
                 <div className={styles.confirmButtonWrapper}>
-                  <button type="submit" className={commonStyles.button}>
-                    XÁC NHẬN
-                  </button>
+                  <SubmitButton loading={isLoadingBtn}>Xác nhận</SubmitButton>
                 </div>
               </form>
             </div>

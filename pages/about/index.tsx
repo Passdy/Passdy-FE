@@ -178,12 +178,8 @@ const About: NextPage = () => {
                 <div className={styles.blurLayer} />
                 <div className={styles.textWrapper}>
                   <div className={styles.name}>Lê Nam Anh</div>
-                  <div className={styles.position}>Project Manager</div>
-                  <div className={styles.hiddenText}>
-                    Ace is one of the marketing arm of Splinterlands and other successfully launched
-                    NFT games and now the new CMO for P2E Marketing handling hundreds of KOLs all
-                    over the world.
-                  </div>
+                  <div className={styles.position}>Phụ trách dự án</div>
+                  <div className={styles.hiddenText} />
                 </div>
               </div>
               <div
@@ -193,12 +189,8 @@ const About: NextPage = () => {
                 <div className={styles.blurLayer} />
                 <div className={styles.textWrapper}>
                   <div className={styles.name}>Nguyễn Anh Trí</div>
-                  <div className={styles.position}>HEAD OF MARKETING</div>
-                  <div className={styles.hiddenText}>
-                    Ace is one of the marketing arm of Splinterlands and other successfully launched
-                    NFT games and now the new CMO for P2E Marketing handling hundreds of KOLs all
-                    over the world.
-                  </div>
+                  <div className={styles.position}>Phụ trách truyền thông</div>
+                  <div className={styles.hiddenText} />
                 </div>
               </div>
               <div
@@ -208,12 +200,8 @@ const About: NextPage = () => {
                 <div className={styles.blurLayer} />
                 <div className={styles.textWrapper}>
                   <div className={styles.name}>Phạm Minh HOÀNG</div>
-                  <div className={styles.position}>WAREHOUSE MANAGER</div>
-                  <div className={styles.hiddenText}>
-                    Ace is one of the marketing arm of Splinterlands and other successfully launched
-                    NFT games and now the new CMO for P2E Marketing handling hundreds of KOLs all
-                    over the world.
-                  </div>
+                  <div className={styles.position}>Phụ trách kho vận</div>
+                  <div className={styles.hiddenText} />
                 </div>
               </div>
             </div>
