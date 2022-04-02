@@ -45,7 +45,6 @@ export default NextAuth({
     },
     session({ session, token }) {
       session.accessToken = token.accessToken;
-      session.profile = token.profile;
       return session;
     },
   },
