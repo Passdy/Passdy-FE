@@ -30,18 +30,24 @@ const LoginPage: NextPage = () => {
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setIsLoading(true);
-    const res: any = await signIn("credentials", {
-      username: data.email,
-      password: data.password,
-      redirect: false,
-    });
-    if (res && res.status === 200) {
-      const session: any = await getSession();
-      Cookies.set("access_token", session.accessToken);
-      await router.push("/profile");
-    } else {
+    try {
+      const res: any = await signIn("credentials", {
+        username: data.email,
+        password: data.password,
+        redirect: false,
+      });
+      console.log(res);
+      if (res && res.status === 200) {
+        const session: any = await getSession();
+        Cookies.set("access_token", session.accessToken);
+        await router.push("/profile");
+      } else {
+        setIsLoading(false);
+        toast.error("Sai email hoặc mật khẩu.");
+      }
+    } catch (e) {
+      console.log(e);
       setIsLoading(false);
-      toast.error("Sai email hoặc mật khẩu.");
     }
   };
 

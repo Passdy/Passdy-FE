@@ -8,6 +8,7 @@ import styles from "../../styles/SellProcess.module.scss";
 import HeaderSellPage from "../../components/HeaderSellPage";
 import LayoutWrapper from "../../components/Shared/LayoutWrapper";
 import Breadcrumb from "../../components/Shared/Breadcrumb";
+import ReactTooltip from "react-tooltip";
 
 const SellProcess: NextPage = () => (
   <LayoutWrapper>
@@ -64,23 +65,23 @@ const SellProcess: NextPage = () => (
               <th>Bạn nhận được</th>
             </tr>
             <tr>
-              <td>$5.00 - $19.99</td>
+              <td>10,000 VND - 200,000 VND</td>
               <td>3% - 15%</td>
             </tr>
             <tr>
-              <td>$20.00 - $49.99</td>
+              <td>200,000 VND - 500,000 VND</td>
               <td>15% - 30%</td>
             </tr>
             <tr>
-              <td>$50.00 - $99.99</td>
+              <td>500,000 VND - 1,000,000 VND</td>
               <td>30% - 60%</td>
             </tr>
             <tr>
-              <td>$100.00 - $199.99</td>
+              <td>1,000,000 VND - 5,000,000 VND</td>
               <td>60% - 80%</td>
             </tr>
             <tr>
-              <td>$200 or more</td>
+              <td>Trên 5,000,000 VND</td>
               <td>80%</td>
             </tr>
           </table>
@@ -104,7 +105,7 @@ const SellProcess: NextPage = () => (
           </div>
           <div className={styles.column}>
             <div className={styles.mediumTitle}>Giá bán dự kiến</div>
-            <div className={styles.primaryText}>$51.00</div>
+            <div className={styles.primaryText}>~100,000 VND</div>
           </div>
         </div>
         <div className={cls(styles.bigTitle, "mt-40")}>Ví dụ</div>
@@ -113,36 +114,36 @@ const SellProcess: NextPage = () => (
             <div className={styles.exampleImage}>
               <Image width="150px" height="150px" src="/images/example-Tshirt.png" />
             </div>
-            <div className={cls(styles.titleExample, "mt-10")}>Est. Listing Price: $13.99</div>
-            <div className={cls(styles.titleExample, "mt-10")}>Est. Payout (10.5%):</div>
-            <div className={cls(styles.primaryText, "mt-10")}>$1.47</div>
+            <div className={cls(styles.titleExample, "mt-10")}>Giá bán dự kiến: 105,500VND</div>
+            <div className={cls(styles.titleExample, "mt-10")}>Giá trả (15%):</div>
+            <div className={cls(styles.primaryText, "mt-10")}>15,750 VND</div>
             <div className={cls(styles.desExample, "mt-10")}>Bán trong vòng: 90 ngày</div>
           </div>
           <div className={styles.exampleCard}>
             <div className={styles.exampleImage}>
-              <Image width="150px" height="150px" src="/images/example-Tshirt.png" />
+              <Image width="150px" height="150px" src="/images/sell-process/skirt.png" />
             </div>
-            <div className={cls(styles.titleExample, "mt-10")}>Est. Listing Price: $13.99</div>
-            <div className={cls(styles.titleExample, "mt-10")}>Est. Payout (10.5%):</div>
-            <div className={cls(styles.primaryText, "mt-10")}>$1.47</div>
+            <div className={cls(styles.titleExample, "mt-10")}>Giá bán dự kiến: 550,000VND</div>
+            <div className={cls(styles.titleExample, "mt-10")}>Giá trả (40%):</div>
+            <div className={cls(styles.primaryText, "mt-10")}>220,000 VND</div>
             <div className={cls(styles.desExample, "mt-10")}>Bán trong vòng: 90 ngày</div>
           </div>
           <div className={styles.exampleCard}>
             <div className={styles.exampleImage}>
-              <Image width="150px" height="150px" src="/images/example-Tshirt.png" />
+              <Image width="150px" height="150px" src="/images/sell-process/boots.png" />
             </div>
-            <div className={cls(styles.titleExample, "mt-10")}>Est. Listing Price: $13.99</div>
-            <div className={cls(styles.titleExample, "mt-10")}>Est. Payout (10.5%):</div>
-            <div className={cls(styles.primaryText, "mt-10")}>$1.47</div>
+            <div className={cls(styles.titleExample, "mt-10")}>Giá bán dự kiến: 1,200,000 VND</div>
+            <div className={cls(styles.titleExample, "mt-10")}>Giá trả (60%)</div>
+            <div className={cls(styles.primaryText, "mt-10")}>720,000 VND</div>
             <div className={cls(styles.desExample, "mt-10")}>Bán trong vòng: 90 ngày</div>
           </div>
           <div className={styles.exampleCard}>
             <div className={styles.exampleImage}>
-              <Image width="150px" height="150px" src="/images/example-Tshirt.png" />
+              <Image width="150px" height="150px" src="/images/sell-process/leather-bag.png" />
             </div>
-            <div className={cls(styles.titleExample, "mt-10")}>Est. Listing Price: $13.99</div>
-            <div className={cls(styles.titleExample, "mt-10")}>Est. Payout (10.5%):</div>
-            <div className={cls(styles.primaryText, "mt-10")}>$1.47</div>
+            <div className={cls(styles.titleExample, "mt-10")}>Giá bán dự kiến: 4,500,000 VND</div>
+            <div className={cls(styles.titleExample, "mt-10")}>Giá trả (75%)</div>
+            <div className={cls(styles.primaryText, "mt-10")}>3,375,000 VND</div>
             <div className={cls(styles.desExample, "mt-10")}>Bán trong vòng: 90 ngày</div>
           </div>
         </div>
@@ -165,7 +166,14 @@ const SellProcess: NextPage = () => (
               </div>
               12 tiếng
               <br />
-              <span className={styles.importantText}>chỉnh sửa giá</span>
+              <span
+                data-background-color="#000000"
+                data-effect="solid"
+                data-tip="Tính năng sắp được update trong thời gian tới bạn nha!"
+                className={styles.importantText}
+              >
+                Chỉnh sửa giá
+              </span>
             </div>
             <div className={styles.itemSellRoute}>
               <div className={styles.iconWrapper}>
@@ -177,7 +185,14 @@ const SellProcess: NextPage = () => (
               </div>
               12 tiếng
               <br />
-              <span className={styles.importantText}>Điều chỉnh giá</span>
+              <span
+                data-background-color="#000000"
+                data-effect="solid"
+                data-tip="Tính năng sắp được update trong thời gian tới bạn nha!"
+                className={styles.importantText}
+              >
+                Điều chỉnh giá
+              </span>
             </div>
             <div className={styles.itemSellRoute}>
               <div className={styles.iconWrapper}>
@@ -209,7 +224,11 @@ const SellProcess: NextPage = () => (
               </div>
               14 ngày
               <br />
-              <span className={styles.importantText}>hoàn trả</span>
+              <span className={styles.importantText}>
+                <Link href="/faq" passHref>
+                  Hoàn trả
+                </Link>
+              </span>
               <div className={cls(styles.iconWrapper, styles.lastItem)}>
                 <div style={{ background: "#E04A08" }} className={styles.borderImage}>
                   <Image width={24} height={24} src="/icons/sell-process/dollar.svg" />
@@ -257,6 +276,7 @@ const SellProcess: NextPage = () => (
         </div>
       </div>
     </div>
+    <ReactTooltip />
   </LayoutWrapper>
 );
 

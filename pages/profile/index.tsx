@@ -24,7 +24,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 const Profile: NextPage = () => {
   const { data: session } = useSession();
 
-  console.log(session);
   return (
     <LayoutWrapper>
       <div className={styles.profileWrapper}>

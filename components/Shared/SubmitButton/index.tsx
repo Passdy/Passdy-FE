@@ -14,7 +14,7 @@ const SubmitButton = ({ children, className, loading, typeButton }: ButtonProps)
   // eslint-disable-next-line react/button-has-type
   <button type={typeButton} disabled={loading} className={cls(commonStyles.button, className)}>
     {children}
-    <div className="ml-20">
+    <div className={commonStyles.loadingWrapper}>
       <ClipLoader color="#ffffff" loading={loading} size={20} />
     </div>
   </button>
