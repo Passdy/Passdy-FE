@@ -104,11 +104,11 @@ const About: NextPage = () => {
                     </div>
                     <div className={styles.noteLine}>
                       <img src="images/about/enter-icon.png" alt="" />
-                      Truyền cảm hứng về thời trang bền vững
+                      Kết nối và xây dựng cộng đồng "Diện Văn Minh"
                     </div>
                     <div className={styles.noteLine}>
                       <img src="images/about/enter-icon.png" alt="" />
-                      Truyền cảm hứng về thời trang bền vững
+                      Tạo ra trải nghiệm mua sắm quần áo cũ tiện lợi nhất tại Việt Nam
                     </div>
                   </div>
                 </div>
