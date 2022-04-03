@@ -39,6 +39,7 @@ const LoginPage: NextPage = () => {
       console.log(res);
       if (res && res.status === 200) {
         const session: any = await getSession();
+        console.log(session)
         Cookies.set("access_token", session.accessToken);
         await router.push("/profile");
       } else {
@@ -46,6 +47,7 @@ const LoginPage: NextPage = () => {
         toast.error("Sai email hoặc mật khẩu.");
       }
     } catch (e) {
+      toast.error("Đã có lỗi xảy ra!");
       console.log(e);
       setIsLoading(false);
     }
