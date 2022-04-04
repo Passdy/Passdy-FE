@@ -324,7 +324,7 @@ const Home: NextPage = () => {
               </div>
             </div>
           </div>
-          <div className={cls("text-center")}>
+          <div className={cls("flex-center")}>
             <button onClick={onPassNow} type="button" className={styles.exploreButton}>
               PASS LUÔN
             </button>

@@ -87,7 +87,7 @@ const SellStep: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className={cls("text-center", "mt-60")}>
+            <div className={cls("flex-center", "mt-60")}>
               <button onClick={() => onRedirect} type="button" className={commonStyles.button}>
                 PASS LUÔN
               </button>

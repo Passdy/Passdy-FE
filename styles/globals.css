@@ -148,3 +148,8 @@ a {
 .w-5o {
     width: 50%;
 }
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}

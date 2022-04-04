@@ -115,7 +115,7 @@ const SellProcess: NextPage = () => (
               <Image width="150px" height="150px" src="/images/example-Tshirt.png" />
             </div>
             <div className={cls(styles.titleExample, "mt-10")}>Giá bán dự kiến: 105,500VND</div>
-            <div className={cls(styles.titleExample, "mt-10")}>Giá trả (15%):</div>
+            <div className={cls(styles.titleExample, "mt-10")}>Số tiền bạn nhận (15%):</div>
             <div className={cls(styles.primaryText, "mt-10")}>15,750 VND</div>
             <div className={cls(styles.desExample, "mt-10")}>Bán trong vòng: 90 ngày</div>
           </div>
@@ -124,7 +124,7 @@ const SellProcess: NextPage = () => (
               <Image width="150px" height="150px" src="/images/sell-process/skirt.png" />
             </div>
             <div className={cls(styles.titleExample, "mt-10")}>Giá bán dự kiến: 550,000VND</div>
-            <div className={cls(styles.titleExample, "mt-10")}>Giá trả (40%):</div>
+            <div className={cls(styles.titleExample, "mt-10")}>Số tiền bạn nhận (40%):</div>
             <div className={cls(styles.primaryText, "mt-10")}>220,000 VND</div>
             <div className={cls(styles.desExample, "mt-10")}>Bán trong vòng: 90 ngày</div>
           </div>
@@ -133,7 +133,7 @@ const SellProcess: NextPage = () => (
               <Image width="150px" height="150px" src="/images/sell-process/boots.png" />
             </div>
             <div className={cls(styles.titleExample, "mt-10")}>Giá bán dự kiến: 1,200,000 VND</div>
-            <div className={cls(styles.titleExample, "mt-10")}>Giá trả (60%)</div>
+            <div className={cls(styles.titleExample, "mt-10")}>Số tiền bạn nhận (60%)</div>
             <div className={cls(styles.primaryText, "mt-10")}>720,000 VND</div>
             <div className={cls(styles.desExample, "mt-10")}>Bán trong vòng: 90 ngày</div>
           </div>
@@ -142,7 +142,7 @@ const SellProcess: NextPage = () => (
               <Image width="150px" height="150px" src="/images/sell-process/leather-bag.png" />
             </div>
             <div className={cls(styles.titleExample, "mt-10")}>Giá bán dự kiến: 4,500,000 VND</div>
-            <div className={cls(styles.titleExample, "mt-10")}>Giá trả (75%)</div>
+            <div className={cls(styles.titleExample, "mt-10")}>Số tiền bạn nhận (75%)</div>
             <div className={cls(styles.primaryText, "mt-10")}>3,375,000 VND</div>
             <div className={cls(styles.desExample, "mt-10")}>Bán trong vòng: 90 ngày</div>
           </div>

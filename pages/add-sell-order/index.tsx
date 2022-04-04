@@ -118,6 +118,7 @@ const AddSellItem: NextPage = () => {
     setIsLoadingBtn(true);
     const res = await OrderServies.createOrder(params);
     if (res && res.data) {
+      setIsLoadingBtn(false);
       toast.success("Thêm order thành công!");
       await router.push("/sell-and-donate");
     } else {
