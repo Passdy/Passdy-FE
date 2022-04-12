@@ -27,6 +27,15 @@
   }
 }
 
+.fullWidthButtonMobile {
+  @media (max-width: $mobile-width) {
+    text-align: center;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .outlineButton {
   padding: 12px 24px;
   border: 1px solid $primary-color;

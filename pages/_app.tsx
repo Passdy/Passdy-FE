@@ -29,11 +29,13 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
       <Provider store={store}>
         <SessionProvider session={session}>
           <Head>
-            <title>PassDy</title>
+            <title>Passdy</title>
           </Head>
-          <Header />
-          <div className="component-wrapper">
-            <Component {...pageProps} />
+          <div className="page-wrapper">
+            <Header />
+            <div className="component-wrapper">
+              <Component {...pageProps} />
+            </div>
           </div>
           <ToastContainer />
           <Footer />

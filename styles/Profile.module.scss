@@ -26,6 +26,7 @@
       line-height: 33px;
       font-family: Volkorm, sans-serif;
       color: #000000;
+      word-break: break-all;
     }
 
     .sinceText {
@@ -97,6 +98,60 @@
         border-top: 0.5px solid #C4C4C4;
         margin-top: 30px;
         margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .profileWrapper {
+    flex-flow: column;
+    height: auto;
+
+    .leftProfile {
+      width: 100%;
+      padding: 50px 20px 100px 20px;
+      position: relative;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      grid-template-columns: 55%;
+
+      .avatarWrapper {
+        width: 65px;
+        height: 65px;
+        position: absolute;
+        top: 2%;
+        left: 4%;
+      }
+
+      .primaryText {
+        font-size: 18px;
+        line-height: 25px;
+      }
+
+      .nameTitle {
+        //margin-left: 100px;
+      }
+
+      .sinceText {
+        margin-top: 0;
+      }
+    }
+
+    .rightProfile {
+      width: 100%;
+      padding: 30px 30px 100px 30px;
+
+      .cardData {
+        margin: 0 auto;
+        width: 320px;
+        padding: 40px 20px;
+
+        .itemWrapper {
+          font-size: 18px;
+          line-height: 26px;
+        }
       }
     }
   }

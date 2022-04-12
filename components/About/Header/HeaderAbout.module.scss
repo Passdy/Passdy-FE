@@ -43,3 +43,21 @@
     color: #FFFFFF;
   }
 }
+
+@media (max-width: $mobile-width) {
+  .bgBlur {
+    height: 160px;
+  }
+  .bgText {
+    height: 160px;
+
+    .bigTitle {
+      font-size: 24px;
+      line-height: 133%;
+      justify-content: flex-start;
+      align-items: start;
+      width: 60%;
+      margin-left: 40px;
+    }
+  }
+}

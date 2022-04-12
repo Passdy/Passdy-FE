@@ -44,3 +44,18 @@
     color: #FFFFFF;
   }
 }
+
+@media (max-width: $mobile-width) {
+  .bgText {
+    padding: 10px;
+    .bigTitle {
+      width: 100%;
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+  .smallTitle {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

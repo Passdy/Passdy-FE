@@ -124,7 +124,7 @@ const Home: NextPage = () => {
               data-aos-delay="1300"
               type="button"
               onClick={onBuyNowButton}
-              className={cls(styles.exploreButton, "fade-up")}
+              className={cls(styles.exploreButton, "fade-up", "mt-40")}
             >
               MUA NGAY
             </button>
@@ -141,15 +141,60 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div id="buy-section" ref={buyRef} className={styles.suitableShop}>
+          <div className={styles.contentSectionMobile}>
+            <div
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="400"
+              data-aos-once="true"
+              data-aos-delay="100"
+              className={cls(styles.bigTitle, "fade-up")}
+            >
+              Chúng mình tin rằng
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-easing="linear"
+              data-aos-duration="400"
+              data-aos-delay="200"
+              data-aos-once="true"
+              className={cls(styles.bigTitle, "fade-up")}
+            >
+              <span>diện đồ cũ</span> là làm mới
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              data-aos-easing="linear"
+              data-aos-duration="400"
+              data-aos-once="true"
+              className={cls(styles.bigTitle, "fade-up")}
+            >
+              bản thân một cách tiết kiệm nhất
+            </div>
+            <div className={cls(styles.secondaryTitle, "fade-up")}>
+              <div
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="400"
+                data-aos-once="true"
+                data-aos-delay="500"
+                className="fade-up"
+              >
+                {/* eslint-disable-next-line max-len */}
+                Không chỉ tiết kiệm thời gian, chi phí dọn đồ và mua sắm. Mà còn tiết kiệm cho môi trường của chúng ta
+              </div>
+            </div>
+          </div>
           <div className={styles.smallHeading}>
             {/* eslint-disable-next-line max-len */}
-            PassDy là một platform kí gửi các sản phẩm thời trang giúp tiết kiệm cho bạn và môi
+            Passdy là một platform kí gửi các sản phẩm thời trang giúp tiết kiệm cho bạn và môi
             trường
           </div>
           <div className={styles.titleSection}>Hướng tới thời trang bền vững</div>
           <div className={styles.cardWrapper} data-aos="fade-in" data-aos-once="true">
             <div
-              data-aos="zoom-out-left"
+              data-aos="fade-in"
               data-aos-duration="2000"
               data-aos-once="true"
               className={styles.card}
@@ -170,7 +215,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div
-              data-aos="zoom-out"
+              data-aos="fade-in"
               data-aos-duration="2000"
               data-aos-once="true"
               className={styles.card}
@@ -194,7 +239,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div
-              data-aos="zoom-out-right"
+              data-aos="fade-in"
               data-aos-duration="2000"
               data-aos-once="true"
               className={styles.card}
@@ -222,9 +267,7 @@ const Home: NextPage = () => {
         </div>
         <div className={styles.howToSection}>
           <div className={styles.titleSection}>
-            Dễ dàng dọn dẹp và bán quần áo của
-            <br />
-            bạn cùng Passdy qua 3 bước
+            Dễ dàng dọn dẹp và bán quần áo của bạn cùng Passdy qua 3 bước
           </div>
           <div className={styles.withImageSection}>
             <div className={cls(styles.cardHowTo)} id="sell-section">
@@ -263,6 +306,24 @@ const Home: NextPage = () => {
                 data-aos="fade-up"
                 data-aos-duration="800"
                 data-aos-easing="ease-in-out"
+                data-aos-once="true"
+                className={cls(styles.contentHowTo, "mobile-show")}
+              >
+                <div className={styles.titleCardHowTo}>
+                  <span className={styles.bigNumber}>02</span>
+                  <span className={styles.bigTitle}>Gửi đồ tới Passdy</span>
+                </div>
+                <div className={styles.cardItemWrapper}>
+                  <div>
+                    Chỉ cần điền các thông tin và các món đồ của bạn sẽ đến với Passdy một cách
+                    nhanh chóng (hoàn toàn miễn phí)
+                  </div>
+                </div>
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-easing="ease-in-out"
                 className={cls(styles.imageHowTow)}
                 data-aos-once="true"
                 data-aos-delay="600"
@@ -275,7 +336,7 @@ const Home: NextPage = () => {
                 data-aos-duration="800"
                 data-aos-easing="ease-in-out"
                 data-aos-once="true"
-                className={cls(styles.contentHowTo, "pl-100")}
+                className={cls(styles.contentHowTo, "pl-100", "mobile-hide")}
               >
                 <div className={styles.titleCardHowTo}>
                   <span className={styles.bigNumber}>02</span>
@@ -325,15 +386,18 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className={cls("flex-center")}>
-            <button onClick={onPassNow} type="button" className={styles.exploreButton}>
+            <button
+              onClick={onPassNow}
+              type="button"
+              className={cls(styles.exploreButton, "mt-40", "mb-40")}
+            >
               PASS LUÔN
             </button>
           </div>
         </div>
         <div className={styles.roadMapSection}>
-          <div id="roadmap-section" ref={roadMapRef} className={styles.titleSection}>
+          <div id="roadmap-section" ref={roadMapRef} className={cls(styles.titleSection, "mt-60")}>
             Lộ Trình phát
-            <br />
             triển của <span className="color-primary">Passdy</span>
           </div>
           <div className={styles.checkLine}>

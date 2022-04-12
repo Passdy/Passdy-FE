@@ -8,11 +8,24 @@ type ButtonProps = {
   children: React.ReactNode;
   loading?: boolean;
   typeButton?: "submit" | "button";
+  fullWidthMobile?: boolean;
 };
 
-const SubmitButton = ({ children, className, loading, typeButton }: ButtonProps) => (
-  // eslint-disable-next-line react/button-has-type
-  <button type={typeButton} disabled={loading} className={cls(commonStyles.button, className)}>
+const SubmitButton = ({
+  children,
+  className,
+  loading,
+  typeButton,
+  fullWidthMobile,
+}: ButtonProps) => (
+  <button
+    // eslint-disable-next-line react/button-has-type
+    type={typeButton}
+    disabled={loading}
+    className={cls(commonStyles.button, className, {
+      [commonStyles.fullWidthButtonMobile]: fullWidthMobile,
+    })}
+  >
     {children}
     <div className={commonStyles.loadingWrapper}>
       <ClipLoader color="#ffffff" loading={loading} size={20} />
@@ -22,6 +35,7 @@ const SubmitButton = ({ children, className, loading, typeButton }: ButtonProps)
 SubmitButton.defaultProps = {
   className: "",
   loading: false,
+  fullWidthMobile: false,
   typeButton: "submit",
 };
 

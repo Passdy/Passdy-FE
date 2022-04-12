@@ -159,3 +159,70 @@
     }
   }
 }
+
+@media (max-width: $mobile-width) {
+  .wrapper {
+    .titleSection {
+      font-size: 32px;
+      line-height: 44px;
+    }
+
+    .container {
+      .reason {
+        .suitableShop {
+          padding: 80px 50px;
+
+          .cardWrapper {
+            grid-template-columns: auto;
+            row-gap: 50px;
+            .card {
+              .titleCard {
+                font-size: 18px;
+                line-height: 25px;
+              }
+            }
+          }
+        }
+      }
+
+      .howToSection {
+        padding: 10px 10px 80px 10px;
+
+        .withImageSection {
+          .cardHowTo {
+            flex-flow: column;
+          }
+
+          .contentHowTo {
+            width: 100%;
+
+            .titleCardHowTo {
+              .bigNumber {
+                font-size: 36px;
+                line-height: 50px;
+              }
+
+              .bigTitle {
+                font-size: 24px;
+                line-height: 33px;
+              }
+            }
+
+            .cardItemWrapper {
+              width: 100%;
+
+              div {
+                font-size: 14px;
+                line-height: 24px;
+              }
+            }
+          }
+
+          .imageHowTow {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

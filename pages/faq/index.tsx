@@ -38,7 +38,7 @@ const FAQ: NextPage = () => {
           >
             <div>Passdy khuyến khích bạn gửi:</div>
             <ul>
-              <li>Quần áo mới vẫn còn tag hoặc secon-hand đã được giặt sạch</li>
+              <li>Quần áo mới vẫn còn tag hoặc second-hand đã được giặt sạch</li>
               <li>Quần áo còn đầy đủ các thông tin như size, chất liệu</li>
               <li>Quần áo không bị lỗi, ố, sờn màu, gião….</li>
               <li>Quần áo theo mùa, đã được mua trong vòng 3 năm trở lại</li>

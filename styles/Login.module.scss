@@ -138,3 +138,33 @@
     }
   }
 }
+
+
+@media (max-width: $mobile-width) {
+  .mainWrapper {
+    padding: 50px 10px;
+    flex-flow: column;
+
+    .leftSide {
+      width: 100%;
+
+      .bigTitle {
+        font-size: 36px;
+        line-height: 50px;
+      }
+
+      .formWrapper {
+        margin-top: 20px;
+      }
+    }
+
+    .rightSide {
+      width: 100%;
+    }
+  }
+  .splitRow {
+    height: 1px;
+    width: 100%;
+    margin: 50px 0;
+  }
+}

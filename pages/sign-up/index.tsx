@@ -166,7 +166,7 @@ const SignUpPage: NextPage = () => {
                   </div>
                 </div>
               )}
-              <SubmitButton loading={isLoading} className="mt-40">
+              <SubmitButton fullWidthMobile loading={isLoading} className="mt-40">
                 Đăng ký
               </SubmitButton>
               <div className={cls("mt-20", styles.lastRow)}>

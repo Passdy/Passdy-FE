@@ -32,7 +32,7 @@ const Profile: NextPage = () => {
             <Image src="/images/avatar.png" layout="fill" />
           </div>
           <div className={styles.nameTitle}>{session?.user.email}</div>
-          <div className={styles.sinceText}>{session?.user.created_at}</div>
+          <div className={styles.sinceText}>Passdi-er từ {session?.user.created_at}</div>
           <div className={styles.wrapperButton}>
             <button
               data-background-color="#000000"

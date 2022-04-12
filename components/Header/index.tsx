@@ -3,10 +3,12 @@ import { NextPage } from "next";
 import Link from "next/link";
 import cls from "classnames";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import ReactTooltip from "react-tooltip";
 import styled from "styled-components";
 import styles from "./Header.module.scss";
 import Countdown from "./CountDown";
+import MobileMenu from "./MobileMenu";
 
 const NavItem = styled.div<{ isShow?: boolean }>`
   size: 14px;
@@ -56,18 +58,6 @@ const NavItem = styled.div<{ isShow?: boolean }>`
     color: #000000;
     font-family: LatoMedium, sans-serif;
     font-weight: 500;
-
-    &:hover::before {
-      clip-path: ellipse(115% 115% at 50% 0%);
-    }
-
-    &::before {
-      position: absolute;
-      content: attr(data-content);
-      color: ${(props) => props.theme.color.primary};
-      clip-path: ellipse(0% 0% at 50% 0%);
-      transition: clip-path 500ms ease;
-    }
   }
 `;
 
@@ -93,6 +83,7 @@ function useOutsideAlerter(ref: MutableRefObject<any>, onClick: Function) {
 
 const Header: NextPage = () => {
   const [isShowDropDown, setIsShowDropDown] = useState<boolean>(false);
+  const [isShowMobileMenu, setIsShowMobileMenu] = useState<boolean>(false);
   const router = useRouter();
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef, () => setIsShowDropDown(false));
@@ -100,7 +91,16 @@ const Header: NextPage = () => {
   return (
     <div className={styles.headerWrapper}>
       <Countdown />
+      <MobileMenu isShow={isShowMobileMenu} onClose={() => setIsShowMobileMenu(false)} />
       <div className={styles.navBarWrapper}>
+        <div className={styles.navBarMobile}>
+          <Image
+            onClick={() => setIsShowMobileMenu(true)}
+            src="/icons/menu.png"
+            width={18}
+            height={12}
+          />
+        </div>
         <div className={styles.navBar}>
           <NavItem>
             <Link href="https://shopee.vn/passdyvn" passHref>
@@ -142,7 +142,7 @@ const Header: NextPage = () => {
         <div className={styles.mainLogo}>
           <div onClick={() => router.push("/")} className={styles.logoWrapper}>
             <img src="/images/main-logo.svg" alt="" />
-            <svg width="180" height="43" viewBox="0 0 180 43" xmlns="http://www.w3.org/2000/svg">
+            <svg height="43" viewBox="0 0 180 43" xmlns="http://www.w3.org/2000/svg">
               <path d="M22.5425 3.21493C24.7955 5.354 25.922 8.42971 25.922 12.442C25.922 17.1632 24.517 20.8718 21.7198 23.5551C18.9225 26.2511 15.0494 27.5927 10.1131 27.5927H5.08819V29.2508L5.35402 42.4776H0L0.3291 29.7065L0 0.0632803L12.961 0C17.0872 0.0126572 20.2895 1.07586 22.5425 3.21493ZM18.3403 19.9857C19.7706 18.2264 20.492 15.8595 20.492 12.9104C20.492 7.44244 17.5809 4.59457 11.7586 4.3794L5.34135 4.58192L5.13883 23.1754L12.0876 23.3019C14.8216 22.8589 16.8974 21.7451 18.3403 19.9857Z" />
               <path d="M56.5398 42.4778H51.5782L50.7808 38.9084L49.0594 34.0101L41.1866 33.9468L34.1745 34.0101L32.3898 38.6426L31.4659 42.4778H26.5675L39.2753 9.53101H44.9711L56.5398 42.4778ZM47.6798 29.9724L42.1865 14.3534H41.7941L35.7693 29.9724L41.5916 30.0357L47.6798 29.9724Z" />
               <path d="M145.419 13.3027C148.089 15.9987 149.418 19.8464 149.418 24.884C149.418 30.6684 147.963 35.0984 145.052 38.1868C142.141 41.2751 137.976 42.8193 132.546 42.8193C131.002 42.8193 129.167 42.7813 127.028 42.718C124.889 42.6547 122.876 42.5788 120.978 42.4902L121.18 32.5669L120.978 9.54348L133.875 9.27768C138.9 9.26502 142.748 10.6193 145.419 13.3027ZM141.52 35.5667C143.444 33.4276 144.394 30.2001 144.394 25.8713C144.394 21.6311 143.495 18.5048 141.685 16.4796C139.875 14.4545 137.141 13.4419 133.483 13.4419C131.319 13.4419 128.787 13.5305 125.876 13.7077L125.749 32.1619L125.813 38.3766C127.091 38.4652 128.433 38.5538 129.85 38.6424C131.255 38.731 132.432 38.769 133.356 38.769C136.875 38.769 139.596 37.7058 141.52 35.5667Z" />

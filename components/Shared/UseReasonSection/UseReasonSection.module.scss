@@ -96,3 +96,24 @@
   max-width: 1900px;
   margin: 0 auto;
 }
+
+@media (max-width: $mobile-width) {
+  .suitableShop {
+    padding: 50px 20px 80px 20px;
+
+    .cardWrapper {
+      display: grid;
+      row-gap: 50px;
+      justify-content: center;
+    }
+    .card {
+      .titleCard {
+        font-size: 18px;
+      }
+    }
+    .titleSection {
+      font-size: 32px;
+      line-height: 44px;
+    }
+  }
+}

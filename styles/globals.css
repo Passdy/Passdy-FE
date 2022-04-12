@@ -87,6 +87,9 @@ a {
 .mt-40 {
     margin-top: 40px;
 }
+.mb-40 {
+    margin-bottom: 40px;
+}
 
 .mt-60 {
     margin-top: 60px;
@@ -111,6 +114,7 @@ a {
 .component-wrapper {
     margin-top: 140px;
 }
+
 
 .d-flex {
     display: flex;
@@ -152,4 +156,29 @@ a {
 .flex-center {
     display: flex;
     justify-content: center;
+}
+
+.mobile-show {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .mobile-show {
+        display: block;
+    }
+    .mobile-hide {
+        display: none;
+    }
+    .component-wrapper {
+        margin-top: 143px;
+    }
+}
+
+.ReactModal__Overlay .ReactModal__Overlay--after-open {
+    z-index: 10;
+}
+
+.page-wrapper {
+    z-index: 0;
+    position: relative;
 }

@@ -8,7 +8,7 @@ interface UserInterface {
   created_at: any;
   email: string;
   expire_code: string;
-  full_name: string;
+  fullname: string;
   id: string;
   phone: number;
   role: string;

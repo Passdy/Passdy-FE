@@ -159,6 +159,14 @@
 }
 
 .addressWrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+
+  .addressTypeWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
   > span {
     color: #707070;
     font-size: 14px;
@@ -169,10 +177,6 @@
   .mr70 {
     margin-right: 70px;
   }
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .confirmButtonWrapper {
@@ -204,4 +208,35 @@
   display: grid;
   column-gap: 50px;
   grid-template-columns: auto auto;
+}
+
+@media (max-width: $mobile-width) {
+  .container {
+    .biggerFormWrapper {
+      padding: 10px 10px 150px 10px;
+    }
+  }
+  .cardWrapper {
+    grid-auto-flow: row;
+    row-gap: 40px;
+    justify-content: unset;
+
+    .card {
+      width: 100%;
+    }
+  }
+  .smallItemWrapper {
+    min-width: 100px;
+  }
+  .formCardWrapper {
+    padding: 40px 10px;
+  }
+  .formLine {
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+  }
+  .addressWrapper {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
 }

@@ -243,6 +243,7 @@ const AddSellItem: NextPage = () => {
                       <input
                         {...register("cloth_num", { required: true })}
                         className={styles.formInput}
+                        inputMode="numeric"
                         onKeyPress={(event) => {
                           if (!/[0-9]/.test(event.key)) {
                             event.preventDefault();
@@ -427,17 +428,19 @@ const AddSellItem: NextPage = () => {
                   </div>
                   <div className={cls("mt-40", styles.addressWrapper)}>
                     <span>Loại địa chỉ:</span>
-                    <SelectCircleItem
-                      onClick={() => setIsHomeAddress(true)}
-                      className={styles.mr70}
-                      isSelected={isHomeAddress}
-                      label="Nhà riêng"
-                    />
-                    <SelectCircleItem
-                      onClick={() => setIsHomeAddress(false)}
-                      isSelected={!isHomeAddress}
-                      label="Nơi làm việc"
-                    />
+                    <div className={styles.addressTypeWrapper}>
+                      <SelectCircleItem
+                        onClick={() => setIsHomeAddress(true)}
+                        className={styles.mr70}
+                        isSelected={isHomeAddress}
+                        label="Nhà riêng"
+                      />
+                      <SelectCircleItem
+                        onClick={() => setIsHomeAddress(false)}
+                        isSelected={!isHomeAddress}
+                        label="Nơi làm việc"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className={styles.confirmButtonWrapper}>

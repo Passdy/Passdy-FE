@@ -1,17 +1,29 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import axiosInstance from "../../services";
 
 const initialState: any = {};
 
-export const counterSlice = createSlice({
+const fetchCurrentUser = createAsyncThunk("users/fetchCurrentUser", async () => {
+  const response = await axiosInstance.get("/user/info", {});
+  return response.data;
+});
+
+export const userSlice = createSlice({
   name: "counter",
   initialState,
   reducers: {
-    getUser: (state) => {
-      state.user;
+    setUser: (state, action: PayloadAction<any>) => {
+      state.user = action.payload;
     },
+  },
+  extraReducers: (builder) => {
+    // Add reducers for additional action types here, and handle loading state as needed
+    builder.addCase(fetchCurrentUser.fulfilled, (state, action) => {
+      state.user = action.payload;
+    });
   },
 });
 
-export const { getUser } = counterSlice.actions;
+export const { setUser } = userSlice.actions;
 
-export default counterSlice.reducer;
+export default userSlice.reducer;

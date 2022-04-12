@@ -50,10 +50,22 @@ const SellStep: React.FC = () => {
                 </div>
               </div>
               <div className={cls(styles.cardHowTo, "mt-100")}>
+                <div className={cls(styles.contentHowTo, "mobile-show")}>
+                  <div className={styles.titleCardHowTo}>
+                    <span className={styles.bigNumber}>02</span>
+                    <span className={styles.bigTitle}>Gửi đồ tới Passdy</span>
+                  </div>
+                  <div className={styles.cardItemWrapper}>
+                    <div>
+                      Chỉ cần điền các thông tin và các món đồ của bạn sẽ đến với Passdy một cách
+                      nhanh chóng (hoàn toàn miễn phí)
+                    </div>
+                  </div>
+                </div>
                 <div className={cls(styles.imageHowTow)}>
                   <img src="/images/sell-step/happy-girls.png" alt="" />
                 </div>
-                <div className={cls(styles.contentHowTo, "pl-100")}>
+                <div className={cls(styles.contentHowTo, "pl-100", "mobile-hide")}>
                   <div className={styles.titleCardHowTo}>
                     <span className={styles.bigNumber}>02</span>
                     <span className={styles.bigTitle}>Gửi đồ tới Passdy</span>

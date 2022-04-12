@@ -12,6 +12,7 @@
     margin-bottom: 40px;
     color: #000000;
   }
+
   .addAccountText {
     color: $primary-color;
     text-align: right;
@@ -33,10 +34,12 @@
       color: #000000;
       display: flex;
       align-items: center;
+
       img {
         margin-right: 20px;
       }
     }
+
     .bulletWrapper {
       margin-top: 24px;
       font-weight: 400;
@@ -44,6 +47,7 @@
       line-height: 21px;
       color: #000000;
       padding-left: 40px;
+
       ul li {
         margin-top: 15px;
       }
@@ -244,6 +248,62 @@
           &:disabled {
             background-color: #E4E4E4;
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .mainWrapper {
+    .accountMoney {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .tableHistory {
+      max-width: 100%;
+      overflow: auto;
+    }
+
+    .formWrapper {
+      .formControl {
+        flex-flow: column;
+        .leftForm {
+          width: 100%;
+        }
+
+        .formItem {
+          flex-flow: column;
+          justify-content: flex-start;
+          .formTitle {
+            text-align: left;
+            margin-right: auto;
+          }
+          input,textarea {
+            width: 100%;
+          }
+          .vndSymbol {
+            width: auto;
+            right: 15px;
+            top: 30px;
+          }
+        }
+
+        .maxMoneyLine {
+          flex-flow: row;
+          margin-bottom: 20px;
+        }
+        .moneyNumberRow {
+          align-items: flex-start;
+          input {
+            width: 80%;
+          }
+        }
+        .rightForm {
+          width: 100%;
+          margin-left: 0;
         }
       }
     }

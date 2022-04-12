@@ -162,7 +162,7 @@ const About: NextPage = () => {
                 })}
               >
                 <div className={styles.imageWrapper}>
-                  <Image src={`/images/about/${fixedContent.url}.png`} width={280} height={280} />
+                  <img src={`/images/about/${fixedContent.url}.png`} className={styles.iconChange} alt="" />
                 </div>
                 <div className={styles.text}>{fixedContent.content}</div>
               </div>

@@ -165,15 +165,18 @@
     .cardImageWrapper {
       position: relative;
       display: flex;
+      width: 240px;
+      height: 240px;
 
       .heartIcon {
         position: absolute;
         top: 16px;
         z-index: 1;
-        right: 130px;
+        right: 30px;
         cursor: pointer;
       }
     }
+
     .nameTitle {
       color: #000000;
       font-weight: 500;
@@ -181,6 +184,7 @@
       line-height: 24px;
       margin-top: 25px;
     }
+
     .priceTitle {
       margin-top: 10px;
       color: $primary-color;
@@ -198,6 +202,125 @@
     span {
       color: $primary-color;
       font-weight: 700;
+    }
+  }
+}
+
+.strokeLineMb {
+  background-color: $stroke1;
+  width: 80%;
+  height: 1px;
+  margin: 0 auto;
+  display: none;
+}
+
+@media (max-width: $mobile-width) {
+  .mainWrapper {
+    padding: 10px 10px 80px 10px;
+
+    .account
+    .strokeLineMb {
+      display: block;
+    }
+
+    .mediumTitle {
+      font-size: 16px;
+    }
+
+    .withdrawButtonWrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+
+      button {
+        padding: 12px 24px;
+      }
+    }
+
+    .bigValueTitle {
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    .wrapperMobile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .accountWrapper {
+      margin-top: 50px;
+      .dataTable {
+        .totalMoneyRow {
+          flex-flow: column;
+          border-bottom: 0;
+        }
+
+        .lastRowTableWrapper {
+          flex-wrap: wrap;
+
+          .firstRow {
+            width: 50%;
+            border-right: 0;
+            padding: 30px 30px;
+          }
+
+          .lastRow {
+            width: 100%;
+            padding: 30px;
+          }
+        }
+      }
+    }
+
+    .contentWrapper {
+      min-width: 0;
+    }
+
+    .filterWrapper {
+      .leftWrapper {
+
+        flex-wrap: wrap;
+        .filterItemWrapper {
+          margin-left: 0;
+          width: 50%;
+          &:last-child {
+            width: 100%;
+            margin-top: 25px;
+          }
+        }
+      }
+      .rightWrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        margin-left: 0;
+        width: 100%;
+        button {
+          padding: 10px 16px;
+        }
+      }
+
+      flex-wrap: wrap;
+    }
+
+    .listItemWrapper {
+      grid-template-columns: 160px 160px;
+      justify-content: center;
+    }
+
+    .bigTitle {
+      font-size: 24px;
+    }
+    .cardItem {
+      .cardImageWrapper {
+        width: 160px;
+        height: 160px;
+        .heartIcon {
+          right: 13px;
+          top: 10px;
+        }
+      }
     }
   }
 }

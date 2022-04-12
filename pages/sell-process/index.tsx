@@ -4,17 +4,27 @@ import cls from "classnames";
 import Select from "react-select";
 import Image from "next/image";
 import Link from "next/link";
+import { isMobile } from "react-device-detect";
 import ReactTooltip from "react-tooltip";
 import styles from "../../styles/SellProcess.module.scss";
 import HeaderSellPage from "../../components/HeaderSellPage";
 import LayoutWrapper from "../../components/Shared/LayoutWrapper";
 import Breadcrumb from "../../components/Shared/Breadcrumb";
+import UseReasonSection from "../../components/Shared/UseReasonSection/UseReasonSection";
 
 const SellProcess: NextPage = () => (
   <LayoutWrapper>
     <HeaderSellPage
-      bigTitle="Cùng xem thời gian bán và mức giá dự kiến cho những món đồ của bạn nhé!"
-      smallTitle="Những yếu tố ảnh hưởng như loại thương hiệu, giá niêm yết"
+      bigTitle={
+        isMobile
+          ? "Túi đồ của bạn đang đến với thời trang bền vững"
+          : "Cùng xem thời gian bán và mức giá dự kiến cho những món đồ của bạn nhé!"
+      }
+      smallTitle={
+        isMobile
+          ? "Cùng xem lại các túi đồ bạn đã gửi đến Passdy"
+          : "Những yếu tố ảnh hưởng như loại thương hiệu, giá niêm yết"
+      }
     />
     <div className={styles.sellProcessWrapper}>
       <Breadcrumb>
@@ -48,7 +58,7 @@ const SellProcess: NextPage = () => (
               <td>90</td>
               <td className={styles.p50}>
                 <div className={styles.boldTitle}>Cao cấp & Thiết kế</div>
-                <div className={cls(styles.smallTitle, "mt-20")}>Levis, H&M, Zara,..</div>
+                <div className={cls(styles.smallTitle, "mt-20")}>Levis, Lacoste, Marcjacobs,..</div>
               </td>
             </tr>
           </table>
@@ -90,9 +100,8 @@ const SellProcess: NextPage = () => (
       <div className={styles.sellPricePrediction}>
         <div className={styles.bigTitle}>Giá bán dự kiến</div>
         <div className={cls(styles.smallText, "mt-20")}>
-          Việc định giá dựa trên nhiều yếu tố, bao gồm giá niêm yết,
-          <br />
-          thương hiệu, mùa và chất lượng của từng món đồ.
+          Việc định giá dựa trên nhiều yếu tố, bao gồm giá niêm yết, thương hiệu, mùa và chất lượng
+          của từng món đồ.
         </div>
         <div className={styles.selectionCard}>
           <div className={styles.column}>
@@ -103,7 +112,7 @@ const SellProcess: NextPage = () => (
             <div className={styles.mediumTitle}>Phân loại</div>
             <Select placeholder="Clothes" options={[]} />
           </div>
-          <div className={styles.column}>
+          <div className={cls(styles.column, styles.predicPriceColumn)}>
             <div className={styles.mediumTitle}>Giá bán dự kiến</div>
             <div className={styles.primaryText}>~100,000 VND</div>
           </div>
@@ -180,7 +189,7 @@ const SellProcess: NextPage = () => (
                 <div style={{ background: "#F0B84F" }} className={styles.borderImage}>
                   <Image width={24} height={24} src="/icons/sell-process/support.svg" />
                 </div>
-                <span className={styles.labelText}>Đồ được duyệt</span>
+                <span className={styles.labelText}>Điều chỉnh giá</span>
                 <div className={styles.grayStroke} />
               </div>
               12 tiếng
@@ -199,7 +208,7 @@ const SellProcess: NextPage = () => (
                 <div style={{ background: "#E32639" }} className={styles.borderImage}>
                   <Image width={24} height={24} src="/icons/sell-process/label.svg" />
                 </div>
-                <span className={styles.labelText}>Đồ được duyệt</span>
+                <span className={styles.labelText}>Đăng bán</span>
                 <div className={styles.grayStroke} />
               </div>
               Từ 60 - 90 ngày đăng bán
@@ -209,7 +218,7 @@ const SellProcess: NextPage = () => (
                 <div style={{ background: "#30D8A4" }} className={styles.borderImage}>
                   <Image width={24} height={24} src="/icons/sell-process/box.svg" />
                 </div>
-                <span className={styles.labelText}>Đồ được duyệt</span>
+                <span className={styles.labelText}>Bán</span>
                 <div className={styles.grayStroke} />
               </div>
               Up to 14- day delivery window
@@ -219,7 +228,7 @@ const SellProcess: NextPage = () => (
                 <div style={{ background: "#A35DB5" }} className={styles.borderImage}>
                   <Image width={24} height={24} src="/icons/sell-process/truck.svg" />
                 </div>
-                <span className={styles.labelText}>Đồ được duyệt</span>
+                <span className={styles.labelText}>Vận chuyển</span>
                 <div className={styles.grayStroke} />
               </div>
               14 ngày
@@ -241,41 +250,7 @@ const SellProcess: NextPage = () => (
         </div>
       </div>
     </div>
-    <div className={styles.suitableShop}>
-      <div className={styles.titleSection}>Chọn Passdy vì?</div>
-      <div className={styles.cardWrapper}>
-        <div className={styles.card}>
-          <div className={styles.iconWrapper}>
-            <img src="/icons/recycle.png" alt="" />
-          </div>
-          <div className={styles.titleCard}>Dịch vụ tiện lợi</div>
-          <div className={styles.descriptionText}>
-            Qua các khâu kiểm duyệt, những món đồ đạt chất lượng sẽ được chụp ảnh, đăng bán và vận
-            chuyển bởi Passdy thay bạn
-          </div>
-        </div>
-        <div className={styles.card}>
-          <div className={styles.iconWrapper}>
-            <img src="/icons/nature.png" alt="" />
-          </div>
-          <div className={styles.titleCard}>Thời trang bền vững</div>
-          <div className={styles.descriptionText}>
-            Sứ mệnh của Passdy là làm giảm lượng chất thải may mặc và kéo dài tuổi thọ thời trang
-            qua tái sử dụng và tái chế
-          </div>
-        </div>
-        <div className={styles.card}>
-          <div className={styles.iconWrapper}>
-            <img src="/icons/save.png" alt="" />
-          </div>
-          <div className={styles.titleCard}>Tạo ra điểm cân bằng</div>
-          <div className={styles.descriptionText}>
-            Người dọn đồ tiết kiệm thời gian, người mua đồ tiết kiệm chi phí. Đẹp - tiết kiệm - bảo
-            vệ môi trường
-          </div>
-        </div>
-      </div>
-    </div>
+    <UseReasonSection />
     <ReactTooltip />
   </LayoutWrapper>
 );

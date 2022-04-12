@@ -39,7 +39,7 @@ const WithdrawPage = () => {
     <div className={styles.mainWrapper}>
       <div className={styles.accountMoney}>
         <span className={parentStyles.bigTitle}>Tài khoản: </span>
-        <span className={parentStyles.bigValueTitle}>15.000.000 VNĐ</span>
+        <span className={parentStyles.bigValueTitle}>0 VNĐ</span>
       </div>
       <div className={styles.breakLine} />
       <div className={styles.formWrapper}>
@@ -56,11 +56,11 @@ const WithdrawPage = () => {
               <img className={styles.angleDown} src="/icons/angle-down.svg" alt="" />
             </div>
             <div className={styles.addAccountText}>+ Thêm tài khoản</div>
-            <div className={cls(styles.formItem, "mt-20")}>
-              <div className={styles.formTitle}>
-                Số tiền tối đa <br /> được chuyển
+            <div className={cls(styles.formItem, "mt-20", styles.maxMoneyLine)}>
+              <div className={cls(styles.formTitle)}>
+                Số tiền tối đa được chuyển
               </div>
-              <div className={styles.moneyForm}>15.000.000 VND</div>
+              <div className={styles.moneyForm}>0 VND</div>
             </div>
           </div>
           <div className={styles.rightForm}>
@@ -72,9 +72,9 @@ const WithdrawPage = () => {
         </div>
         <div className={styles.formControl}>
           <div className={styles.leftForm}>
-            <div className={cls(styles.formItem, "mt-20")}>
-              <div className={styles.formTitle}>Đến tài khoản</div>
-              <input type="text" />
+            <div className={cls(styles.formItem, "mt-20", styles.moneyNumberRow)}>
+              <div className={styles.formTitle}>Số tiền chuyển</div>
+              <input type="number" inputMode="numeric" />
               <span className={cls(styles.formTitle, styles.vndSymbol)}>VND</span>
             </div>
             <div className={cls(styles.smallText, "mt-40")}>

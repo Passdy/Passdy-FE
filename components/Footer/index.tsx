@@ -18,7 +18,7 @@ const Footer = () => {
           <Image width="225px" height="225px" src="/images/footer-baloon.png" />
         </div>
         <div className={styles.socialColumn}>
-          <div className={styles.whiteLogo}>PassDy</div>
+          <div className={styles.whiteLogo}>Passdy</div>
           <div className={styles.socialLogo}>
             <a href="https://www.instagram.com/passdyvn/">
               <Image width="24px" height="24px" src="/icons/instagram-logo.png" />
@@ -74,7 +74,7 @@ const Footer = () => {
               <div className={styles.item}>Chính sách trả hàng</div>
             </div>
           </div>
-          <div className={styles.columnInfo}>
+          <div className={cls(styles.columnInfo, styles.mt50)}>
             <div className={styles.titleColumn}>LIÊN LẠC</div>
             <div className={styles.itemWrapper}>
               <div className={cls(styles.item, "color-primary")}>Điện thoại: 094 8256677</div>
@@ -87,7 +87,7 @@ const Footer = () => {
         </div>
         <div className={styles.grayLine} />
         <div className={styles.lastLine}>
-          Về bản quyền thuộc công ty TNHH PassDy. Bảo lưu mọi quyền
+          Về bản quyền thuộc công ty TNHH Passdy. Bảo lưu mọi quyền
         </div>
       </div>
     </div>

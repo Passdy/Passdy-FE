@@ -87,11 +87,11 @@ const SaleAccountPage: NextPage = () => {
                 <div className={styles.bigTitle}>Tổng quan tài khoản</div>
                 <div className={styles.dataTable}>
                   <div className={cls(styles.totalMoneyRow, "d-flex space-between")}>
-                    <div className={styles.left}>
+                    <div className={styles.wrapperMobile}>
                       <div className={styles.mediumTitle}>Tổng giá trị</div>
                       <div className={cls(styles.bigValueTitle, "mt-20")}>10.000.000 VNĐ</div>
                     </div>
-                    <div>
+                    <div className={styles.withdrawButtonWrapper}>
                       <button
                         onClick={() => setIsWithDraw(true)}
                         type="button"
@@ -101,7 +101,8 @@ const SaleAccountPage: NextPage = () => {
                       </button>
                     </div>
                   </div>
-                  <div className="d-flex">
+                  <div className={styles.strokeLineMb} />
+                  <div className={cls("d-flex", styles.lastRowTableWrapper)}>
                     <div className={styles.firstRow}>
                       <div className={styles.mediumTitle}>Số đồ đã đăng bán</div>
                       <div className={cls(styles.bigValueTitle, "mt-30")}>50</div>
@@ -110,6 +111,7 @@ const SaleAccountPage: NextPage = () => {
                       <div className={styles.mediumTitle}>Số đồ đã bán</div>
                       <div className={cls(styles.bigValueTitle, "mt-30")}>10</div>
                     </div>
+                    <div className={styles.strokeLineMb} />
                     <div className={styles.lastRow}>
                       <div className={styles.imageWrapper}>
                         <Image src="/icons/green-earth.svg" height={132} width={132} />
@@ -168,6 +170,9 @@ const SaleAccountPage: NextPage = () => {
                         value={selectedBrand}
                         onChange={(value: any) => setSelectedBrand(value)}
                         options={[]}
+                        components={{
+                          IndicatorSeparator: () => null,
+                        }}
                       />
                     </div>
                     <div className={cls(styles.filterItemWrapper, "ml-40")}>
@@ -177,6 +182,9 @@ const SaleAccountPage: NextPage = () => {
                         styles={customStyles}
                         value={categorySelected}
                         options={[]}
+                        components={{
+                          IndicatorSeparator: () => null,
+                        }}
                       />
                     </div>
                     <div className={cls(styles.filterItemWrapper, "ml-40")}>
@@ -186,6 +194,9 @@ const SaleAccountPage: NextPage = () => {
                         styles={customStyles}
                         value={selectedTime}
                         options={[]}
+                        components={{
+                          IndicatorSeparator: () => null,
+                        }}
                       />
                     </div>
                   </div>
@@ -205,7 +216,7 @@ const SaleAccountPage: NextPage = () => {
                   <div className={styles.cardItem}>
                     <div className={styles.cardImageWrapper}>
                       <img src="/icons/heart.svg" className={styles.heartIcon} alt="" />
-                      <Image src="/images/example-Tshirt.png" width={240} height={240} />
+                      <Image src="/images/example-Tshirt.png" layout="fill" />
                     </div>
                     <div className={styles.nameTitle}>Tên sản phẩm</div>
                     <div className={styles.priceTitle}>250.000 VNĐ</div>

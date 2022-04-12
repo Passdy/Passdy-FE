@@ -258,6 +258,7 @@
       margin-top: 15px;
     }
   }
+
   .lastItem {
     right: -27%;
   }
@@ -327,4 +328,73 @@
   font-size: 40px;
   line-height: 56px;
   color: #000000;
+}
+
+@media (max-width: $mobile-width) {
+  .sellProcessWrapper {
+    padding: 30px 10px 150px 10px;
+  }
+  .sellDetail {
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+
+    .cardSellDetail {
+      .bigTitle {
+        font-size: 24px;
+      }
+    }
+  }
+  .selectionCard {
+    padding: 30px 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .predicPriceColumn {
+    .mediumTitle {
+      margin-bottom: 0;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    width: 100% !important;
+  }
+  .exampleCardWrapper {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 50px;
+    padding: 0 10px;
+  }
+  .wrapperSellRoute {
+    flex-flow: column;
+    align-items: flex-end;
+
+    .itemSellRoute {
+      padding: 25px 10px;
+    }
+
+    .iconWrapper {
+      flex-flow: row;
+      top: -25px;
+      align-items: center;
+      justify-content: center;
+      max-height: 50px;
+      right: 0px;
+
+      .grayStroke {
+        width: 170px;
+        height: 1px;
+        margin-top: 0;
+      }
+
+      .labelText {
+        order: -1;
+        margin-top: 0;
+        margin-right: 15px;
+      }
+    }
+    .lastItem {
+      top: 85px;
+    }
+  }
 }

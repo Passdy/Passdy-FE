@@ -34,6 +34,7 @@
 
   .passdyStory {
     margin-top: 150px;
+    overflow: hidden;
 
     .storyBannerWrapper {
       width: 100%;
@@ -245,7 +246,7 @@
     }
 
     .hiddenClass {
-      opacity: 0 ;
+      opacity: 0;
     }
 
 
@@ -341,6 +342,120 @@
         font-size: 14px;
         line-height: 24px;
         color: #FFFFFF;
+      }
+    }
+  }
+}
+.iconChange {
+  width: 280px;
+}
+
+@media (max-width: $mobile-width) {
+  .iconChange {
+    width: 100px;
+  }
+  .wrapper {
+    .passdyStory {
+      .storyBannerWrapper {
+        flex-flow: column;
+        justify-content: center;
+        height: 380px;
+
+        .storyTitle {
+          margin: 10px 40px;
+          text-align: center;
+        }
+
+        .bgTeamWrapper {
+          margin: 10px 40px
+        }
+      }
+
+      .storyTitle {
+        font-size: 32px !important;
+        line-height: 121.3% !important;
+      }
+
+      .cardStoryWrapper {
+        grid-template-columns: 1fr;
+        padding: 10px;
+
+        .cardStory {
+          grid-template-columns: 1fr;
+          padding: 50px 10px;
+
+          .titleCardStory {
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 40px;
+            text-align: center;
+          }
+
+          .contentStory {
+            font-size: 14px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+
+    .passdyPerson {
+      width: 100%;
+      padding: 10px;
+
+      .selectionTitle {
+        div {
+          font-size: 14px;
+          white-space: nowrap;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .textImageWrapper {
+        flex-flow: column;
+        padding: 15px 10px;
+
+        .imageWrapper {
+          width: 100%;
+          text-align: center;
+        }
+
+        .text {
+          width: 100%;
+          margin-left: 0;
+          font-size: 14px;
+          line-height: 24px;
+          margin-top: 20px;
+        }
+      }
+
+      .contentWrapper {
+        grid-template-columns: 100px 250px;
+        column-gap: 10px;
+      }
+
+      .wrapperTitle {
+        .primaryLine {
+          width: 50%;
+        }
+
+        span {
+          font-size: 24px;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .passdyTeam {
+      .cardTeamWrapper {
+        padding-left: 10px;
+        width: 100%;
+        overflow: auto;
+        justify-content: flex-start;
       }
     }
   }

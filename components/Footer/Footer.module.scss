@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   z-index: 0;
-
+  width: 100%;
   .leftBalloonWrapper {
     position: absolute;
     top: 0;
@@ -16,6 +16,9 @@
 
     img {
       width: 550px;
+      @media(max-width: $mobile-width) {
+        display: none;
+      }
     }
   }
 
@@ -31,6 +34,9 @@
     position: relative;
     z-index: 1;
     width: 600px;
+    @media(max-width: $mobile-width) {
+      width: auto;
+    }
 
     .whiteLogo {
       color: #fff;
@@ -123,6 +129,26 @@
         }
       }
     }
+
+    @media (max-width: $mobile-width) {
+      .bigTitle {
+        margin-top: 80px;
+      }
+      .formWrapper {
+        input {
+          width: 70%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 10px 10px 200px 10px;
+    height: auto;
+    flex-flow: column;
+    .rightBaloonWrapper {
+      top: 350px;
+    }
   }
 }
 
@@ -132,7 +158,7 @@
 
   .columnInfoWrapper {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     column-gap: 50px;
   }
 
@@ -178,6 +204,29 @@
     font-size: 12px;
     line-height: 15px;
     font-weight: 400;
+  }
+  .mt50 {
+    margin-top: 0;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 40px 10px 50px 10px;
+    .mt50 {
+      margin-top: 50px;
+    }
+    .columnInfoWrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .columnInfo {
+      .itemWrapper {
+        .item {
+          line-height: 24px;
+        }
+      }
+    }
   }
 }
 
