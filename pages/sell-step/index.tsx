@@ -110,7 +110,7 @@ const SellStep: React.FC = () => {
               <div className={styles.titleSection}>Chọn Passdy vì?</div>
               <div className={styles.cardWrapper} data-aos="fade-in" data-aos-once="true">
                 <div
-                  data-aos="zoom-out-left"
+                  data-aos="zoom-out"
                   data-aos-duration="2000"
                   data-aos-once="true"
                   className={styles.card}
@@ -140,7 +140,7 @@ const SellStep: React.FC = () => {
                   </div>
                 </div>
                 <div
-                  data-aos="zoom-out-right"
+                  data-aos="zoom-out"
                   data-aos-duration="2000"
                   data-aos-once="true"
                   className={styles.card}
