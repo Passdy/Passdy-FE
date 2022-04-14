@@ -43,7 +43,7 @@ const SignUpPage: NextPage = () => {
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setIsLoading(true);
     const formData = {
-      username: data.fullname,
+      fullname: data.fullname,
       password: data.password,
       rePassword: data.password,
       email: data.email,
