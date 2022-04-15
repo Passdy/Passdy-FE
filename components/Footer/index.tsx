@@ -77,8 +77,8 @@ const Footer = () => {
           <div className={cls(styles.columnInfo, styles.mt50)}>
             <div className={styles.titleColumn}>LIÊN LẠC</div>
             <div className={styles.itemWrapper}>
-              <div className={cls(styles.item, "color-primary")}>Điện thoại: 094 8256677</div>
-              <div className={styles.item}>Gmail: passdyvn@gmail.com</div>
+              <div className={cls(styles.item, "color-primary")}>Điện thoại: 037 8200337</div>
+              <div className={styles.item}>Gmail: passdyvietnam@gmail.com</div>
               <div className={styles.item}>
                 Số 7 ngách 3/2 phố Nhân Hòa, phường Nhân Chính, quận Thanh Xuân, Hà Nội
               </div>

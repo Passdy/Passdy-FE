@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import cls from "classnames";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 import Breadcrumb from "../../components/Shared/Breadcrumb";
 import styles from "./SellStep.module.scss";
 import commonStyles from "../../styles/common.module.scss";
@@ -9,9 +10,14 @@ import LayoutWrapper from "../../components/Shared/LayoutWrapper";
 
 const SellStep: React.FC = () => {
   const router = useRouter();
+  const user = useSelector((state: any) => state.user.value);
 
-  const onRedirect = () => {
-    router.push("/");
+  const onPassNow = () => {
+    if (!user) {
+      router.push("/login");
+    } else {
+      router.push("/sell-and-donate");
+    }
   };
   return (
     <LayoutWrapper>
@@ -100,7 +106,7 @@ const SellStep: React.FC = () => {
               </div>
             </div>
             <div className={cls("flex-center", "mt-60")}>
-              <button onClick={() => onRedirect} type="button" className={commonStyles.button}>
+              <button onClick={onPassNow} type="button" className={commonStyles.button}>
                 PASS LUÔN
               </button>
             </div>

@@ -4,9 +4,8 @@ import Select from "react-select";
 import ReactPaginate from "react-paginate";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { GetServerSideProps, NextPage } from "next";
+import { NextPage } from "next";
 import Link from "next/link";
-import { getSession } from "next-auth/react";
 import HeaderSellPage from "../../components/HeaderSellPage";
 import styles from "../../styles/SellDonate.module.scss";
 import commonStyles from "../../styles/common.module.scss";
@@ -30,26 +29,6 @@ const customStyles = {
 const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 const ITEM_PER_PAGE = 2;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const session = await getSession(context);
-  if (!session) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: "/sell-step",
-      },
-      props: {},
-    };
-  }
-  return {
-    redirect: {
-      permanent: false,
-      destination: "/add-sell-order",
-    },
-    props: {},
-  };
-};
-
 const SellAndDonatePage: NextPage = () => {
   const [selectedFilter] = useState<{ value: string; label: string }>({
     value: "0",
@@ -58,6 +37,8 @@ const SellAndDonatePage: NextPage = () => {
   const [pageCount, setPageCount] = useState<number>(0);
   const [itemOffset, setItemOffset] = useState<number>(0);
   const router = useRouter();
+
+  // TODO check not login return to sell step
 
   useEffect(() => {
     // Fetch items from another resources.

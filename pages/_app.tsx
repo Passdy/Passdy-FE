@@ -2,10 +2,10 @@ import "../styles/globals.css";
 import React, { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import type { AppProps } from "next/app";
-import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "styled-components";
 import Head from "next/head";
 import AOS from "aos";
+import { persistStore } from "redux-persist";
 import { Provider } from "react-redux";
 import theme from "../theme";
 import "aos/dist/aos.css";
@@ -24,22 +24,22 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
     });
   }, []);
 
+  persistStore(store);
+
   return (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <SessionProvider session={session}>
-          <Head>
-            <title>Passdy</title>
-          </Head>
-          <div className="page-wrapper">
-            <Header />
-            <div className="component-wrapper">
-              <Component {...pageProps} />
-            </div>
+        <Head>
+          <title>Passdy</title>
+        </Head>
+        <div className="page-wrapper">
+          <Header />
+          <div className="component-wrapper">
+            <Component {...pageProps} />
           </div>
-          <ToastContainer />
-          <Footer />
-        </SessionProvider>
+        </div>
+        <ToastContainer />
+        <Footer />
       </Provider>
     </ThemeProvider>
   );

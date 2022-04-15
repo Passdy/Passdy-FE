@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { GetServerSideProps, NextPage } from "next";
+import { NextPage } from "next";
 import cls from "classnames";
 import Image from "next/image";
 import ReactPaginate from "react-paginate";
 import Link from "next/link";
 import Select from "react-select";
-import { getSession, useSession } from "next-auth/react";
 import styles from "../../styles/SaleAccount.module.scss";
 import commonStyles from "../../styles/common.module.scss";
 import WithdrawPage from "../../components/SaleAccount/WithdrawPage";
@@ -21,20 +20,6 @@ const customStyles = {
 const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 const ITEM_PER_PAGE = 8;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const session = await getSession(context);
-  if (!session) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: "/sell-step",
-      },
-      props: {},
-    };
-  }
-  return { props: {} };
-};
-
 const SaleAccountPage: NextPage = () => {
   const [isWithdrawPage, setIsWithDraw] = useState<boolean>(false);
   const [pageCount, setPageCount] = useState<number>(0);
@@ -44,9 +29,6 @@ const SaleAccountPage: NextPage = () => {
     label: "All",
   });
 
-  const { data: session } = useSession();
-
-  console.log(session);
   const [categorySelected, setCategorySelected] = useState({
     value: "",
     label: "All",

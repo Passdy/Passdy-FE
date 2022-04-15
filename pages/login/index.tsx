@@ -4,13 +4,15 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { getSession, signIn } from "next-auth/react";
 import Cookies from "js-cookie";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import Image from "next/image";
 import styles from "../../styles/Login.module.scss";
 import LayoutWrapper from "../../components/Shared/LayoutWrapper";
 import SubmitButton from "../../components/Shared/SubmitButton";
+import AuthServices from "../../services/AuthServices";
+import { setUser } from "../../store/user";
 
 type Inputs = {
   password: string;
@@ -27,18 +29,18 @@ const LoginPage: NextPage = () => {
     formState: { errors },
   } = useForm<Inputs>();
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setIsLoading(true);
     try {
-      const res: any = await signIn("credentials", {
+      const userInfo: any = await AuthServices.login({
         username: data.email,
         password: data.password,
-        redirect: false,
       });
-      if (res && res.status === 200) {
-        const session: any = await getSession();
-        Cookies.set("access_token", session.accessToken);
+      if (userInfo && userInfo.access_token) {
+        dispatch(setUser(userInfo));
+        Cookies.set("access_token", userInfo.access_token);
         await router.push("/profile");
       } else {
         setIsLoading(false);

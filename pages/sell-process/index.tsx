@@ -160,9 +160,7 @@ const SellProcess: NextPage = () => (
         <div className={cls(styles.sellRoadMap)}>
           <div className={cls(styles.bigTitle)}>Lộ trình đăng bán</div>
           <div className={cls(styles.smallText, "mt-20")}>
-            You can adjust listing prices at any time except for when items
-            <br />
-            are available for bids or reserved in someone’s cart.
+            Tính năng điều chỉnh giá sẽ được chúng mình update trong thời gian tới nhé bạn!
           </div>
           <div className={cls(styles.wrapperSellRoute)}>
             <div className={styles.itemSellRoute}>
@@ -221,7 +219,7 @@ const SellProcess: NextPage = () => (
                 <span className={styles.labelText}>Bán</span>
                 <div className={styles.grayStroke} />
               </div>
-              Up to 14- day delivery window
+              Thời gian vận chuyển từ 1-14 ngày
             </div>
             <div className={styles.itemSellRoute}>
               <div className={styles.iconWrapper}>

@@ -9,8 +9,7 @@ import { useCountUp } from "react-countup";
 import Link from "next/link";
 import Select from "react-select";
 import { toast } from "react-toastify";
-import { GetServerSideProps, NextPage } from "next";
-import { getSession } from "next-auth/react";
+import { NextPage } from "next";
 import { useRouter } from "next/router";
 import styles from "./AddSellItem.module.scss";
 import SelectCircleItem from "../../components/SelectCircleItem";
@@ -34,20 +33,6 @@ type Inputs = {
   ward_id: number;
   address: string;
   address_type: "apartment" | "company";
-};
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const session = await getSession(context);
-  if (!session) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: "/login",
-      },
-      props: {},
-    };
-  }
-  return { props: {} };
 };
 
 const AddSellItem: NextPage = () => {
@@ -195,7 +180,6 @@ const AddSellItem: NextPage = () => {
                       </button>
                       {wrapperQuestion(
                         "Quần áo của bạn sẽ được dùng với mục đích từ thiện, trực tiếp gửi đến những tổ chức từ thiện.",
-                        "",
                         "tip2",
                       )}
                     </div>

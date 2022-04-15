@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import cls from "classnames";
 import styles from "../styles/Home.module.scss";
@@ -9,6 +10,7 @@ import ScrollItem from "../components/Header/ScrollItem";
 
 const Home: NextPage = () => {
   const [selectedSection, setSelectedSection] = useState<string>("");
+  const user = useSelector((state: any) => state.user.value);
 
   const buyRef = useRef<any>(null);
   const sellRef = useRef<any>(null);
@@ -30,7 +32,11 @@ const Home: NextPage = () => {
   };
 
   const onPassNow = () => {
-    router.push("/sell-and-donate");
+    if (!user) {
+      router.push("/login");
+    } else {
+      router.push("/sell-and-donate");
+    }
   };
 
   const isBottom = (el: any, offsetHeight: number) =>
@@ -116,18 +122,20 @@ const Home: NextPage = () => {
                 Mà còn tiết kiệm cho môi trường của chúng ta
               </div>
             </div>
-            <button
-              data-aos="fade"
-              data-aos-easing="linear"
-              data-aos-duration="500"
-              data-aos-once="true"
-              data-aos-delay="1300"
-              type="button"
-              onClick={onBuyNowButton}
-              className={cls(styles.exploreButton, "fade-up", "mt-40")}
-            >
-              MUA NGAY
-            </button>
+            <a href="https://shopee.vn/passdyvn">
+              <button
+                data-aos="fade"
+                data-aos-easing="linear"
+                data-aos-duration="500"
+                data-aos-once="true"
+                data-aos-delay="1300"
+                type="button"
+                onClick={onBuyNowButton}
+                className={cls(styles.exploreButton, "fade-up", "mt-40")}
+              >
+                MUA NGAY
+              </button>
+            </a>
           </div>
           <div
             className={cls(styles.banner, "fade-up")}
@@ -182,7 +190,8 @@ const Home: NextPage = () => {
                 className="fade-up"
               >
                 {/* eslint-disable-next-line max-len */}
-                Không chỉ tiết kiệm thời gian, chi phí dọn đồ và mua sắm. Mà còn tiết kiệm cho môi trường của chúng ta
+                Không chỉ tiết kiệm thời gian, chi phí dọn đồ và mua sắm. Mà còn tiết kiệm cho môi
+                trường của chúng ta
               </div>
             </div>
           </div>
@@ -397,8 +406,7 @@ const Home: NextPage = () => {
         </div>
         <div className={styles.roadMapSection}>
           <div id="roadmap-section" ref={roadMapRef} className={cls(styles.titleSection, "mt-60")}>
-            Lộ Trình phát
-            triển của <span className="color-primary">Passdy</span>
+            Lộ Trình phát triển của <span className="color-primary">Passdy</span>
           </div>
           <div className={styles.checkLine}>
             <div
