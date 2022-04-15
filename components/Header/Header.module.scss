@@ -85,13 +85,19 @@
       fill: $primary-color;
     }
   }
+  .supportLabel {
+    @media (max-width: $mobile-width) {
+      font-size: 12px;
+    }
+  }
 
   .person {
     margin-right: 20px;
     cursor: pointer;
     margin-left: 10px;
     @media (max-width: $mobile-width) {
-      margin-right: 10px;
+      margin-right: 5px;
+      margin-left: 5px;
     }
   }
 

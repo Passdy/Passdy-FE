@@ -167,6 +167,7 @@ const Header: NextPage = () => {
         </div>
         <div className={styles.rightHeader}>
           <a
+            className={styles.supportLabel}
             rel="noreferrer"
             target="_blank"
             href="https://doc.clickup.com/25689456/d/h/rfzbg-6445/1d711ab5ef84ee4"
