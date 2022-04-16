@@ -32,7 +32,7 @@ const NavItem = styled.div<{ isShow?: boolean }>`
     background: #ffffff;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     padding: 10px 10px 10px 0;
-    top: 67px;
+    top: 59px;
 
     .menu-item {
       padding: 10px 20px;
@@ -57,7 +57,6 @@ const NavItem = styled.div<{ isShow?: boolean }>`
     transition: clip-path 500ms ease;
     cursor: pointer;
     color: #000000;
-    font-family: LatoMedium, sans-serif;
     font-weight: 500;
   }
 `;
@@ -98,6 +97,14 @@ const Header: NextPage = () => {
     }
   }, [user]);
 
+  const onClickSellAndDonate = useCallback(() => {
+    if (user) {
+      router.push("/add-sell-order");
+    } else {
+      router.push("/login");
+    }
+  }, [user]);
+
   return (
     <div className={styles.headerWrapper}>
       <Countdown />
@@ -127,9 +134,7 @@ const Header: NextPage = () => {
             <span data-content="Bán">Bán</span>
             <div className="primary-line" />
             <div className="dropdownWrapper">
-              <Link href="/sell-and-donate" passHref>
-                <div className="menu-item">Bán & Từ thiện</div>
-              </Link>
+                <div onClick={onClickSellAndDonate} className="menu-item">Bán & Từ thiện</div>
               <Link href="/sell-process" passHref>
                 <div className="menu-item">Quy trình bán</div>
               </Link>

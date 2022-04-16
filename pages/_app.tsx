@@ -29,9 +29,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <Provider store={store}>
-        <Head>
-          <title>Passdy</title>
-        </Head>
         <div className="page-wrapper">
           <Header />
           <div className="component-wrapper">

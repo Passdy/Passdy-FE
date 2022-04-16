@@ -116,9 +116,9 @@ const AddSellItem: NextPage = () => {
     <div className={styles.wrapperQuestion}>
       <Image
         data-tip="hello world"
-        width={11}
+        width={15}
         src="/icons/circle-question.svg"
-        height={11}
+        height={15}
         data-for={idTip}
       />
       <ReactTooltip
@@ -130,7 +130,7 @@ const AddSellItem: NextPage = () => {
         className={styles.customTooltip}
       >
         <div>
-          {text} <span className={styles.importantText}>{importantText}</span>.
+          {text} <span className={styles.importantText}>{importantText}</span>
         </div>
       </ReactTooltip>
     </div>

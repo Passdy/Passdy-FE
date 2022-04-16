@@ -85,16 +85,22 @@
       fill: $primary-color;
     }
   }
+
   .supportLabel {
     @media (max-width: $mobile-width) {
       font-size: 12px;
+    }
+    transition: color 150ms;
+
+    &:hover {
+      color: $primary-color;
     }
   }
 
   .person {
     margin-right: 20px;
+    margin-left: 20px;
     cursor: pointer;
-    margin-left: 10px;
     @media (max-width: $mobile-width) {
       margin-right: 5px;
       margin-left: 5px;

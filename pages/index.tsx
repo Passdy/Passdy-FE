@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import cls from "classnames";
 import styles from "../styles/Home.module.scss";
 import ScrollItem from "../components/Header/ScrollItem";
+import Head from "next/head";
 
 const Home: NextPage = () => {
   const [selectedSection, setSelectedSection] = useState<string>("");
@@ -66,6 +67,10 @@ const Home: NextPage = () => {
   // @ts-ignore
   return (
     <>
+      <Head>
+        <title>Passdy</title>
+        <meta name="description" content="Passdy" />
+      </Head>
       <ScrollItem selectedSection={selectedSection} onClickScroll={onClickScroll} />
       <div className={styles.homeWrapper}>
         <div className={styles.bannerSection}>
