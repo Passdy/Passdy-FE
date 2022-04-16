@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
-import Head from "next/head";
 import AOS from "aos";
 import { persistStore } from "redux-persist";
 import { Provider } from "react-redux";

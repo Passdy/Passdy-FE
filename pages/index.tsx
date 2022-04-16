@@ -2,12 +2,12 @@ import type { NextPage } from "next";
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import cls from "classnames";
 import styles from "../styles/Home.module.scss";
 import ScrollItem from "../components/Header/ScrollItem";
-import Head from "next/head";
 
 const Home: NextPage = () => {
   const [selectedSection, setSelectedSection] = useState<string>("");

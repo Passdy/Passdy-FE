@@ -134,7 +134,7 @@ const Header: NextPage = () => {
             <span data-content="Bán">Bán</span>
             <div className="primary-line" />
             <div className="dropdownWrapper">
-                <div onClick={onClickSellAndDonate} className="menu-item">Bán & Từ thiện</div>
+              <div onClick={onClickSellAndDonate} className="menu-item">Bán & Từ thiện</div>
               <Link href="/sell-process" passHref>
                 <div className="menu-item">Quy trình bán</div>
               </Link>
