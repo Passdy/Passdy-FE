@@ -20,18 +20,27 @@ const listMenu: any = {
   },
 };
 
-const MobileMenu = ({ isShow, onClose }: { isShow: boolean; onClose: () => void }) => {
+const MobileMenu = ({
+  isShow,
+  onClose,
+  onClickSellAndDonate,
+}: {
+  isShow: boolean;
+  onClose: () => void;
+  onClickSellAndDonate: () => void;
+}) => {
   const [selectedMenu, setSelectedMenu] = useState<string>("");
   const router = useRouter();
 
   const selectedTabTitle = useMemo(() => (selectedMenu ? listMenu.sell.label : ""), [selectedMenu]);
-  const selectedItemsMenu = useMemo(
-    () => (selectedMenu ? listMenu.sell.childItem : []),
-    [selectedMenu],
-  );
 
   const onRedirect = (link: string) => {
     router.push(link);
+    onClose();
+  };
+
+  const onRedirectSellAndDonate = () => {
+    onClickSellAndDonate();
     onClose();
   };
 
@@ -54,11 +63,12 @@ const MobileMenu = ({ isShow, onClose }: { isShow: boolean; onClose: () => void 
         </div>
         <div className={styles.strokeLine} />
         <div className={styles.itemWrapper}>
-          {selectedItemsMenu.map((e: any) => (
-            <div onClick={() => onRedirect(e.href)} className={styles.item}>
-              {e.label}
-            </div>
-          ))}
+          <div onClick={onRedirectSellAndDonate} className={styles.item}>
+            Bán & từ Thiện
+          </div>
+          <div onClick={() => onRedirect("/sell-process")} className={styles.item}>
+            Quy trình bán
+          </div>
         </div>
       </div>
       <div className={styles.modalMainContent}>
