@@ -3,7 +3,7 @@ import axiosInstance from "../../services";
 
 const initialState: any = {};
 
-const fetchCurrentUser = createAsyncThunk("users/fetchCurrentUser", async () => {
+export const fetchCurrentUser = createAsyncThunk("users/fetchCurrentUser", async () => {
   const response = await axiosInstance.get("/user/info", {});
   return response.data;
 });
@@ -19,6 +19,7 @@ export const userSlice = createSlice({
   extraReducers: (builder) => {
     // Add reducers for additional action types here, and handle loading state as needed
     builder.addCase(fetchCurrentUser.fulfilled, (state, action) => {
+      console.log("overhere");
       state.user = action.payload;
     });
   },

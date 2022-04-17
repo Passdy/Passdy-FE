@@ -120,6 +120,7 @@ const AddSellItem: NextPage = () => {
         src="/icons/circle-question.svg"
         height={15}
         data-for={idTip}
+        className={styles.questionTooltip}
       />
       <ReactTooltip
         id={idTip}

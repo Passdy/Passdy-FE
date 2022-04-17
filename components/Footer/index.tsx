@@ -80,7 +80,7 @@ const Footer = () => {
               <div className={cls(styles.item, "color-primary")}>Điện thoại: 037 8200337</div>
               <div className={styles.item}>Gmail: passdyvietnam@gmail.com</div>
               <div className={styles.item}>
-                Số 7 ngách 3/2 phố Nhân Hòa, phường Nhân Chính, quận Thanh Xuân, Hà Nội
+                Địa chỉ: Số 7 ngách 3/2 phố Nhân Hòa, phường Nhân Chính, quận Thanh Xuân, Hà Nội
               </div>
             </div>
           </div>

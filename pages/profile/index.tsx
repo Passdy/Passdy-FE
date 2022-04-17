@@ -8,7 +8,7 @@ import Cookies from "js-cookie";
 import Link from "next/link";
 import styles from "../../styles/Profile.module.scss";
 import LayoutWrapper from "../../components/Shared/LayoutWrapper";
-import { setUser } from "../../store/user";
+import { fetchCurrentUser, setUser } from "../../store/user";
 
 const Profile: NextPage = () => {
   const user = useSelector((state: any) => state.user.value);
@@ -22,10 +22,7 @@ const Profile: NextPage = () => {
   }, [dispatch, router]);
 
   useEffect(() => {
-    // console.log(storage.getItem("user"));
-    // if (!user) {
-    //   router.push("/login");
-    // }
+    dispatch(fetchCurrentUser());
   }, []);
 
   return (
@@ -36,7 +33,7 @@ const Profile: NextPage = () => {
             <Image src="/images/avatar.png" layout="fill" />
           </div>
           <div className={styles.nameTitle}>{user?.full_name}</div>
-          <div className={styles.sinceText}>Passdi-er từ {user?.created_at}</div>
+          {/* <div className={styles.sinceText}>Passdi-er từ {user?.created_at}</div> */}
           <div className={styles.wrapperButton}>
             <button
               data-background-color="#000000"
