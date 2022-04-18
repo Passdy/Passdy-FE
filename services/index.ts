@@ -39,7 +39,7 @@ axiosInstance.interceptors.response.use(
     switch (error.response.status) {
       case 401:
         if (!error.response.request.responseURL.includes("/auth/login")) {
-          window.location.replace("/login");
+          window.location.replace("/logout");
         }
         Cookies.remove("access_token");
         break;

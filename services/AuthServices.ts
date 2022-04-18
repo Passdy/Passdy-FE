@@ -13,7 +13,10 @@ const login = (data: ParamsLogin): Promise<ExampleUserType> => axiosInstance.pos
 
 const register = (data: any) => axiosInstance.post("/user/register", data);
 
+const currentUser = () => axiosInstance.get("/user/info", {});
+
 export default {
   login,
   register,
+  currentUser,
 };

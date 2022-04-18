@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import axiosInstance from "../../services";
+import AuthServices from "../../services/AuthServices";
 
 const initialState: any = {};
 
 export const fetchCurrentUser = createAsyncThunk("users/fetchCurrentUser", async () => {
-  const response = await axiosInstance.get("/user/info", {});
+  const response = await AuthServices.currentUser();
   return response.data;
 });
 
@@ -19,7 +19,6 @@ export const userSlice = createSlice({
   extraReducers: (builder) => {
     // Add reducers for additional action types here, and handle loading state as needed
     builder.addCase(fetchCurrentUser.fulfilled, (state, action) => {
-      console.log("overhere");
       state.user = action.payload;
     });
   },

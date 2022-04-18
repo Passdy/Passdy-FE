@@ -242,7 +242,8 @@
 }
 
 .questionTooltip {
+  fill: #C4C4C4;
   &:hover {
-    filter: contrast(0);
+    fill: $primary-color;
   }
 }
