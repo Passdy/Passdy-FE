@@ -6,12 +6,14 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { NextPage } from "next";
 import Link from "next/link";
+import moment from "moment";
 import HeaderSellPage from "../../components/HeaderSellPage";
 import styles from "../../styles/SellDonate.module.scss";
 import commonStyles from "../../styles/common.module.scss";
 import UseReasonSection from "../../components/Shared/UseReasonSection/UseReasonSection";
 import LayoutWrapper from "../../components/Shared/LayoutWrapper";
 import Breadcrumb from "../../components/Shared/Breadcrumb";
+import orderServies from "../../services/OrderServies";
 
 const options = [
   { value: "0", label: "Trong tháng này" },
@@ -26,7 +28,6 @@ const customStyles = {
   }),
 };
 
-const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 const ITEM_PER_PAGE = 2;
 
 const SellAndDonatePage: NextPage = () => {
@@ -34,23 +35,27 @@ const SellAndDonatePage: NextPage = () => {
     value: "0",
     label: "Trong tháng này",
   });
-  const [pageCount, setPageCount] = useState<number>(0);
-  const [itemOffset, setItemOffset] = useState<number>(0);
+  const [pageCount, setPageCount] = useState<number>(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [items, setItems] = useState<any[]>([]);
   const router = useRouter();
 
-  // TODO check not login return to sell step
+  const getData = async () => {
+    const orderList: any = await orderServies.orderList(
+      { page: currentPage, limit: ITEM_PER_PAGE });
+    setItems(orderList.items);
+    setPageCount(orderList.meta.totalPages);
+  };
 
   useEffect(() => {
-    // Fetch items from another resources.
-    // const endOffset = itemOffset + ITEM_PER_PAGE;
-    setPageCount(Math.ceil(items.length / ITEM_PER_PAGE));
-  }, [itemOffset]);
+    getData();
+  }, []);
 
   const handlePageClick = (event: any) => {
-    const newOffset = (event.selected * ITEM_PER_PAGE) % items.length;
-    console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
-    setItemOffset(newOffset);
+    setCurrentPage(event.selected);
   };
+
+  const convertDate = (timestamp: any) => moment.unix(timestamp / 1000).format("D/m/YYYY");
 
   return (
     <LayoutWrapper>
@@ -83,15 +88,15 @@ const SellAndDonatePage: NextPage = () => {
             <Select styles={customStyles} defaultValue={selectedFilter} options={options} />
           </div>
           <div className={styles.itemWrapper}>
-            {[1, 2].map((index) => (
-              <div key={index} className={styles.cardPackage}>
+            {items.map((el) => (
+              <div key={el.id} className={styles.cardPackage}>
                 <div className={styles.idPackageColumn}>
-                  <div className={styles.titleColumn}>Mã túi #34567</div>
-                  <div className={styles.smallText}>Ngày 09/02/2022</div>
+                  <div className={styles.titleColumn}>Mã túi #{el.id}</div>
+                  <div className={styles.smallText}>Ngày {convertDate(el.created_at)}</div>
                 </div>
                 <div className={styles.totalNumber}>
                   <div className={styles.titleColumn}>Tổng số đồ</div>
-                  <div className={styles.itemNumber}>10</div>
+                  <div className={styles.itemNumber}>{el.cloth_num}</div>
                 </div>
                 <div className={styles.bigColumnWrapper}>
                   <Image src="/icons/green-earth.svg" width={86} height={108} />

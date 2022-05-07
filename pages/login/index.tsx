@@ -47,8 +47,7 @@ const LoginPage: NextPage = () => {
         toast.error("Sai email hoặc mật khẩu.");
       }
     } catch (e) {
-      console.log(e);
-      toast.error("Đã có lỗi xảy ra!");
+      toast.error("Sai email hoặc mật khẩu.");
       setIsLoading(false);
     }
   };

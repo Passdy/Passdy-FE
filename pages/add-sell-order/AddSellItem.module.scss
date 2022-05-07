@@ -100,6 +100,10 @@
   border-radius: 5px;
   outline: 0;
   resize: none;
+  &:disabled {
+    background-color: #C4C4C4;
+    cursor: not-allowed;
+  }
 }
 
 .centerCardWrapper {

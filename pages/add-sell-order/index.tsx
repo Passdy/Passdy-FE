@@ -11,6 +11,7 @@ import Select from "react-select";
 import { toast } from "react-toastify";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
+import { useSelector } from "react-redux";
 import styles from "./AddSellItem.module.scss";
 import SelectCircleItem from "../../components/SelectCircleItem";
 import useAddressOption from "../../hooks/useAddressOption";
@@ -49,7 +50,7 @@ const AddSellItem: NextPage = () => {
   const cityId = watch("city_id");
   const districtId = watch("district_id");
   const clothNumber = watch("cloth_num");
-  const [isHomeAddress, setIsHomeAddress] = useState<boolean>(false);
+  const [isHomeAddress, setIsHomeAddress] = useState<boolean>(true);
   const [isLoadingBtn, setIsLoadingBtn] = useState<boolean>(false);
   const [typeGive, setTypeGive] = useState<TypeGive>();
   const [typeReceive, setTypeReceive] = useState<TypeReceive>();
@@ -58,6 +59,9 @@ const AddSellItem: NextPage = () => {
   const [listWard] = useAddressOption("ward", districtId);
   const countUpRef = React.useRef(null);
   const countUpWaterRef = React.useRef(null);
+  const user = useSelector((state: any) => state.user.value);
+
+  const isDisableEmail = useMemo(() => user && user.email, [user]);
 
   const [co2Saved, waterLiterSave] = useMemo(() => {
     const co2Kg = new BigNumber(clothNumber || 0).times(0.5).toNumber();
@@ -90,6 +94,13 @@ const AddSellItem: NextPage = () => {
     duration: 1,
     decimals: 2,
   });
+
+  useEffect(() => {
+    if (user) {
+      setValue("address_name", user.full_name);
+      setValue("email", user.email);
+    }
+  }, [user]);
 
   useEffect(() => {
     update(co2Saved);
@@ -309,6 +320,7 @@ const AddSellItem: NextPage = () => {
                         <input
                           {...register("email", { required: true, pattern: /\S+@\S+\.\S+/ })}
                           placeholder="Email"
+                          disabled={isDisableEmail}
                           className={styles.formInput}
                           type="text"
                         />
