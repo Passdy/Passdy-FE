@@ -98,11 +98,7 @@ const Header: NextPage = () => {
   }, [user]);
 
   const onClickSellAndDonate = useCallback(() => {
-    if (user) {
-      router.push("/add-sell-order");
-    } else {
-      router.push("/login");
-    }
+    router.push("/add-sell-order");
   }, [user]);
 
   return (

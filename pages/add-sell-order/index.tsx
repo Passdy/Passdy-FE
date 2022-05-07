@@ -32,6 +32,7 @@ type Inputs = {
   district_id: number;
   ward_id: number;
   address: string;
+  email: string;
   address_type: "apartment" | "company";
 };
 
@@ -302,27 +303,44 @@ const AddSellItem: NextPage = () => {
                         </span>
                       )}
                     </div>
-                    <div className={styles.formItemWrapper}>
-                      <div className={styles.titleItemForm}>Số điện thoại</div>
-                      <input
-                        {...register("phone", {
-                          required: true,
-                          pattern: /^[0-9]*$/,
-                          maxLength: 15,
-                        })}
-                        placeholder="Phone"
-                        className={styles.formInput}
-                        type="text"
-                      />
-                      {errors.phone && (
-                        <span className="text-danger">
-                          {errors.phone?.type === "required" && "Số điện thoại là bắt buộc."}
-                          {errors.phone?.type === "pattern" &&
-                            "Số điện thoại không thể chứa ký tự đặc biệt."}
-                          {errors.phone?.type === "maxLength" &&
-                            "Số điện thoại không thể vượt quá 15 ký tự."}
-                        </span>
-                      )}
+                    <div className={styles.districtWrapper}>
+                      <div className={styles.formItemWrapper}>
+                        <div className={styles.titleItemForm}>Email</div>
+                        <input
+                          {...register("email", { required: true, pattern: /\S+@\S+\.\S+/ })}
+                          placeholder="Email"
+                          className={styles.formInput}
+                          type="text"
+                        />
+                        {errors.phone && (
+                          <span className="text-danger">
+                            {errors.email?.type === "required" && "Email là bắt buộc!"}
+                            {errors.email?.type === "pattern" && "Email không hợp lệ!"}
+                          </span>
+                        )}
+                      </div>
+                      <div className={styles.formItemWrapper}>
+                        <div className={styles.titleItemForm}>Số điện thoại</div>
+                        <input
+                          {...register("phone", {
+                            required: true,
+                            pattern: /^[0-9]*$/,
+                            maxLength: 15,
+                          })}
+                          placeholder="Phone"
+                          className={styles.formInput}
+                          type="text"
+                        />
+                        {errors.phone && (
+                          <span className="text-danger">
+                            {errors.phone?.type === "required" && "Số điện thoại là bắt buộc."}
+                            {errors.phone?.type === "pattern" &&
+                              "Số điện thoại không thể chứa ký tự đặc biệt."}
+                            {errors.phone?.type === "maxLength" &&
+                              "Số điện thoại không thể vượt quá 15 ký tự."}
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
                   <div className={cls(styles.formLine, "mt-40")}>

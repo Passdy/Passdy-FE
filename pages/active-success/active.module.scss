@@ -1,0 +1,43 @@
+@import "./styles/variables.module";
+
+.wrapper {
+  background-color: $bg-color2;
+  min-height: 600px;
+  padding: 50px 20px 100px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: 30px;
+}
+
+.content {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.buttonWrapper {
+  margin-top: 50px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto;
+  grid-column-gap: 50px;
+}
