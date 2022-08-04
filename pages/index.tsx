@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import Grid from "@mui/material/Grid";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import cls from "classnames";
@@ -408,6 +409,67 @@ const Home: NextPage = () => {
               PASS LUÔN
             </button>
           </div>
+        </div>
+        <div className={styles.instagramPage}>
+          <div className={styles.bigTitle}>#Passdy trên Instagram</div>
+          <Grid
+            container
+            spacing={3}
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-easing="ease-in-out"
+            className={cls(styles.imageHowTow)}
+            data-aos-once="true"
+            data-aos-delay="600"
+            data-aos-offset="100"
+          >
+            <Grid item xs={6}>
+              <Link href="https://instagram.com/passdyvn?igshid=YmMyMTA2M2Y=" passHref>
+                <img src="/images/instagram-1.png" alt="" className="w-full cursor-pointer" />
+              </Link>
+              <Grid container spacing={3} className="pt-4">
+                <Grid item xs={6}>
+                  <Link href="https://instagram.com/passdyvn?igshid=YmMyMTA2M2Y=" passHref>
+                    <img src="/images/instagram-2.png" alt="" className="w-full cursor-pointer" />
+                  </Link>
+                </Grid>
+                <Grid item xs={6}>
+                  <Link href="https://instagram.com/passdyvn?igshid=YmMyMTA2M2Y=" passHref>
+                    <img src="/images/instagram-3.png" alt="" className="w-full cursor-pointer" />
+                  </Link>
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item xs={6}>
+              <Link href="https://instagram.com/passdyvn?igshid=YmMyMTA2M2Y=" passHref>
+                <img
+                  src="/images/instagram-4.png"
+                  alt=""
+                  className="w-full h-full cursor-pointer"
+                />
+              </Link>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={styles.instagramPage}>
+          <div className={styles.bigTitle}>Passdy Vietnam trên Tiktok</div>
+          <Grid container spacing={2}>
+            <Grid item xs={4}>
+              <Link href="https://www.tiktok.com/@passdyvn?_t=8UWSgRnjsDx&_r=1" passHref>
+                <img src="/images/tiktok.png" alt="" className="w-full cursor-pointer" />
+              </Link>
+            </Grid>
+            <Grid item xs={4}>
+              <Link href="https://www.tiktok.com/@passdyvn?_t=8UWSgRnjsDx&_r=1" passHref>
+                <img src="/images/tiktok.png" alt="" className="w-full cursor-pointer" />
+              </Link>
+            </Grid>
+            <Grid item xs={4}>
+              <Link href="https://www.tiktok.com/@passdyvn?_t=8UWSgRnjsDx&_r=1" passHref>
+                <img src="/images/tiktok.png" alt="" className="w-full cursor-pointer" />
+              </Link>
+            </Grid>
+          </Grid>
         </div>
         <div className={styles.roadMapSection}>
           <div id="roadmap-section" ref={roadMapRef} className={cls(styles.titleSection, "mt-60")}>

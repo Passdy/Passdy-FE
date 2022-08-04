@@ -1,0 +1,35 @@
+@import "./styles/variables.module";
+
+.productWrapper {
+  background: #f9f6f1;
+  padding: 0px 0px 140px 47px;
+  .title {
+    color: $primary-color;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 40px;
+    padding-bottom: 6px;
+  }
+  .titleSidebar {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 16px;
+    cursor: pointer;
+    &:hover {
+      text-decoration-line: underline;
+    }
+    // text-decoration-line: underline;
+  }
+  .divide {
+    width: 87px;
+    height: 0px;
+    left: -2px;
+    top: 299px;
+    border-bottom: 1px solid #7c808b;
+    margin-top: 28px;
+    margin-bottom: 23px;
+  }
+}

@@ -63,7 +63,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  background: linear-gradient(180deg, #FBB163 -480.11%, rgba(251, 177, 99, 0) 100%);
+  background: linear-gradient(180deg, #fbb163 -480.11%, rgba(251, 177, 99, 0) 100%);
 
   .banner {
     position: relative;
@@ -97,7 +97,7 @@
     justify-content: center;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 50px;
-    @media(max-width: $mobile-width) {
+    @media (max-width: $mobile-width) {
       width: auto;
       grid-template-columns: 1fr;
 
@@ -124,7 +124,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #FFF8F1;
+      background-color: #fff8f1;
 
       img {
         width: 99px;
@@ -278,16 +278,29 @@
     }
   }
 }
-
+.instagramPage {
+  padding: 100px 200px;
+  .bigTitle {
+    font-family: "Vollkorn";
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 56px;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  @media (max-width: $mobile-width) {
+    padding: 10px 10px;
+  }
+}
 .roadMapSection {
   padding: 100px 200px;
-  background: #EDE6DB;
+  background: #ede6db;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
 
-  @media(max-width: $mobile-width) {
+  @media (max-width: $mobile-width) {
     padding: 0 0 50px 0;
     position: relative;
     .checkLine {
@@ -317,7 +330,6 @@
     column-gap: 30px;
     align-items: center;
 
-
     .grayLine {
       background-color: $stroke1;
       width: 120px;
@@ -337,8 +349,8 @@
       display: flex;
       align-items: center;
       flex-flow: column;
-      background: #FFFFFF;
-      border: 1px dashed #7C808B;
+      background: #ffffff;
+      border: 1px dashed #7c808b;
       box-sizing: border-box;
       border-radius: 4px;
       padding: 30px 25px;

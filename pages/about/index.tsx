@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { NextPage } from "next";
 import Image from "next/image";
+import Grid from "@mui/material/Grid";
 import cls from "classnames";
 import styles from "./about.module.scss";
 import UseReasonSection from "../../components/Shared/UseReasonSection/UseReasonSection";
@@ -62,21 +63,8 @@ const About: NextPage = () => {
                 <Image src="/images/about/bg-team.png" width={715} height={500} />
               </div>
             </div>
+
             <div className={styles.cardStoryWrapper}>
-              <div className={styles.cardStory}>
-                <div className={styles.iconWrapper}>
-                  <Image src="/images/about/save-eco.png" height={140} width={140} />
-                </div>
-                <div className={styles.contentStory}>
-                  <div className={styles.titleCardStory}>Năm 2018</div>
-                  <div className="mt-20">
-                    Ý thức môi trường từ sớm, chúng mình luôn nuôi nấng những ý tưởng và tạo ra các
-                    dự án giúp bảo vệ môi trường. Khi mới 18 tuổi, chúng mình đã tổ chức hoạt động
-                    từ thiện để gây quỹ và đóng góp cho những tổ chức bảo vệ môi trường tại Việt
-                    Nam. Tuy nhiên những đóng góp này chưa tạo ra ảnh hưởng thực sự lớn.
-                  </div>
-                </div>
-              </div>
               <div className={styles.cardStory}>
                 <div className={styles.iconWrapper}>
                   <Image src="/images/about/heart-money.png" height={140} width={140} />
@@ -162,7 +150,11 @@ const About: NextPage = () => {
                 })}
               >
                 <div className={styles.imageWrapper}>
-                  <img src={`/images/about/${fixedContent.url}.png`} className={styles.iconChange} alt="" />
+                  <img
+                    src={`/images/about/${fixedContent.url}.png`}
+                    className={styles.iconChange}
+                    alt=""
+                  />
                 </div>
                 <div className={styles.text}>{fixedContent.content}</div>
               </div>
@@ -171,39 +163,79 @@ const About: NextPage = () => {
           <div className={styles.passdyTeam}>
             <div className={styles.titleSection}>Team Passdy</div>
             <div className={styles.cardTeamWrapper}>
-              <div
-                style={{ backgroundImage: "url(images/about/namanh.png)" }}
-                className={styles.cardMember}
-              >
-                <div className={styles.blurLayer} />
-                <div className={styles.textWrapper}>
-                  <div className={styles.name}>Lê Nam Anh</div>
-                  <div className={styles.position}>Phụ trách dự án</div>
-                  <div className={styles.hiddenText} />
-                </div>
-              </div>
-              <div
-                style={{ backgroundImage: "url(images/about/minhtri.png)" }}
-                className={styles.cardMember}
-              >
-                <div className={styles.blurLayer} />
-                <div className={styles.textWrapper}>
-                  <div className={styles.name}>Nguyễn Anh Trí</div>
-                  <div className={styles.position}>Phụ trách truyền thông</div>
-                  <div className={styles.hiddenText} />
-                </div>
-              </div>
-              <div
-                style={{ backgroundImage: "url(images/about/minhhoang.png)" }}
-                className={styles.cardMember}
-              >
-                <div className={styles.blurLayer} />
-                <div className={styles.textWrapper}>
-                  <div className={styles.name}>Phạm Minh HOÀNG</div>
-                  <div className={styles.position}>Phụ trách kho vận</div>
-                  <div className={styles.hiddenText} />
-                </div>
-              </div>
+              <Grid container spacing={2} className="">
+                <Grid item xs={4}>
+                  <div
+                    style={{ backgroundImage: "url(images/about/namanh.png)" }}
+                    className={styles.cardMember}
+                  >
+                    <div className={styles.blurLayer} />
+                    <div className={styles.textWrapper}>
+                      <div className={`text-sm text-white ${styles.hiddenDescription}`}>
+                        Ace is one of the marketing arm of Splinterlands and other successfully
+                        launched NFT games and now the new CMO for P2E Marketing handling hundreds
+                        of KOLs all over the world.
+                      </div>
+                      <div className={styles.position}>Phụ trách dự án</div>
+                      <div className={styles.name}>Lê Nam Anh</div>
+                    </div>
+                  </div>
+                </Grid>
+                <Grid item xs={4}>
+                  <div
+                    style={{ backgroundImage: "url(images/about/thaonguyen.png)" }}
+                    className={styles.cardMember}
+                  >
+                    <div className={styles.blurLayer} />
+                    <div className={styles.textWrapper}>
+                      <div className={styles.position}>HEAD OF warehouse & It</div>
+                      <div className={styles.name}>Trần thảo nguyên</div>
+                      <div className={styles.hiddenText} />
+                    </div>
+                  </div>
+                </Grid>
+                <Grid item xs={4}>
+                  <div
+                    style={{ backgroundImage: "url(images/about/lamgiang.png)" }}
+                    className={styles.cardMember}
+                  >
+                    <div className={styles.blurLayer} />
+                    <div className={styles.textWrapper}>
+                      <div className={styles.position}>Head of marketing & Cs</div>
+                      <div className={styles.name}>Lâm Giang</div>
+                      <div className={styles.hiddenText} />
+                    </div>
+                  </div>
+                </Grid>
+              </Grid>
+              <Grid container spacing={2} className="justify-center mt-2">
+                <Grid item xs={4}>
+                  <div
+                    style={{ backgroundImage: "url(images/about/minhtri.png)" }}
+                    className={styles.cardMember}
+                  >
+                    <div className={styles.blurLayer} />
+                    <div className={styles.textWrapper}>
+                      <div className={styles.position}>Phụ trách truyền thông</div>
+                      <div className={styles.name}>Nguyễn Anh Trí</div>
+                      <div className={styles.hiddenText} />
+                    </div>
+                  </div>
+                </Grid>
+                <Grid item xs={4}>
+                  <div
+                    style={{ backgroundImage: "url(images/about/minhhoang.png)" }}
+                    className={styles.cardMember}
+                  >
+                    <div className={styles.blurLayer} />
+                    <div className={styles.textWrapper}>
+                      <div className={styles.position}>Phụ trách kho vận</div>
+                      <div className={styles.name}>Phạm Minh HOÀNG</div>
+                      <div className={styles.hiddenText} />
+                    </div>
+                  </div>
+                </Grid>
+              </Grid>
             </div>
           </div>
         </div>

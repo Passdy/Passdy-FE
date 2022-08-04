@@ -2,7 +2,7 @@
 
 .mainWrapper {
   padding: 50px 200px;
-  background: #F9F6F1;
+  background: #f9f6f1;
   display: flex;
   justify-content: center;
 }
@@ -10,7 +10,7 @@
 .splitRow {
   height: 400px;
   width: 1px;
-  background: #C4C4C4;
+  background: #c4c4c4;
   margin-left: 100px;
   margin-right: 100px;
 }
@@ -49,8 +49,8 @@
 }
 
 .input {
-  background: #FFFFFF;
-  border: 1px solid #C4C4C4;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
   box-sizing: border-box;
   border-radius: 5px;
   margin-top: 10px;
@@ -63,7 +63,6 @@
   &:focus {
     outline: 0;
   }
-
 }
 
 .formItem {
@@ -134,11 +133,10 @@
 
   &.isActive {
     span {
-      color: #51B960;
+      color: #51b960;
     }
   }
 }
-
 
 @media (max-width: $mobile-width) {
   .mainWrapper {

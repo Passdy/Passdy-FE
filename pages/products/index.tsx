@@ -1,99 +1,137 @@
-/* eslint-disable react/react-in-jsx-scope */
+import React from "react";
 import { NextPage } from "next";
-import Link from "next/link";
-import Select from "react-select";
+import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
-import LayoutWrapper from "../../components/Shared/LayoutWrapper";
-import Breadcrumb from "../../components/Shared/Breadcrumb";
+import Link from "next/link";
+import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import LayoutProducts from "../../components/Shared/LayoutProducts";
 import styles from "../../styles/Product.module.scss";
+import Breadcrumb from "../../components/Shared/Breadcrumb";
+import LikeProduct from "../../components/Shared/LikeProduct";
 
-const Product: NextPage = () => (
-  <LayoutWrapper>
-    <div className={styles.productWrapper}>
-      <div className="pt-8">
-        <Breadcrumb>
-          <Link href="/products" passHref>
-            <span>Mua /</span>
-          </Link>
-        </Breadcrumb>
-        <span className={styles.titleSidebar}>NỮ</span>
-        <div className={styles.divider}>{" "}</div>
-        <div className={`cursor-pointer ${styles.categoryProductSelected}`}>Hàng mới về</div>
-        <div className={`cursor-pointer ${styles.categoryProductSelected}`}>Sale</div>
-        <div className={`cursor-pointer ${styles.categoryProductSelected}`}>Áo khoác</div>
-        <div className={`cursor-pointer ${styles.categoryProduct}`}>Áo Coast</div>
-        <div className={`cursor-pointer ${styles.categoryProduct}`}>Áo blouse</div>
-        <div className={`cursor-pointer ${styles.categoryProduct}`}>Áo jacket</div>
-      </div>
-      <div>
-        <div className={styles.banner}>
-          <img src="/images/products/banner-product.png" alt="" />
-          <div className="flex justify-center items-center">
+const Products: NextPage = () => (
+  <LayoutProducts>
+    <div className={styles.mainProducts}>
+      <Grid container spacing={1} className={`flex  ${styles.backgroundMain}`}>
+        <Grid item xs={7}>
+          <div className={styles.sale}>Sale tới 40%</div>
+          <div className="flex">
+            <img src="/icons/product/arrow.svg" alt="" />
+            <div className="text-xl font-semibold pl-5">
+              Cho tất cả các khách hàng đầu tiên của Passdy + Free ship!!
+            </div>
+          </div>
+        </Grid>
+        <Grid item xs={5} className="flex items-center justify-center">
+          <Button
+            size="large"
+            variant="contained"
+            className={`text-base font-semibold ${styles.buyNowButton}`}
+          >
+            SẮM NGAY
+          </Button>
+        </Grid>
+      </Grid>
+      <Breadcrumb>
+        <Link href="/sell-and-donate" passHref>
+          Bán/
+        </Link>
+        <Link href="/sell-and-donate" passHref>
+          <span> Nữ</span>
+        </Link>
+      </Breadcrumb>
+      <div className={styles.titleTop}>Diện văn minh mùa hè này!</div>
+      <div className={` mb-28 ${styles.banner}`}>
+        <Grid container spacing={1} className="relative">
+          <Grid item xs={5} className="text-center">
+            <div className={styles.titleBanner}>Back-to-school</div>
+            <div className="text-base pt-3 pb-5">
+              Khám phá những outfit nổi bât nhất mùa hè này!
+            </div>
             <div>
-              <div className={styles.titleBanner}>Áo khoác họa tiết</div>
-              <div className="text-xl w-80 py-9">Áo khoác đa dụng, phù hợp với mọi loại thời tiết.</div>
-              <div className="text-xl w-80">Áo khoác đa dụng, phù hợp với mọi loại thời tiết.</div>
-              <div className="flex items-baseline justify-between">
-                <div className="text-2xl text-red-600 pt-6">290,000 VND </div>
-                <div className="line-through">690,000 VND</div>
-              </div>
-              <div className="text-red-600 pt-3.5 pb-6">Sale đến 25/4</div>
-              <button type="submit" className={styles.btnBuy}>MUA NGAY</button>
+              <Button
+                size="large"
+                variant="outlined"
+                className={`text-base font-semibold ${styles.btnShop}`}
+              >
+                SHOP NGAY
+              </Button>
             </div>
+          </Grid>
+          <Grid item xs={7}>
+            {" "}
+          </Grid>
+          <div className={`absolute ${styles.imageBanner}`}>
+            <img src="/images/products/banner-1.png" alt="" />
           </div>
-        </div>
-        <div className="mt-16">
-          <span className="text-xl font-bold">Thông báo</span>
-          <div className={styles.notify}>
-            <div className="flex">
-              <img src="/images/products/notify-1.svg" alt="" />
-              <div className="pl-6 space-y-10">
-                <div className="text-base font-extrabold">Passdy Update</div>
-                <div className="w-36">Tin tức về thời bền vững luôn được cập nhật mới nhất</div>
-              </div>
+        </Grid>
+      </div>
+      <div className="md:container md:pr-44">
+        <Grid container spacing={2}>
+          <Grid item xs={4} className="flex">
+            <img src="/images/products/banner-2.png" alt="" />
+            <div className="pt-6 pl-4 pr-10">
+              <div className="font-bold pb-4">Passdy Update</div>
+              <div className="text-sm ">Tin tức về thời bền vững luôn được cập nhật mới nhất</div>
             </div>
-            <div className="flex">
-              <img src="/images/products/notify-1.svg" alt="" />
-              <div className="pl-6 space-y-10">
-                <div className="text-base font-extrabold">Passdy Update</div>
-                <div className="w-36">Tin tức về thời bền vững luôn được cập nhật mới nhất</div>
-              </div>
+          </Grid>
+          <Grid item xs={4} className="flex">
+            <img src="/images/products/banner-2.png" alt="" />
+            <div className="pt-6 pl-4 pr-10">
+              <div className="font-bold pb-4">Passdy Update</div>
+              <div className="text-sm ">Tin tức về thời bền vững luôn được cập nhật mới nhất</div>
             </div>
-            <div className="flex">
-              <img src="/images/products/notify-1.svg" alt="" />
-              <div className="pl-6 space-y-10">
-                <div className="text-base font-extrabold">Passdy Update</div>
-                <div className="w-36">Tin tức về thời bền vững luôn được cập nhật mới nhất</div>
-              </div>
+          </Grid>
+          <Grid item xs={4} className="flex">
+            <img src="/images/products/banner-2.png" alt="" />
+            <div className="pt-6 pl-4 pr-10">
+              <div className="font-bold pb-4">Passdy Update</div>
+              <div className="text-sm ">Tin tức về thời bền vững luôn được cập nhật mới nhất</div>
             </div>
+          </Grid>
+        </Grid>
+        <div className={styles.seenProduct}>
+          <div className={styles.titleSeen}>Xem gần đây</div>
+          <div className="flex items-center pt-10">
+            <div className="flex items-center">
+              <div className={`text-sm ${styles.colorBg5}`}>Thời gian</div>
+              <FormControl className="m-1 w-40 ml-3" size="small">
+                <InputLabel id="demo-select-small">Trong tháng này</InputLabel>
+                <Select labelId="demo-select-small" id="demo-select-small" label="Trong tháng này">
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            <div className={`text-sm ml-auto ${styles.colorBg5}`}>120 sản phẩm</div>
           </div>
-        </div>
-        <div className="mt-16">
-          <span className="text-xl font-bold">Xem gần đây</span>
-          <div className="flex items-center">
-            <span className="text-sm pr-1.5">Thời gian</span>
-            <Select
-              placeholder="Trong tháng này"
-              value={1}
-              name="1"
-            />
-          </div>
-          <Grid container spacing={2} className="pt-10">
-            <Grid item md={3}>
-              <img src="/images/products/product-1.svg" alt="" />
+          <Grid container spacing={2} className="pt-12">
+            <Grid item xs={3}>
+              <div className="relative">
+                <div className={`absolute flex items-center ${styles.heartIcon}`}>
+                  <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
+                  <LikeProduct />
+                </div>
+                <img src="/images/example-Tshirt.png" alt="s" />
+              </div>
               <div className="flex">
-                <div>s</div>
-                <div>s</div>
+                <div>
+                  <div>s</div>
+                  <div>s</div>
+                  <div>s</div>
+                </div>
+                <div className={`ml-auto text-xs ml-auto ${styles.colorBg5}`}>Size S</div>
               </div>
             </Grid>
-            <Grid item md={3}>s</Grid>
-            <Grid item md={3}>s</Grid>
-            <Grid item md={3}>s</Grid>
           </Grid>
         </div>
       </div>
     </div>
-  </LayoutWrapper>
+  </LayoutProducts>
 );
 
-export default Product;
+export default Products;

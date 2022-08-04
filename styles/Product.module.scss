@@ -1,60 +1,69 @@
 @import "./styles/variables.module";
 
-.productWrapper{
-    background: #F9F6F1;
-    padding: 10px 204px 140px 47px;
-    display: grid;
-    grid-template-columns:11% auto;
-    .titleSidebar{
-        color:$primary-color;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 40px;
+.mainProducts {
+  .backgroundMain {
+    color: #ffffff;
+    background: $primary-color;
+    padding: 40px 0px 42px 53px;
+    margin-left: 2px;
+  }
+  .colorBg5 {
+    color: $bg-color5;
+  }
+  .colorPrimary {
+    color: $primary-color;
+  }
+  .banner {
+    background: rgba(177, 226, 211, 0.3);
+    padding: 63px 0px 50px 0px;
+    .titleBanner {
+      font-weight: 700;
+      line-height: 40px;
+      font-size: 40px;
+      color: $primary-color;
     }
-    .divider{
-        width: 157px;
-        border-bottom: 5px solid #CBCBD4;
+    .btnShop {
+      color: $primary-color;
+      padding: 12px;
+      border: 1px solid $primary-color;
     }
-    .categoryProductSelected{
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 24px;
+    .imageBanner {
+      right: 0px;
+      bottom: -41%;
     }
-    .categoryProduct{
-        font-size: 20px;
-        line-height: 24px;
-        color: #A6A6AA;
+  }
+  .seenProduct {
+    margin-top: 40px;
+    .titleSeen {
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 32px;
     }
-    .banner{
-        padding-bottom:10px;
-        border: 1px solid #CBCBD4;
-        display: grid;
-        grid-template-columns:50% 50%;
-        .titleBanner{
-            font-weight: 700;
-            font-size: 40px;
-            line-height: 40px;
-        }
-        .btnBuy{
-            background:$primary-color;
-            font-weight: 700;
-            font-size: 28px;
-            line-height: 32px;
-            border-radius: 4px;
-            color:white;
-            padding : 18px 10px;
-            &:hover{
-                background:#406b64;
-            }
-            &:active{
-                background:$secondary-color;
-            }
-        }
+    .heartIcon {
+      right: 4%;
+      top: 5%;
     }
-    .notify{
-        margin-top:39px;
-        display: grid;
-        grid-template-columns:repeat(3,33%);
-    }
+  }
+  .sale {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    align-items: center;
+    text-transform: uppercase;
+  }
+  .buyNowButton {
+    color: $primary-color;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 12px 24px;
+  }
+  .titleTop {
+    font-family: "Vollkorn";
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 56px;
+    text-transform: capitalize;
+    padding-top: 38px;
+    padding-bottom: 25px;
+  }
 }
