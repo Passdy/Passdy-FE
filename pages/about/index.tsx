@@ -60,7 +60,7 @@ const About: NextPage = () => {
               <img className={styles.bubble} alt="" src="/images/about/bubble.png" />
               <div className={styles.storyTitle}>Câu chuyện của Passdy</div>
               <div className={styles.bgTeamWrapper}>
-                <Image src="/images/about/bg-team.png" width={715} height={500} />
+                <Image src="/images/about/team.jpg" width={715} height={500} />
               </div>
             </div>
 
