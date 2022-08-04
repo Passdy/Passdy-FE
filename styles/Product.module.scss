@@ -66,4 +66,16 @@
     padding-top: 38px;
     padding-bottom: 25px;
   }
+  .salePrice {
+    color: #a6a6aa;
+    text-decoration-line: line-through;
+    font-size: 14px;
+    margin-left: 15px;
+  }
+  .priceRed {
+    color: #ff0000;
+  }
+  .pricePrimary {
+    color: $primary-color;
+  }
 }

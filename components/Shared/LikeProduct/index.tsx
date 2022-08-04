@@ -20,8 +20,8 @@ const LikeProduct: React.FC = () => (
       defaultValue={0}
       getLabelText={(value: number) => `${value} Heart${value !== 1 ? "s" : ""}`}
       precision={1}
-      icon={<FavoriteIcon fontSize="inherit" />}
-      emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+      icon={<FavoriteIcon fontSize="inherit" className="text-green-700" />}
+      emptyIcon={<FavoriteBorderIcon fontSize="inherit" className="text-green-700" />}
       max={1}
     />
   </>

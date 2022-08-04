@@ -118,11 +118,74 @@ const Products: NextPage = () => (
                 </div>
                 <img src="/images/example-Tshirt.png" alt="s" />
               </div>
-              <div className="flex">
+              <div className="flex mt-1">
                 <div>
-                  <div>s</div>
-                  <div>s</div>
-                  <div>s</div>
+                  <div className="font-medium text-sm">Uniqlo</div>
+                  <div className="text-slate-600 text-sm">Áo blouse</div>
+                  <div className="flex">
+                    <div className={`text-sm ${styles.priceRed}`}>250.000 VND</div>
+                    <div className={styles.salePrice}> 250.000 VND</div>
+                  </div>
+                </div>
+                <div className={`ml-auto text-xs ml-auto ${styles.colorBg5}`}>Size S</div>
+              </div>
+            </Grid>
+            <Grid item xs={3}>
+              <div className="relative">
+                <div className={`absolute flex items-center ${styles.heartIcon}`}>
+                  <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
+                  <LikeProduct />
+                </div>
+                <img src="/images/example-Tshirt.png" alt="s" />
+              </div>
+              <div className="flex mt-1">
+                <div>
+                  <div className="font-medium text-sm">Uniqlo</div>
+                  <div className="text-slate-600 text-sm">Áo blouse</div>
+                  <div className="flex">
+                    <div className={`text-sm ${styles.pricePrimary}`}>250.000 VND</div>
+                    <div className={styles.salePrice}> 250.000 VND</div>
+                  </div>
+                </div>
+                <div className={`ml-auto text-xs ml-auto ${styles.colorBg5}`}>Size S</div>
+              </div>
+            </Grid>
+            <Grid item xs={3}>
+              <div className="relative">
+                <div className={`absolute flex items-center ${styles.heartIcon}`}>
+                  <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
+                  <LikeProduct />
+                </div>
+                <img src="/images/example-Tshirt.png" alt="s" />
+              </div>
+              <div className="flex mt-1">
+                <div>
+                  <div className="font-medium text-sm">Uniqlo</div>
+                  <div className="text-slate-600 text-sm">Áo blouse</div>
+                  <div className="flex">
+                    <div className={`text-sm ${styles.priceRed}`}>250.000 VND</div>
+                    <div className={styles.salePrice}> 250.000 VND</div>
+                  </div>
+                </div>
+                <div className={`ml-auto text-xs ml-auto ${styles.colorBg5}`}>Size S</div>
+              </div>
+            </Grid>
+            <Grid item xs={3}>
+              <div className="relative">
+                <div className={`absolute flex items-center ${styles.heartIcon}`}>
+                  <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
+                  <LikeProduct />
+                </div>
+                <img src="/images/example-Tshirt.png" alt="s" />
+              </div>
+              <div className="flex mt-1">
+                <div>
+                  <div className="font-medium text-sm">Uniqlo</div>
+                  <div className="text-slate-600 text-sm">Áo blouse</div>
+                  <div className="flex">
+                    <div className={`text-sm ${styles.priceRed}`}>250.000 VND</div>
+                    <div className={styles.salePrice}> 250.000 VND</div>
+                  </div>
                 </div>
                 <div className={`ml-auto text-xs ml-auto ${styles.colorBg5}`}>Size S</div>
               </div>
