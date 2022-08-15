@@ -1,11 +1,49 @@
 @import "./styles/variables.module";
 
 .mainProducts {
+  .productList {
+    padding: 10px;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    &:hover {
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      z-index: 1;
+    }
+    .thumbnail {
+      @media (max-width: $mobile-width) {
+        padding-right: 1px;
+      }
+
+      text-align: center;
+      position: relative;
+      padding-right: 52px;
+      width: 100%;
+      &:hover .group-icon {
+        display: flex !important;
+        margin: auto;
+      }
+      .titleSlider {
+        margin-top: 20px;
+        color: $primary-color;
+        font-size: 28px;
+        line-height: 32px;
+        border: 1px solid $primary-color;
+        background: #f9f6f1;
+        padding: 11px;
+        @media (max-width: $mobile-width) {
+          font-size: 10px;
+          padding: 5px;
+        }
+      }
+    }
+  }
   .backgroundMain {
     color: #ffffff;
     background: $primary-color;
     padding: 40px 0px 42px 53px;
-    margin-left: 2px;
   }
   .colorBg5 {
     color: $bg-color5;
@@ -38,6 +76,136 @@
       font-weight: 700;
       font-size: 28px;
       line-height: 32px;
+    }
+    .titleFavorite {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .priceFavorite {
+      color: #ff0000;
+      font-size: 28px;
+      font-weight: 700;
+    }
+    .saleTime {
+      color: #ff0000;
+      background: #ede6db;
+      padding: 8px 16px;
+      width: fit-content;
+    }
+    .firstSale {
+      background: $secondary-color;
+      padding: 42px 28px 110px 28px;
+      border-radius: 10px;
+      position: relative;
+      .backgroundFirst {
+        background: $secondary-color;
+        opacity: 0.3;
+        border-radius: 10px;
+        position: absolute;
+        bottom: -5%;
+        height: 34px;
+        width: 87%;
+      }
+      .imgSaleProduct {
+        position: absolute;
+        bottom: 1px;
+        right: 1px;
+      }
+      .titleSale {
+        font-size: 32px;
+        font-weight: 700px;
+        margin-bottom: 10px;
+      }
+      .mainSale {
+        background-color: #ffffff;
+        border-radius: 50%;
+        padding: 28px 12px;
+        width: fit-content;
+        margin-top: 140px;
+        .salePrices {
+          font-weight: 700;
+          font-size: 28px;
+          line-height: 32px;
+        }
+      }
+    }
+    .secondSale {
+      background: $secondary-purple;
+      padding: 42px 28px 110px 28px;
+      border-radius: 10px;
+      position: relative;
+      .backgroundFirst {
+        background: $secondary-purple;
+        opacity: 0.3;
+        border-radius: 10px;
+        position: absolute;
+        bottom: -5%;
+        height: 34px;
+        width: 87%;
+      }
+      .imgSaleProduct {
+        position: absolute;
+        bottom: 1px;
+        right: 1px;
+      }
+      .titleSale {
+        font-size: 32px;
+        font-weight: 700px;
+        margin-bottom: 10px;
+      }
+      .mainSale {
+        background-color: #ffffff;
+        border-radius: 50%;
+        padding: 28px 12px;
+        width: fit-content;
+        margin-top: 140px;
+        .salePrices {
+          font-weight: 700;
+          font-size: 28px;
+          line-height: 32px;
+        }
+      }
+    }
+    .thirdSale {
+      background: #a0cfc6;
+      padding: 42px 28px 110px 28px;
+      border-radius: 10px;
+      position: relative;
+      .backgroundFirst {
+        background: #a0cfc6;
+        opacity: 0.3;
+        border-radius: 10px;
+        position: absolute;
+        bottom: -5%;
+        height: 34px;
+        width: 87%;
+      }
+      .imgSaleProduct {
+        position: absolute;
+        bottom: 1px;
+        right: 1px;
+      }
+      .titleSale {
+        font-size: 32px;
+        font-weight: 700px;
+        margin-bottom: 10px;
+      }
+      .mainSale {
+        background-color: #ffffff;
+        border-radius: 50%;
+        padding: 28px 12px;
+        width: fit-content;
+        margin-top: 140px;
+        .salePrices {
+          font-weight: 700;
+          font-size: 28px;
+          line-height: 32px;
+        }
+      }
+    }
+    .btnReadMore {
+      background: $primary-color;
     }
     .heartIcon {
       right: 4%;
@@ -72,6 +240,13 @@
     font-size: 14px;
     margin-left: 15px;
   }
+  .saleFavorite {
+    color: #a6a6aa;
+    text-decoration-line: line-through;
+    font-size: 20px;
+    margin-left: 15px;
+  }
+
   .priceRed {
     color: #ff0000;
   }

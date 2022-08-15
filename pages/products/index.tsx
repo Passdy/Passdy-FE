@@ -1,13 +1,20 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { NextPage } from "next";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Link from "next/link";
+import ReactPaginate from "react-paginate";
+import cls from "classnames";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import LayoutProducts from "../../components/Shared/LayoutProducts";
 import styles from "../../styles/Product.module.scss";
+import commonStyles from "../../styles/common.module.scss";
 import Breadcrumb from "../../components/Shared/Breadcrumb";
 import LikeProduct from "../../components/Shared/LikeProduct";
+import SlickSlider from "../../components/Shared/SlickSlider";
+
+import { SETTINGS_BANNER } from "../../components/Shared/Constant/SettingSlider";
 
 const Products: NextPage = () => (
   <LayoutProducts>
@@ -94,8 +101,8 @@ const Products: NextPage = () => (
           <div className={styles.titleSeen}>Xem gần đây</div>
           <div className="flex items-center pt-10">
             <div className="flex items-center">
-              <div className={`text-sm ${styles.colorBg5}`}>Thời gian</div>
-              <FormControl className="m-1 w-40 ml-3" size="small">
+              <div className={`text-sm pr-3 ${styles.colorBg5}`}>Thời gian</div>
+              <FormControl className="m-1 w-40 " size="small">
                 <InputLabel id="demo-select-small">Trong tháng này</InputLabel>
                 <Select labelId="demo-select-small" id="demo-select-small" label="Trong tháng này">
                   <MenuItem value="">
@@ -109,7 +116,7 @@ const Products: NextPage = () => (
             </div>
             <div className={`text-sm ml-auto ${styles.colorBg5}`}>120 sản phẩm</div>
           </div>
-          <Grid container spacing={2} className="pt-12">
+          <Grid container spacing={5} className="pt-12">
             <Grid item xs={3}>
               <div className="relative">
                 <div className={`absolute flex items-center ${styles.heartIcon}`}>
@@ -188,6 +195,342 @@ const Products: NextPage = () => (
                   </div>
                 </div>
                 <div className={`ml-auto text-xs ml-auto ${styles.colorBg5}`}>Size S</div>
+              </div>
+            </Grid>
+          </Grid>
+          <div className={cls(commonStyles.paginateLine, "pt-20")}>
+            <ReactPaginate
+              breakLabel="..."
+              nextLabel=">"
+              onPageChange={() => console.log("1")}
+              pageRangeDisplayed={5}
+              pageCount={5}
+              previousLabel="<"
+              activeClassName={commonStyles.selected}
+              renderOnZeroPageCount={undefined}
+            />
+          </div>
+        </div>
+        <div className={styles.seenProduct}>
+          <div className={styles.titleSeen}>Gợi ý cho bạn</div>
+          <div className="flex items-center pt-10">
+            <div className="flex items-center">
+              <div className={`text-sm pr-3 ${styles.colorBg5}`}>Thời gian</div>
+              <FormControl className="m-1 w-40 " size="small">
+                <InputLabel id="demo-select-small">Trong tháng này</InputLabel>
+                <Select labelId="demo-select-small" id="demo-select-small" label="Trong tháng này">
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            <div className={`text-sm ml-auto ${styles.colorBg5}`}>120 sản phẩm</div>
+          </div>
+          <Grid container spacing={5} className="pt-12">
+            <Grid item xs={3}>
+              <div className="relative">
+                <div className={`absolute flex items-center ${styles.heartIcon}`}>
+                  <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
+                  <LikeProduct />
+                </div>
+                <img src="/images/example-Tshirt.png" alt="s" />
+              </div>
+              <div className="flex mt-1">
+                <div>
+                  <div className="font-medium text-sm">Uniqlo</div>
+                  <div className="text-slate-600 text-sm">Áo blouse</div>
+                  <div className="flex">
+                    <div className={`text-sm ${styles.priceRed}`}>250.000 VND</div>
+                    <div className={styles.salePrice}> 250.000 VND</div>
+                  </div>
+                </div>
+                <div className={`ml-auto text-xs ml-auto ${styles.colorBg5}`}>Size S</div>
+              </div>
+            </Grid>
+            <Grid item xs={3}>
+              <div className="relative">
+                <div className={`absolute flex items-center ${styles.heartIcon}`}>
+                  <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
+                  <LikeProduct />
+                </div>
+                <img src="/images/example-Tshirt.png" alt="s" />
+              </div>
+              <div className="flex mt-1">
+                <div>
+                  <div className="font-medium text-sm">Uniqlo</div>
+                  <div className="text-slate-600 text-sm">Áo blouse</div>
+                  <div className="flex">
+                    <div className={`text-sm ${styles.pricePrimary}`}>250.000 VND</div>
+                    <div className={styles.salePrice}> 250.000 VND</div>
+                  </div>
+                </div>
+                <div className={`ml-auto text-xs ml-auto ${styles.colorBg5}`}>Size S</div>
+              </div>
+            </Grid>
+            <Grid item xs={3}>
+              <div className="relative">
+                <div className={`absolute flex items-center ${styles.heartIcon}`}>
+                  <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
+                  <LikeProduct />
+                </div>
+                <img src="/images/example-Tshirt.png" alt="s" />
+              </div>
+              <div className="flex mt-1">
+                <div>
+                  <div className="font-medium text-sm">Uniqlo</div>
+                  <div className="text-slate-600 text-sm">Áo blouse</div>
+                  <div className="flex">
+                    <div className={`text-sm ${styles.priceRed}`}>250.000 VND</div>
+                    <div className={styles.salePrice}> 250.000 VND</div>
+                  </div>
+                </div>
+                <div className={`ml-auto text-xs ml-auto ${styles.colorBg5}`}>Size S</div>
+              </div>
+            </Grid>
+            <Grid item xs={3}>
+              <div className="relative">
+                <div className={`absolute flex items-center ${styles.heartIcon}`}>
+                  <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
+                  <LikeProduct />
+                </div>
+                <img src="/images/example-Tshirt.png" alt="s" />
+              </div>
+              <div className="flex mt-1">
+                <div>
+                  <div className="font-medium text-sm">Uniqlo</div>
+                  <div className="text-slate-600 text-sm">Áo blouse</div>
+                  <div className="flex">
+                    <div className={`text-sm ${styles.priceRed}`}>250.000 VND</div>
+                    <div className={styles.salePrice}> 250.000 VND</div>
+                  </div>
+                </div>
+                <div className={`ml-auto text-xs ml-auto ${styles.colorBg5}`}>Size S</div>
+              </div>
+            </Grid>
+          </Grid>
+          <div className={cls(commonStyles.paginateLine, "pt-20")}>
+            <ReactPaginate
+              breakLabel="..."
+              nextLabel=">"
+              onPageChange={() => console.log("1")}
+              pageRangeDisplayed={5}
+              pageCount={5}
+              previousLabel="<"
+              activeClassName={commonStyles.selected}
+              renderOnZeroPageCount={undefined}
+            />
+          </div>
+        </div>
+        <div className="py-16">
+          <img src="images/products/event.png" alt="" className="w-full" />
+        </div>
+        <div>
+          <SlickSlider settings={SETTINGS_BANNER}>
+            <div className={styles.productList}>
+              <div className={styles.thumbnail}>
+                <img src="images/products/slider-1.png" alt="" className="w-full" />
+                <div className={`font-bold ${styles.titleSlider}`}>Cháy phố</div>
+              </div>
+            </div>
+            <div className={styles.productList}>
+              <div className={styles.thumbnail}>
+                <img src="images/products/slider-2.png" alt="" className="w-full" />
+                <div className={`font-bold ${styles.titleSlider}`}>CÔNG SỞ</div>
+              </div>
+            </div>
+            <div className={styles.productList}>
+              <div className={styles.thumbnail}>
+                <img src="images/products/slider-3.png" alt="" className="w-full" />
+                <div className={`font-bold ${styles.titleSlider}`}>BEACH PARTY </div>
+              </div>
+            </div>
+            <div className={styles.productList}>
+              <div className={styles.thumbnail}>
+                <img src="images/products/slider-3.png" alt="" className="w-full" />
+                <div className={`font-bold ${styles.titleSlider}`}>BEACH PARTY </div>
+              </div>
+            </div>
+          </SlickSlider>
+        </div>
+        <div className={styles.seenProduct}>
+          <div className={styles.titleSeen}>Thương hiệu yêu thích của bạn</div>
+          <Grid container spacing={4} className="pt-9">
+            <Grid item xs={6}>
+              <img src="/images/products/favorite-banner.png" alt="" className="w-full" />
+              <div className={styles.titleFavorite}>Uniqlo</div>
+              <div className="text-base mb-2.5">
+                Áo dài tay cực on trend, chỉ với giá 290,000 VND
+              </div>
+              <div className="flex items-center">
+                <div className={styles.priceFavorite}>250.000 VND</div>
+                <div className={styles.saleFavorite}> 250.000 VND</div>
+              </div>
+              <div className={styles.saleTime}>Sale đến 25/4</div>
+            </Grid>
+            <Grid item xs={6}>
+              <Grid container spacing={4}>
+                <Grid item xs={6}>
+                  <div className="relative">
+                    <div className={`absolute flex items-center ${styles.heartIcon}`}>
+                      <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
+                      <LikeProduct />
+                    </div>
+                    <img src="/images/example-Tshirt.png" alt="s" className="w-full" />
+                  </div>
+                  <div className="flex mt-1">
+                    <div>
+                      <div className="font-medium text-sm">Uniqlo</div>
+                      <div className="text-slate-600 text-sm">Áo blouse</div>
+                      <div className="flex">
+                        <div className={`text-sm ${styles.priceRed}`}>250.000 VND</div>
+                        <div className={styles.salePrice}> 250.000 VND</div>
+                      </div>
+                    </div>
+                    <div className={`ml-auto text-xs ml-auto ${styles.colorBg5}`}>Size S</div>
+                  </div>
+                </Grid>
+                <Grid item xs={6}>
+                  <div className="relative">
+                    <div className={`absolute flex items-center ${styles.heartIcon}`}>
+                      <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
+                      <LikeProduct />
+                    </div>
+                    <img src="/images/example-Tshirt.png" alt="s" className="w-full" />
+                  </div>
+                  <div className="flex mt-1">
+                    <div>
+                      <div className="font-medium text-sm">Uniqlo</div>
+                      <div className="text-slate-600 text-sm">Áo blouse</div>
+                      <div className="flex">
+                        <div className={`text-sm ${styles.priceRed}`}>250.000 VND</div>
+                        <div className={styles.salePrice}> 250.000 VND</div>
+                      </div>
+                    </div>
+                    <div className={`ml-auto text-xs ml-auto ${styles.colorBg5}`}>Size S</div>
+                  </div>
+                </Grid>
+              </Grid>
+              <Grid container spacing={4} className="pt-10">
+                <Grid item xs={6}>
+                  <div className="relative">
+                    <div className={`absolute flex items-center ${styles.heartIcon}`}>
+                      <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
+                      <LikeProduct />
+                    </div>
+                    <img src="/images/example-Tshirt.png" alt="s" className="w-full" />
+                  </div>
+                  <div className="flex mt-1">
+                    <div>
+                      <div className="font-medium text-sm">Uniqlo</div>
+                      <div className="text-slate-600 text-sm">Áo blouse</div>
+                      <div className="flex">
+                        <div className={`text-sm ${styles.priceRed}`}>250.000 VND</div>
+                        <div className={styles.salePrice}> 250.000 VND</div>
+                      </div>
+                    </div>
+                    <div className={`ml-auto text-xs ml-auto ${styles.colorBg5}`}>Size S</div>
+                  </div>
+                </Grid>
+                <Grid item xs={6}>
+                  <div className="relative">
+                    <div className={`absolute flex items-center ${styles.heartIcon}`}>
+                      <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
+                      <LikeProduct />
+                    </div>
+                    <img src="/images/example-Tshirt.png" alt="s" className="w-full" />
+                  </div>
+                  <div className="flex mt-1">
+                    <div>
+                      <div className="font-medium text-sm">Uniqlo</div>
+                      <div className="text-slate-600 text-sm">Áo blouse</div>
+                      <div className="flex">
+                        <div className={`text-sm ${styles.priceRed}`}>250.000 VND</div>
+                        <div className={styles.salePrice}> 250.000 VND</div>
+                      </div>
+                    </div>
+                    <div className={`ml-auto text-xs ml-auto ${styles.colorBg5}`}>Size S</div>
+                  </div>
+                </Grid>
+                <Grid item xs={12}>
+                  <Button size="large" className={styles.btnReadMore} fullWidth variant="contained">
+                    Xem tất cả
+                  </Button>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </div>
+        <div className={`pt-10 ${styles.seenProduct}`}>
+          <div className={styles.titleSeen}>Ưu đãi</div>
+          <Grid container spacing={2} className="mt-5">
+            <Grid item xs={4}>
+              <div className={styles.firstSale}>
+                <div className={styles.titleSale}>Quần Jeans</div>
+                <div className="text-xl font-normal mb-3">
+                  Chuẩn bị cho mùa hè đầy năng động với quần Jeans
+                </div>
+                <Link href="https://shopee.vn/passdyvn" passHref>
+                  <span className="underline cursor-pointer text-xl font-weight">MUA NGAY</span>
+                </Link>
+                <div>
+                  <div className={`text-center ${styles.mainSale}`}>
+                    <div>Chỉ từ</div>
+                    <div className={styles.salePrices}>290,000</div>
+                    <div className={styles.salePrices}>VND</div>
+                  </div>
+                  <div className={styles.imgSaleProduct}>
+                    <img src="images/products/sale-image-1.png" alt="" />
+                  </div>
+                  <div className={styles.backgroundFirst}> </div>
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={4}>
+              <div className={styles.secondSale}>
+                <div className={styles.titleSale}>Áo Phông</div>
+                <div className="text-xl font-normal mb-3">
+                  Chuẩn bị cho mùa hè đầy năng động với quần Jeans
+                </div>
+                <Link href="https://shopee.vn/passdyvn" passHref>
+                  <span className="underline cursor-pointer text-xl font-weight">MUA NGAY</span>
+                </Link>
+                <div>
+                  <div className={`text-center ${styles.mainSale}`}>
+                    <div>Chỉ từ</div>
+                    <div className={styles.salePrices}>290,000</div>
+                    <div className={styles.salePrices}>VND</div>
+                  </div>
+                  <div className={styles.imgSaleProduct}>
+                    <img src="images/products/sale-image-2.png" alt="" />
+                  </div>
+                  <div className={styles.backgroundFirst}> </div>
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={4}>
+              <div className={styles.thirdSale}>
+                <div className={styles.titleSale}>Quần Jeans</div>
+                <div className="text-xl font-normal mb-3">
+                  Chuẩn bị cho mùa hè đầy năng động với quần Jeans
+                </div>
+                <Link href="https://shopee.vn/passdyvn" passHref>
+                  <span className="underline cursor-pointer text-xl font-weight">MUA NGAY</span>
+                </Link>
+                <div>
+                  <div className={`text-center ${styles.mainSale}`}>
+                    <div>Chỉ từ</div>
+                    <div className={styles.salePrices}>290,000</div>
+                    <div className={styles.salePrices}>VND</div>
+                  </div>
+                  <div className={styles.imgSaleProduct}>
+                    <img src="images/products/sale-image-3.png" alt="" />
+                  </div>
+                  <div className={styles.backgroundFirst}> </div>
+                </div>
               </div>
             </Grid>
           </Grid>

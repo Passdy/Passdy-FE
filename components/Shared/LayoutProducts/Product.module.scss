@@ -3,6 +3,9 @@
 .productWrapper {
   background: #f9f6f1;
   padding: 0px 0px 140px 47px;
+  .sidebar {
+    margin-top: 31px;
+  }
   .title {
     color: $primary-color;
     font-style: normal;
@@ -31,5 +34,24 @@
     border-bottom: 1px solid #7c808b;
     margin-top: 28px;
     margin-bottom: 23px;
+  }
+}
+.trend {
+  background: $primary-color;
+  padding: 70px 70px;
+  .titleTop {
+    font-family: "Vollkorn";
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 56px;
+    text-align: center;
+    color: #ffffff;
+  }
+  .titleBot {
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 32px;
+    text-align: center;
+    color: #ffffff;
   }
 }
