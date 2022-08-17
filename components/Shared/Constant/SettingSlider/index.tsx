@@ -10,11 +10,9 @@ const StyledButtonNextArrow = styled("div")`
   display: flex !important;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.6);
   transform: matrix(1, 0, 0, 1, 0, 0);
-  border-radius: 50%;
-  opacity: 0.51;
-  right: -1px;
+  right: 6.1% !important;
+  z-index:1;
   &:hover {
     background: black;
   }
@@ -29,11 +27,8 @@ const StyledButtonPreviousArrow = styled("div")`
   display: flex !important;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.6);
-  transform: matrix(1, 0, 0, 1, 0, 0);
-  border-radius: 50%;
-  opacity: 0.51;
-  left: -1px;
+  left: 1.8% !important;
+  z-index:1;
   &:hover {
     background: blue;
   }

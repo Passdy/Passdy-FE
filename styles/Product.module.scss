@@ -106,11 +106,13 @@
         bottom: -5%;
         height: 34px;
         width: 87%;
+        left: 7%;
       }
       .imgSaleProduct {
         position: absolute;
         bottom: 1px;
         right: 1px;
+        z-index: 1;
       }
       .titleSale {
         font-size: 32px;
@@ -123,6 +125,7 @@
         padding: 28px 12px;
         width: fit-content;
         margin-top: 140px;
+        z-index: 100;
         .salePrices {
           font-weight: 700;
           font-size: 28px;
@@ -143,11 +146,12 @@
         bottom: -5%;
         height: 34px;
         width: 87%;
+        left: 7%;
       }
-      .imgSaleProduct {
+      .imgSaleProductSecond {
         position: absolute;
         bottom: 1px;
-        right: 1px;
+        right: -12%;
       }
       .titleSale {
         font-size: 32px;
@@ -180,6 +184,7 @@
         bottom: -5%;
         height: 34px;
         width: 87%;
+        left: 7%;
       }
       .imgSaleProduct {
         position: absolute;

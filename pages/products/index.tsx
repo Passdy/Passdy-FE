@@ -33,7 +33,7 @@ const Products: NextPage = () => (
           <Button
             size="large"
             variant="contained"
-            className={`text-base font-semibold ${styles.buyNowButton}`}
+            className={`text-base font-semibold font-semibold ${styles.buyNowButton}`}
           >
             SẮM NGAY
           </Button>
@@ -466,7 +466,7 @@ const Products: NextPage = () => (
         </div>
         <div className={`pt-10 ${styles.seenProduct}`}>
           <div className={styles.titleSeen}>Ưu đãi</div>
-          <Grid container spacing={2} className="mt-5">
+          <Grid container spacing={2} className="pt-5">
             <Grid item xs={4}>
               <div className={styles.firstSale}>
                 <div className={styles.titleSale}>Quần Jeans</div>
@@ -503,9 +503,9 @@ const Products: NextPage = () => (
                     <div>Chỉ từ</div>
                     <div className={styles.salePrices}>290,000</div>
                     <div className={styles.salePrices}>VND</div>
-                  </div>
-                  <div className={styles.imgSaleProduct}>
-                    <img src="images/products/sale-image-2.png" alt="" />
+                    <div className={styles.imgSaleProductSecond}>
+                      <img src="images/products/sale-image-2.png" alt="" />
+                    </div>
                   </div>
                   <div className={styles.backgroundFirst}> </div>
                 </div>
