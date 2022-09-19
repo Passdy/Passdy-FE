@@ -3,10 +3,10 @@ import Link from "next/link";
 import { NextPage } from "next";
 import LayoutProducts from "../../../components/Shared/LayoutProducts";
 
-const Cc: NextPage = () => (
+const NewProducts: NextPage = () => (
   <LayoutProducts>
-    <Link href="/">Trang chủ/ </Link>
+    <Link href="/">NewProducts</Link>
   </LayoutProducts>
 );
 
-export default Cc;
+export default NewProducts;

@@ -1,0 +1,143 @@
+@import "./styles/variables.module";
+
+.seenProduct {
+  margin-top: 40px;
+  .titleSeen {
+    font-weight: 700 !important;
+    font-size: 28px;
+    line-height: 32px;
+    margin-bottom: 15px;
+  }
+  .titleFavorite {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .priceFavorite {
+    color: #ff0000;
+    font-size: 28px;
+    font-weight: 700;
+  }
+  .saleTime {
+    color: #ff0000;
+    background: #ede6db;
+    padding: 8px 16px;
+    width: fit-content;
+  }
+  .firstSale {
+    background: $secondary-color;
+    padding: 42px 28px 110px 28px;
+    border-radius: 10px;
+    position: relative;
+    .backgroundFirst {
+      background: $secondary-color;
+      opacity: 0.3;
+      border-radius: 10px;
+      position: absolute;
+      bottom: -5%;
+      height: 34px;
+      width: 87%;
+      left: 7%;
+    }
+    .imgSaleProduct {
+      position: absolute;
+      bottom: 1px;
+      right: 1px;
+      z-index: 1;
+    }
+    .titleSale {
+      font-size: 32px;
+      font-weight: 700px;
+      margin-bottom: 10px;
+    }
+    .mainSale {
+      background-color: #ffffff;
+      border-radius: 50%;
+      padding: 28px 12px;
+      width: fit-content;
+      margin-top: 140px;
+      z-index: 2;
+      .salePrices {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 32px;
+      }
+    }
+  }
+  .secondSale {
+    background: $secondary-purple;
+    padding: 42px 28px 110px 28px;
+    border-radius: 10px;
+    position: relative;
+    .backgroundFirst {
+      background: $secondary-purple;
+      opacity: 0.3;
+      border-radius: 10px;
+      position: absolute;
+      bottom: -5%;
+      height: 34px;
+      width: 87%;
+      left: 7%;
+    }
+    .imgSaleProductSecond {
+      position: absolute;
+      bottom: 1px;
+      right: -12%;
+    }
+    .titleSale {
+      font-size: 32px;
+      font-weight: 700px;
+      margin-bottom: 10px;
+    }
+    .mainSale {
+      background-color: #ffffff;
+      border-radius: 50%;
+      padding: 28px 12px;
+      width: fit-content;
+      margin-top: 140px;
+      .salePrices {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 32px;
+      }
+    }
+  }
+  .thirdSale {
+    background: #a0cfc6;
+    padding: 42px 28px 110px 28px;
+    border-radius: 10px;
+    position: relative;
+    .backgroundFirst {
+      background: #a0cfc6;
+      opacity: 0.3;
+      border-radius: 10px;
+      position: absolute;
+      bottom: -5%;
+      height: 34px;
+      width: 87%;
+      left: 7%;
+    }
+    .imgSaleProduct {
+      position: absolute;
+      bottom: 1px;
+      right: 1px;
+    }
+    .titleSale {
+      font-size: 32px;
+      font-weight: 700px;
+      margin-bottom: 10px;
+    }
+    .mainSale {
+      background-color: #ffffff;
+      border-radius: 50%;
+      padding: 28px 12px;
+      width: fit-content;
+      margin-top: 140px;
+      .salePrices {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 32px;
+      }
+    }
+  }
+}

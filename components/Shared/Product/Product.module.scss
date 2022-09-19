@@ -1,0 +1,21 @@
+@import "./styles/variables.module";
+
+.heartIcon {
+  right: 4%;
+  top: 5%;
+  .colorPrimary {
+    color: $primary-color;
+  }
+}
+.priceRed {
+  color: #ff0000;
+}
+.salePrice {
+  color: #a6a6aa;
+  text-decoration-line: line-through;
+  font-size: 14px;
+  margin-left: 15px;
+}
+.colorBg5 {
+  color: $bg-color5;
+}

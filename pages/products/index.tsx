@@ -12,9 +12,8 @@ import styles from "../../styles/Product.module.scss";
 import commonStyles from "../../styles/common.module.scss";
 import Breadcrumb from "../../components/Shared/Breadcrumb";
 import LikeProduct from "../../components/Shared/LikeProduct";
-import SlickSlider from "../../components/Shared/SlickSlider";
-
-import { SETTINGS_BANNER } from "../../components/Shared/Constant/SettingSlider";
+import OtherEvents from "../../components/Shared/OtherEvents";
+import Sales from "../../components/Shared/Sale";
 
 const Products: NextPage = () => (
   <LayoutProducts>
@@ -123,7 +122,7 @@ const Products: NextPage = () => (
                   <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
                   <LikeProduct />
                 </div>
-                <img src="/images/example-Tshirt.png" alt="s" />
+                <img src="/images/example-Tshirt.png" alt="s" className="w-full" />
               </div>
               <div className="flex mt-1">
                 <div>
@@ -143,7 +142,7 @@ const Products: NextPage = () => (
                   <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
                   <LikeProduct />
                 </div>
-                <img src="/images/example-Tshirt.png" alt="s" />
+                <img src="/images/example-Tshirt.png" alt="s" className="w-full" />
               </div>
               <div className="flex mt-1">
                 <div>
@@ -163,7 +162,7 @@ const Products: NextPage = () => (
                   <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
                   <LikeProduct />
                 </div>
-                <img src="/images/example-Tshirt.png" alt="s" />
+                <img src="/images/example-Tshirt.png" alt="s" className="w-full" />
               </div>
               <div className="flex mt-1">
                 <div>
@@ -183,7 +182,7 @@ const Products: NextPage = () => (
                   <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
                   <LikeProduct />
                 </div>
-                <img src="/images/example-Tshirt.png" alt="s" />
+                <img src="/images/example-Tshirt.png" alt="s" className="w-full" />
               </div>
               <div className="flex mt-1">
                 <div>
@@ -237,7 +236,7 @@ const Products: NextPage = () => (
                   <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
                   <LikeProduct />
                 </div>
-                <img src="/images/example-Tshirt.png" alt="s" />
+                <img src="/images/example-Tshirt.png" alt="s" className="w-full" />
               </div>
               <div className="flex mt-1">
                 <div>
@@ -257,7 +256,7 @@ const Products: NextPage = () => (
                   <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
                   <LikeProduct />
                 </div>
-                <img src="/images/example-Tshirt.png" alt="s" />
+                <img src="/images/example-Tshirt.png" alt="s" className="w-full" />
               </div>
               <div className="flex mt-1">
                 <div>
@@ -277,7 +276,7 @@ const Products: NextPage = () => (
                   <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
                   <LikeProduct />
                 </div>
-                <img src="/images/example-Tshirt.png" alt="s" />
+                <img src="/images/example-Tshirt.png" alt="s" className="w-full" />
               </div>
               <div className="flex mt-1">
                 <div>
@@ -297,7 +296,7 @@ const Products: NextPage = () => (
                   <span className={`mr-1 font-bold ${styles.colorPrimary}`}>25</span>
                   <LikeProduct />
                 </div>
-                <img src="/images/example-Tshirt.png" alt="s" />
+                <img src="/images/example-Tshirt.png" alt="s" className="w-full" />
               </div>
               <div className="flex mt-1">
                 <div>
@@ -328,35 +327,10 @@ const Products: NextPage = () => (
         <div className="py-16">
           <img src="images/products/event.png" alt="" className="w-full" />
         </div>
-        <div>
-          <SlickSlider settings={SETTINGS_BANNER}>
-            <div className={styles.productList}>
-              <div className={styles.thumbnail}>
-                <img src="images/products/slider-1.png" alt="" className="w-full" />
-                <div className={`font-bold ${styles.titleSlider}`}>Cháy phố</div>
-              </div>
-            </div>
-            <div className={styles.productList}>
-              <div className={styles.thumbnail}>
-                <img src="images/products/slider-2.png" alt="" className="w-full" />
-                <div className={`font-bold ${styles.titleSlider}`}>CÔNG SỞ</div>
-              </div>
-            </div>
-            <div className={styles.productList}>
-              <div className={styles.thumbnail}>
-                <img src="images/products/slider-3.png" alt="" className="w-full" />
-                <div className={`font-bold ${styles.titleSlider}`}>BEACH PARTY </div>
-              </div>
-            </div>
-            <div className={styles.productList}>
-              <div className={styles.thumbnail}>
-                <img src="images/products/slider-3.png" alt="" className="w-full" />
-                <div className={`font-bold ${styles.titleSlider}`}>BEACH PARTY </div>
-              </div>
-            </div>
-          </SlickSlider>
+        <div className={`pb-5 ${styles.seenProduct}`}>
+          <OtherEvents />
         </div>
-        <div className={styles.seenProduct}>
+        <div className={`pt-5 ${styles.seenProduct}`}>
           <div className={styles.titleSeen}>Thương hiệu yêu thích của bạn</div>
           <Grid container spacing={4} className="pt-9">
             <Grid item xs={6}>
@@ -464,76 +438,8 @@ const Products: NextPage = () => (
             </Grid>
           </Grid>
         </div>
-        <div className={`pt-10 ${styles.seenProduct}`}>
-          <div className={styles.titleSeen}>Ưu đãi</div>
-          <Grid container spacing={2} className="pt-5">
-            <Grid item xs={4}>
-              <div className={styles.firstSale}>
-                <div className={styles.titleSale}>Quần Jeans</div>
-                <div className="text-xl font-normal mb-3">
-                  Chuẩn bị cho mùa hè đầy năng động với quần Jeans
-                </div>
-                <Link href="https://shopee.vn/passdyvn" passHref>
-                  <span className="underline cursor-pointer text-xl font-weight">MUA NGAY</span>
-                </Link>
-                <div>
-                  <div className={`text-center ${styles.mainSale}`}>
-                    <div>Chỉ từ</div>
-                    <div className={styles.salePrices}>290,000</div>
-                    <div className={styles.salePrices}>VND</div>
-                  </div>
-                  <div className={styles.imgSaleProduct}>
-                    <img src="images/products/sale-image-1.png" alt="" />
-                  </div>
-                  <div className={styles.backgroundFirst}> </div>
-                </div>
-              </div>
-            </Grid>
-            <Grid item xs={4}>
-              <div className={styles.secondSale}>
-                <div className={styles.titleSale}>Áo Phông</div>
-                <div className="text-xl font-normal mb-3">
-                  Chuẩn bị cho mùa hè đầy năng động với quần Jeans
-                </div>
-                <Link href="https://shopee.vn/passdyvn" passHref>
-                  <span className="underline cursor-pointer text-xl font-weight">MUA NGAY</span>
-                </Link>
-                <div>
-                  <div className={`text-center ${styles.mainSale}`}>
-                    <div>Chỉ từ</div>
-                    <div className={styles.salePrices}>290,000</div>
-                    <div className={styles.salePrices}>VND</div>
-                    <div className={styles.imgSaleProductSecond}>
-                      <img src="images/products/sale-image-2.png" alt="" />
-                    </div>
-                  </div>
-                  <div className={styles.backgroundFirst}> </div>
-                </div>
-              </div>
-            </Grid>
-            <Grid item xs={4}>
-              <div className={styles.thirdSale}>
-                <div className={styles.titleSale}>Quần Jeans</div>
-                <div className="text-xl font-normal mb-3">
-                  Chuẩn bị cho mùa hè đầy năng động với quần Jeans
-                </div>
-                <Link href="https://shopee.vn/passdyvn" passHref>
-                  <span className="underline cursor-pointer text-xl font-weight">MUA NGAY</span>
-                </Link>
-                <div>
-                  <div className={`text-center ${styles.mainSale}`}>
-                    <div>Chỉ từ</div>
-                    <div className={styles.salePrices}>290,000</div>
-                    <div className={styles.salePrices}>VND</div>
-                  </div>
-                  <div className={styles.imgSaleProduct}>
-                    <img src="images/products/sale-image-3.png" alt="" />
-                  </div>
-                  <div className={styles.backgroundFirst}> </div>
-                </div>
-              </div>
-            </Grid>
-          </Grid>
+        <div className="pt-10">
+          <Sales />
         </div>
       </div>
     </div>

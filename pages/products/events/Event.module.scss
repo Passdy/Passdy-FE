@@ -1,0 +1,51 @@
+@import "./styles/variables.module";
+
+.mainEvents {
+  margin-top: 9px;
+  .banner {
+    background: url("/images/products/events/banner.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    .titleBanner {
+      background: linear-gradient(0deg, #118671 0%, rgba(17, 134, 113, 0) 100%);
+      font-family: "Vollkorn";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 62px;
+      line-height: 56px;
+      text-align: center;
+      color: white;
+      padding: 242px;
+    }
+  }
+  .bread {
+    margin: 30px 0px;
+  }
+  .selects {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 29px;
+    border-top: 1px solid #cbcbd4;
+    border-bottom: 1px solid #cbcbd4;
+    .inputSelect {
+      width: 100px;
+      margin-right: 10px;
+    }
+  }
+  .titleProduct {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .totalProduct {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: right;
+    color: #707070;
+  }
+}
