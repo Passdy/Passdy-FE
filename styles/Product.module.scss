@@ -260,3 +260,74 @@
     color: $primary-color;
   }
 }
+
+.mainDetails {
+  background: #f9f6f1;
+  padding: 10px 0px 50px 47px;
+  .btnBack {
+    color: black;
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 12px;
+    font-family: "Inter";
+    margin-bottom: 15px;
+  }
+  .titleProduct {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .titleSale {
+    font-weight: 400;
+    line-height: 12px;
+    color: #ff0000;
+    margin-bottom: 8px;
+  }
+  .priceProduct {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 24px;
+    color: #ff0000;
+  }
+  .salePrice {
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration-line: line-through;
+    color: #a6a6aa;
+    margin-left: 10px;
+  }
+  .firstSale {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 12px;
+    text-decoration-line: line-through;
+    color: #a6a6aa;
+    margin-right: 9px;
+  }
+  .percentSale {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    color: #3a3a3a;
+  }
+  .size {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .sizeTable {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #000000;
+  }
+  .code {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 12px;
+  }
+}
