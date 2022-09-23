@@ -1,3 +1,5 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable no-console */
 /* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import { NextPage } from "next";
@@ -6,7 +8,10 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Grid from "@mui/material/Grid";
+import cls from "classnames";
+import ReactPaginate from "react-paginate";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import commonStyles from "../../../styles/common.module.scss";
 import styles from "./Event.module.scss";
 import LayoutProducts from "../../../components/Shared/LayoutProducts";
 import Breadcrumb from "../../../components/Shared/Breadcrumb";
@@ -16,6 +21,8 @@ import Sales from "../../../components/Shared/Sale";
 
 const BuyEvents: NextPage = () => {
   const [age, setAge] = useState("");
+  const imageProduct = Array.from(Array(4));
+
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
   };
@@ -128,19 +135,24 @@ const BuyEvents: NextPage = () => {
               <div className={styles.totalProduct}>15 sản phẩm</div>
             </div>
             <Grid container spacing={5} className="pt-6">
-              <Grid item xs={3}>
-                <Product />
-              </Grid>
-              <Grid item xs={3}>
-                <Product />
-              </Grid>
-              <Grid item xs={3}>
-                <Product />
-              </Grid>
-              <Grid item xs={3}>
-                <Product />
-              </Grid>
+              {imageProduct.map((item, index) => (
+                <Grid item xs={3} key={index}>
+                  <Product />
+                </Grid>
+              ))}
             </Grid>
+            <div className={cls(commonStyles.paginateLine, "pt-20")}>
+              <ReactPaginate
+                breakLabel="..."
+                nextLabel=">"
+                onPageChange={() => console.log("1")}
+                pageRangeDisplayed={5}
+                pageCount={5}
+                previousLabel="<"
+                activeClassName={commonStyles.selected}
+                renderOnZeroPageCount={undefined}
+              />
+            </div>
           </div>
           <div className="mt-12">
             <div className="flex justify-between items-center">
@@ -161,6 +173,18 @@ const BuyEvents: NextPage = () => {
                 <Product />
               </Grid>
             </Grid>
+            <div className={cls(commonStyles.paginateLine, "pt-20")}>
+              <ReactPaginate
+                breakLabel="..."
+                nextLabel=">"
+                onPageChange={() => console.log("1")}
+                pageRangeDisplayed={5}
+                pageCount={5}
+                previousLabel="<"
+                activeClassName={commonStyles.selected}
+                renderOnZeroPageCount={undefined}
+              />
+            </div>
           </div>
           <div className="mt-12">
             <div className="flex justify-between items-center">
@@ -181,8 +205,23 @@ const BuyEvents: NextPage = () => {
                 <Product />
               </Grid>
             </Grid>
+            <div className={cls(commonStyles.paginateLine, "pt-20")}>
+              <ReactPaginate
+                breakLabel="..."
+                nextLabel=">"
+                onPageChange={() => console.log("1")}
+                pageRangeDisplayed={5}
+                pageCount={5}
+                previousLabel="<"
+                activeClassName={commonStyles.selected}
+                renderOnZeroPageCount={undefined}
+              />
+            </div>
           </div>
-          <OtherEvents />
+          <div className="mt-11">
+            <div className={styles.titleProduct}>Các sự kiện khác</div>
+            <OtherEvents />
+          </div>
           <div className="pt-10">
             <Sales />
           </div>

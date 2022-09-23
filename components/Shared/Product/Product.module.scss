@@ -1,21 +1,32 @@
 @import "./styles/variables.module";
 
-.heartIcon {
-  right: 4%;
-  top: 5%;
-  .colorPrimary {
-    color: $primary-color;
+.cardProduct {
+  .cardImage {
+    width: 100%;
+    cursor: pointer;
+    &:hover {
+      box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
   }
-}
-.priceRed {
-  color: #ff0000;
-}
-.salePrice {
-  color: #a6a6aa;
-  text-decoration-line: line-through;
-  font-size: 14px;
-  margin-left: 15px;
-}
-.colorBg5 {
-  color: $bg-color5;
+
+  .heartIcon {
+    right: 4%;
+    top: 5%;
+    .colorPrimary {
+      color: $primary-color;
+    }
+  }
+  .priceRed {
+    color: #ff0000;
+  }
+  .salePrice {
+    color: #a6a6aa;
+    text-decoration-line: line-through;
+    font-size: 14px;
+    margin-left: 15px;
+  }
+  .colorBg5 {
+    color: $bg-color5;
+  }
 }

@@ -195,3 +195,8 @@ a {
     z-index: 0;
     position: relative;
 }
+
+.tab-description .MuiTabs-indicator {
+    background-color: #118671 !important;
+    height: 3px;
+}

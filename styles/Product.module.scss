@@ -330,4 +330,182 @@
     font-size: 14px;
     line-height: 12px;
   }
+  .btnAdd {
+    background: $primary-color;
+    padding: 9px 24px;
+    gap: 10px;
+    width: 364px;
+    border-radius: 4px;
+  }
+  .borderIconLike {
+    border: 1px solid #cbcbd4;
+    border-radius: 4px;
+    padding: 10px 10px 3.6px 10px;
+  }
+  .borderIconChat {
+    border: 1px solid #cbcbd4;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  .stockTitle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .textTab {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: black;
+    white-space: nowrap;
+  }
+}
+.suitableShop {
+  padding: 100px 200px;
+  background: $primary-color;
+
+  &.noBg {
+    background: transparent;
+  }
+
+  .titleSection {
+    font-family: Volkorm, sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 56px;
+    color: #ffffff;
+    text-align: center;
+  }
+  .secondaryColor {
+    font-family: Volkorm, sans-serif;
+    color: $secondary-color;
+  }
+  .titleBottom {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .cardWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  .card {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .iconWrapper {
+      border-radius: 50%;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff8f1;
+    }
+
+    .titleCard {
+      font-family: Volkorm, sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 33px;
+      color: #ffffff;
+      margin-top: 20px;
+      width: 294px;
+      text-align: center;
+    }
+  }
+
+  .startSellingBtn {
+    margin-top: 20px;
+    text-align: center;
+
+    button {
+      padding: 10px 24px;
+      font-size: 16px;
+      line-height: 26px;
+      color: #fff;
+      background-color: $primary-color;
+      border-radius: 4px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 150ms;
+
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
+}
+
+.container {
+  max-width: 1900px;
+  margin: 0 auto;
+}
+
+@media (max-width: $mobile-width) {
+  .suitableShop {
+    padding: 50px 20px 80px 20px;
+
+    .cardWrapper {
+      display: grid;
+      row-gap: 50px;
+      justify-content: center;
+    }
+    .card {
+      .titleCard {
+        font-size: 18px;
+      }
+    }
+    .titleSection {
+      font-size: 32px;
+      line-height: 44px;
+    }
+  }
+}
+.productSide {
+  padding: 100px 195px;
+  background: #f9f6f1;
+  .title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    color: $primary-color;
+  }
+  .productList {
+    padding-bottom: 100px;
+  }
+  .backgroundImageSquare {
+    position: relative;
+    width: 204px;
+    height: 173px;
+    background: #ede6db;
+    img {
+      width: 100%;
+      position: absolute;
+      bottom: 15%;
+      left: 11%;
+    }
+  }
+  .backgroundImageRectangle {
+    position: relative;
+    width: 204px;
+    height: 248px;
+    background: #ede6db;
+    img {
+      width: 100%;
+      position: absolute;
+      bottom: 10%;
+      left: 10%;
+    }
+  }
 }

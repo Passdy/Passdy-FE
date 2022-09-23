@@ -7,7 +7,6 @@ import styles from "./Events.module.scss";
 
 const OtherEvents: NextPage = () => (
   <div className={`pb-5 ${styles.seenProduct}`}>
-    <div className={styles.titleSeen}>Các sự kiện khác</div>
     <SlickSlider settings={SETTINGS_BANNER}>
       <div className={styles.productList}>
         <div className={styles.thumbnail}>
